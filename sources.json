@@ -1,0 +1,75 @@
+{
+  "rapid7.com": {
+    "domain": "https://www.rapid7.com/blog/tag/threat-intel/",
+    "engine": "httpx",
+    "article_path": "/blog/",
+    "needs-filtering": false,
+    "selectors": {
+      "title": "h1",
+      "date": "time",
+      "content": "main"
+    }
+  },
+  "sekoia.com": {
+    "domain": "https://www.sekoia.com/blog/",
+    "engine": "playwright",
+    "needs-filtering": true,
+    "cookie_element": {
+      "get-by-role": {
+        "role": "button",
+        "name": "Close the widget without"
+      }
+    },
+    "filter_elements": {
+      "get-by-role": {
+        "role": "radio",
+        "name": "Threat Research & Intelligence",
+        "state": "visible"
+      }
+    },
+    "pagination": {
+      "max_pages": 10
+    },
+    "selectors": {
+      "title": "h1",
+      "date": "auto",
+      "content": "article, .w-richtext, main"
+    }
+  },
+  "teamt5.org": {
+    "domain": "https://teamt5.org/en/blog/",
+    "article_path": "/en/posts/",
+    "engine": "playwright",
+    "needs-filtering": true,
+    "filter_elements": {
+      "get-by-text": {
+        "text": "Threat Intelligence",
+        "exact": true,
+        "index": 2
+      }
+    },
+    "pagination": {
+      "max_pages": 10
+    },
+    "selectors": {
+      "title": "h1",
+      "date": "auto",
+      "content": "main"
+    }
+  },
+  "harfanglab.io": {
+    "domain": "https://harfanglab.io/insidethelab/",
+    "engine": "playwright",
+    "needs-filtering": false,
+    "cookie_element": {
+      "get-by-role": {
+        "role": "button",
+        "name": "Close without accepting"
+      }
+    },
+    "pagination": {
+      "max_pages": 5
+    },
+    "selectors": {}
+  }
+}
