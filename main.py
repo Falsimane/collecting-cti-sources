@@ -37,15 +37,35 @@ def get_pending_urls_count():
         return 0, 0
 
 def run_collector():
-    """Launches the URL collection script."""
-    print("\n🔍 Launching URL Collector...")
-    script_path = os.path.join("url_collector", "collector.py")
-    
-    if not os.path.exists(script_path):
-        print(f"❌ Error: Could not find collector script at '{script_path}'. Please check the filename.")
-        return
-    
-    subprocess.run([sys.executable, script_path])
+  """Launches the URL collection script with a user-defined worker count."""
+  print("\n🔍 Configuration du collecteur...")
+
+  # Demande interactive du nombre de workers avec une fourchette conseillée
+  while True:
+    choice = input(
+        "👉 Entrez le nombre de workers souhaité (fourchette conseillée : 1 à"
+        " 20) [Défaut: 3] : "
+    ).strip()
+    if not choice:
+      workers = 3
+      break
+    try:
+      workers = int(choice)
+      if 1 <= workers <= 20:  # Fourchette de sécurité autorisée
+        break
+      print("❌ Veuillez entrer un nombre compris entre 1 et 20.")
+    except ValueError:
+      print("❌ Entrée invalide. Veuillez entrer un nombre entier.")
+
+  print(f"\n🚀 Lancement du collecteur avec {workers} worker(s)...")
+  script_path = os.path.join("url_collector", "collector.py")
+
+  if not os.path.exists(script_path):
+    print(f"❌ Error: Could not find collector script at '{script_path}'.")
+    return
+
+  # On transmet le nombre de workers en argument au script collector.py
+  subprocess.run([sys.executable, script_path, str(workers)])
 
 def run_scraper():
     """

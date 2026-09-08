@@ -25,5 +25,15 @@
     "max_pages": 5,
     "pagination_pattern": "click",
     "slow_mode": false
+  },
+  "paloalto_unit42": {
+    "url": "https://unit42.paloaltonetworks.com/category/threat-research/",
+    "card_selector": "l-card",
+    "keyword": "Threat Research",
+    "use_nodriver": true,
+    "max_pages": 10,
+    "pagination_pattern": "scroll",
+    "next_button_selector": ".cc-button__wrapper .l-btn",
+    "slow_mode": false
   }
 }

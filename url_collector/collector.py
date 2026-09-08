@@ -1,87 +1,27 @@
 import asyncio
+import json
+import os
+import re
+from urllib.parse import urljoin
+from bs4 import BeautifulSoup
 import nodriver as uc
 from nodriver.cdp import network
-import re
-from bs4 import BeautifulSoup
-from urllib.parse import urljoin, urlparse, urlunparse
-import json
-import sqlite3
-import os
 from tqdm import tqdm
+import sys  
 
-DB_NAME = "db_outputs/urls_collection.db"
-
-# Seuil de sécurité universel : nombre de pages consécutives sans nouvelle URL avant d'arrêter
-MAX_EMPTY_PAGES_TOLERANCE = 5
-
-def init_db():
-    """
-    Initializes the SQLite database and creates the 'articles' table 
-    if it does not already exist.
-    """
-    os.makedirs(os.path.dirname(DB_NAME), exist_ok=True)
-    conn = sqlite3.connect(DB_NAME, timeout=30.0)
-    cursor = conn.cursor()
-    cursor.execute('''
-        CREATE TABLE IF NOT EXISTS articles (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            site_name TEXT,
-            url TEXT UNIQUE,
-            scraped INTEGER DEFAULT 0
-        )
-    ''')
-    conn.commit()
-    conn.close()
-
-def save_to_db(site_name: str, url: str):
-    """
-    Saves a newly discovered URL into the SQLite database.
-    Duplicates are ignored thanks to the UNIQUE constraint on the url column.
-    """
-    conn = sqlite3.connect(DB_NAME, timeout=30.0)
-    cursor = conn.cursor()
-    try:
-        cursor.execute('''
-            INSERT OR IGNORE INTO articles (site_name, url, scraped) 
-            VALUES (?, ?, 0)
-        ''', (site_name, url))
-        conn.commit()
-    except Exception as e:
-        tqdm.write(f"❌ Erreur SQLite pour {url}: {e}")
-    finally:
-        conn.close()
-
-def build_paginated_url(base_url: str, page_num: int, pattern: str) -> str:
-    """
-    Constructs the paginated URL preserving query parameters (Rapid7) 
-    or path-based segments (WordPress).
-    """
-    if page_num == 1:
-        return base_url
-
-    parsed = urlparse(base_url)
-    if "blog_category" in base_url or parsed.query:
-        path_clean = parsed.path.rstrip('/')
-        return urlunparse((
-            parsed.scheme,
-            parsed.netloc,
-            f"{path_clean}/page/{page_num}/",
-            parsed.params,
-            parsed.query,
-            parsed.fragment
-        ))
-    return urljoin(base_url, pattern.format(page=page_num))
+from database import init_db, save_to_db, DB_NAME
+from pagination import build_paginated_url, get_page_html, handle_scroll_pagination, MAX_EMPTY_PAGES_TOLERANCE
 
 async def crawl_single_source(browser, site: str, data: dict, semaphore: asyncio.Semaphore, pbar: tqdm, shared_urls: set):
-    """
-    Asynchronously crawls a single CTI source with a universal circuit-breaker tolerance.
-    """
+    """Exécute la collecte pour une source donnée selon sa méthode de pagination."""
     async with semaphore:
         base_url = data["url"]
         pag_type = data.get("pagination_pattern", "page/{page}/")
         is_click_mode = pag_type == "click"
         card_sel = data.get("card_selector", "card")
-        keyword = data.get("keyword", "")
+        keyword = data.get("keyword", "").strip()
+        next_btn_sel = data.get("next_button_selector", "")
+        max_scrolls = data.get("max_pages", 15)
 
         page = await browser.get("about:blank", new_tab=True)
         current_status = 200
@@ -97,12 +37,16 @@ async def crawl_single_source(browser, site: str, data: dict, semaphore: asyncio
 
         try:
             await page.get(base_url)
-            await asyncio.sleep(4.0)
+            await asyncio.sleep(4.5)
+
+            if pag_type == "scroll":
+                tqdm.write(f"📜 [{site}] Démarrage de la collecte par Infinite Scroll (max {max_scrolls} scrolls)...")
+                await handle_scroll_pagination(
+                    page, site, base_url, card_sel, keyword, next_btn_sel, shared_urls, pbar, max_scrolls
+                )
+                return
 
             while True:
-                # -------------------------------------------------------------
-                # 1. NAVIGATION (URL OU SIMULATION DE CLIC)
-                # -------------------------------------------------------------
                 if page_num > 1:
                     if is_click_mode:
                         await page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
@@ -113,127 +57,136 @@ async def crawl_single_source(browser, site: str, data: dict, semaphore: asyncio
                                 const elements = Array.from(document.querySelectorAll('button, a, div, li, span'));
                                 const btn = elements.find(el => el.textContent.trim() === '{page_num}' && el.children.length === 0);
                                 if (btn) {{
-                                    btn.click();
-                                    return true;
+                                    btn.click(); return true;
                                 }}
                                 return false;
                             }})()
                         """)
-
-                        if click_success:
-                            await asyncio.sleep(4.0)
+                        if click_success: await asyncio.sleep(4.0)
                         else:
-                            tqdm.write(f"🛑 [{site}] Arrêt : bouton de la page {page_num} introuvable (fin de catalogue).")
+                            tqdm.write(f"🛑 [{site}] Arrêt : bouton page {page_num} introuvable.")
                             break
                     else:
                         target_url = build_paginated_url(base_url, page_num, pag_type)
-
-                        # Navigation simple
+                        current_status = 200
                         await page.get(target_url)
                         await asyncio.sleep(3.5)
 
-                        # 1. Détection de redirection CMS (ex: HarfangLab qui revient sur la page 1 ou /insidethelab/)
-                        current_browser_url = await page.evaluate("window.location.href")
-                        if str(page_num) not in current_browser_url and (
-                            "page" not in current_browser_url
-                            or "/page/1" in current_browser_url
-                        ):
-                            tqdm.write(
-                                f"🛑 [{site}] Arrêt : redirection détectée vers"
-                                f" {current_browser_url} (fin de catalogue)."
-                            )
+                        if current_status >= 400:
+                            tqdm.write(f"🛑 [{site}] Arrêt : code HTTP {current_status} à la page {page_num}.")
                             break
 
-                # -------------------------------------------------------------
-                # 2. VÉRIFICATION DU DOM & DES CARTES D'ARTICLES
-                # -------------------------------------------------------------
-                html = await page.get_content()
+                        current_browser_url = await page.evaluate("window.location.href")
+                        if str(page_num) not in current_browser_url and ("page" not in current_browser_url or "/page/1" in current_browser_url):
+                            tqdm.write(f"🛑 [{site}] Arrêt : redirection vers {current_browser_url}.")
+                            break
+
+                html = await get_page_html(page)
+                if not html: break
+
                 soup = BeautifulSoup(html, "html.parser")
-
-                # Arrêt 3 : Mention 404 explicite dans le titre
-                page_title = soup.find('title').get_text().lower() if soup.find('title') else ""
-                if "404" in page_title or "not found" in page_title or "page non trouvée" in page_title:
-                    tqdm.write(f"🛑 [{site}] Arrêt : mention 404 dans le titre à la page {page_num}.")
-                    break
-
-                cards = soup.find_all(['a', 'div', 'article', 'li'], class_=re.compile(rf'\b{card_sel}\b'))
+                page_title = soup.find("title").get_text().lower() if soup.find("title") else ""
                 
-                # Arrêt 4 : La page ne contient structurellement AUCUNE carte d'article
-                if not cards:
-                    tqdm.write(f"🛑 [{site}] Arrêt : aucun conteneur d'article dans le DOM à la page {page_num}.")
+                if "404" in page_title or "not found" in page_title or "page non trouvée" in page_title:
+                    tqdm.write(f"🛑 [{site}] Arrêt : 404 dans le titre à la page {page_num}.")
                     break
 
-                # -------------------------------------------------------------
-                # 3. EXTRACTION ET COMPTAGE DES NOUVELLES URLS
-                # -------------------------------------------------------------
-                new_on_page = 0
-                for card in cards:
-                    if keyword and not card.find(string=re.compile(keyword, re.IGNORECASE)):
-                        continue
+                cards = soup.find_all(["a", "div", "article", "li"], class_=lambda c: c and card_sel in c.split())
+                if not cards:
+                    cards = soup.find_all(class_=re.compile(re.escape(card_sel), re.I))
 
-                    link = card if card.name == 'a' else card.find('a', href=True)
-                    if link and link.get('href'):
-                        abs_url = urljoin(base_url, link.get('href'))
+                articles_found = 0
+                new_on_page = 0
+
+                for card in cards:
+                    if keyword and keyword.lower() not in card.get_text().lower(): continue
+                    link = card if card.name == "a" else card.find("a", href=True)
+                    if link and link.get("href"):
+                        abs_url = urljoin(base_url, link.get("href"))
+                        
+                        low_url = abs_url.lower()
+                        if any(err in low_url for err in ['403', '404', '500', 'error', 'access-denied', 'block']):
+                            continue
+
+                        articles_found += 1
                         if abs_url not in shared_urls:
                             shared_urls.add(abs_url)
                             save_to_db(site, abs_url)
                             new_on_page += 1
 
-                # -------------------------------------------------------------
-                # 4. RÈGLE UNIVERSELLE : CIRCUIT BREAKER (TOLÉRANCE DE N PAGES)
-                # -------------------------------------------------------------
-                if new_on_page == 0:
+                if articles_found == 0:
                     consecutive_empty_pages += 1
-                    tqdm.write(f"   ⚠️ [{site}] Page {page_num} : 0 nouvelle URL (marge de sécurité : {consecutive_empty_pages}/{MAX_EMPTY_PAGES_TOLERANCE}).")
-                    
+                    tqdm.write(f"   ⚠️ [{site}] Page {page_num} : 0 article trouvé ({consecutive_empty_pages}/{MAX_EMPTY_PAGES_TOLERANCE}).")
                     if consecutive_empty_pages >= MAX_EMPTY_PAGES_TOLERANCE:
-                        tqdm.write(f"🛑 [{site}] Arrêt : seuil de {MAX_EMPTY_PAGES_TOLERANCE} pages consécutives sans aucun nouvel article atteint.")
+                        tqdm.write(f"🛑 [{site}] Arrêt : catalogue épuisé.")
                         break
                 else:
-                    # Réinitialisation du compteur dès qu'une URL valide est trouvée
                     consecutive_empty_pages = 0
-                    tqdm.write(f"   ➔ [{site}] Page {page_num} analysée ({new_on_page} URLs ajoutées).")
+                    tqdm.write(f"   ➔ [{site}] Page {page_num} analysée ({articles_found} articles vus, {new_on_page} inédits).")
 
                 pbar.update(1)
                 page_num += 1
 
         except Exception as e:
-            tqdm.write(f"❌ Erreur sur {site} (page {page_num}): {e}")
+            tqdm.write(f"❌ Erreur sur {site}: {e}")
         finally:
             await page.close()
 
 async def main():
-    init_db()
+  init_db()
 
-    with open('url_collector/sources.json', 'r', encoding='utf-8') as f:
-        sources_cti = json.load(f)
-
-    browser_args = [
-        "--headless=new",
-        "--window-size=1920,1080",
-        "--disable-blink-features=AutomationControlled",
-        "--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
-        "--lang=en-US,en;q=0.9",
-    ]
-    browser = await uc.start(browser_args=browser_args)
-
-    semaphore = asyncio.Semaphore(300)
-    shared_urls = set()
-
+  # Récupération du nombre de workers passé en argument (défaut à 3 si lancé seul)
+  workers = 3
+  if len(sys.argv) > 1:
     try:
-        with tqdm(desc="Collecte globale", unit="page") as pbar:
-            tasks = [
-                crawl_single_source(browser, site, data, semaphore, pbar, shared_urls)
-                for site, data in sources_cti.items()
-            ]
-            await asyncio.gather(*tasks)
-    finally:
-        try:
-            browser.stop()
-        except RuntimeError:
-            pass
+      workers = int(sys.argv[1])
+    except ValueError:
+      pass
 
-    print(f"\n🎯 Collecte terminée : {len(shared_urls)} URLs enregistrées dans {DB_NAME}.")
+  with open(
+      os.path.join(os.path.dirname(__file__), "sources.json"),
+      "r",
+      encoding="utf-8",
+  ) as f:
+    sources_cti = json.load(f)
 
-if __name__ == '__main__':
+  browser_args = [
+      "--headless=new",
+      "--window-size=1920,1080",
+      "--disable-blink-features=AutomationControlled",
+      (
+          "--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
+          " AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0"
+          " Safari/537.36"
+      ),
+      "--lang=en-US,en;q=0.9",
+  ]
+  browser = await uc.start(browser_args=browser_args)
+
+  # Utilisation dynamique du nombre de workers choisi par l'utilisateur
+  semaphore = asyncio.Semaphore(workers)
+  shared_urls = set()
+
+  try:
+    with tqdm(
+        desc=f"Collecte globale ({workers} workers)", unit="page"
+    ) as pbar:
+      tasks = [
+          crawl_single_source(
+              browser, site, data, semaphore, pbar, shared_urls
+          )
+          for site, data in sources_cti.items()
+      ]
+      await asyncio.gather(*tasks)
+  finally:
+    try:
+      browser.stop()
+    except RuntimeError:
+      pass
+
+  print(
+      f"\n🎯 Collecte terminée : {len(shared_urls)} URLs inédites enregistrées."
+  )
+
+if __name__ == "__main__":
     asyncio.run(main())
