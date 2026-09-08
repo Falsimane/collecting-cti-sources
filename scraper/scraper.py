@@ -141,7 +141,7 @@ async def main():
     browser = await uc.start(browser_args=browser_args)
     
     # Set worker limits based on mode
-    max_workers = 1 if force_slow_all else 5
+    max_workers = 3 if force_slow_all else 20
     semaphore = asyncio.Semaphore(max_workers)
     
     try:
