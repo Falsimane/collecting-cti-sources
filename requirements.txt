@@ -1,4 +1,0 @@
-httpx
-selectolax
-sqlite3
-playwright

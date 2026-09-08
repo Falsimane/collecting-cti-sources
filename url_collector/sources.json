@@ -1,0 +1,29 @@
+{
+  "harfanglab": {
+    "url": "https://harfanglab.io/insidethelab/",
+    "card_selector": "card",
+    "keyword": "Cyber Threat Intelligence",
+    "use_nodriver": true,
+    "max_pages": 3,
+    "pagination_pattern": "page/{page}/",
+    "slow_mode": false
+  },
+    "rapid7": {
+    "url": "https://www.rapid7.com/blog/?blog_category=Threat+Research",
+    "card_selector": "group",
+    "keyword": "Threat Research",
+    "use_nodriver": true,
+    "max_pages": 5,
+    "pagination_pattern": "page/{page}/?blog_category=Threat+Research",
+    "slow_mode": true
+  },
+  "teamt5": {
+    "url": "https://teamt5.org/en/blog/",
+    "card_selector": "css-l7kkof",
+    "keyword": "cyber threat intelligence",
+    "use_nodriver": true,
+    "max_pages": 5,
+    "pagination_pattern": "click",
+    "slow_mode": false
+  }
+}
