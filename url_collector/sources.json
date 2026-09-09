@@ -35,5 +35,14 @@
     "pagination_pattern": "scroll",
     "next_button_selector": ".cc-button__wrapper .l-btn",
     "slow_mode": false
+  },
+  "threatbook": {
+    "url": "https://threatbook.io/blog/tag/threat-research/",
+    "card_selector": "blog-index__post",
+    "keyword": "Threat Research",
+    "use_nodriver":true,
+    "max_pages":4,
+    "pagination_pattern": "/page/{page}",
+    "slow_mode":false
   }
 }
