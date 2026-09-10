@@ -8,6 +8,15 @@
     "pagination_pattern": "page/{page}/",
     "slow_mode": false
   },
+  "sekoia": {
+    "url": "https://www.sekoia.com/blog",
+    "card_selector": "blog-list_item",
+    "keyword":"Threat Research",
+    "use_curl_cffi":true,
+    "max_pages":10,
+    "pagination_pattern":"click",
+    "slow_mode":false
+  },
     "rapid7": {
     "url": "https://www.rapid7.com/blog/?blog_category=Threat+Research",
     "card_selector": "group",
