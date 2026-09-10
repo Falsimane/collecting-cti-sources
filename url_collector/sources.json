@@ -3,7 +3,7 @@
     "url": "https://harfanglab.io/insidethelab/",
     "card_selector": "card",
     "keyword": "Cyber Threat Intelligence",
-    "use_nodriver": true,
+    "use_curl_cffi": true,
     "max_pages": 3,
     "pagination_pattern": "page/{page}/",
     "slow_mode": false
@@ -12,7 +12,7 @@
     "url": "https://www.rapid7.com/blog/?blog_category=Threat+Research",
     "card_selector": "group",
     "keyword": "Threat Research",
-    "use_nodriver": true,
+    "use_curl_cffi": true,
     "max_pages": 5,
     "pagination_pattern": "page/{page}/?blog_category=Threat+Research",
     "slow_mode": true
@@ -44,5 +44,13 @@
     "max_pages":4,
     "pagination_pattern": "/page/{page}",
     "slow_mode":false
+  },
+  "crowdstrike": {
+    "url": "https://www.crowdstrike.com/en-us/blog/category.counter-adversary-operations/",
+    "card_selector": "row category_article flex-lg-row",
+    "keyword": "Threat Hunting & Intel",
+    "use_curl_cffi": true,
+    "pagination_pattern":"/#page={page}",
+    "slow_mode": false
   }
 }

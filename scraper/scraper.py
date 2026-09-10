@@ -1,21 +1,51 @@
 import asyncio
 import json
+import os
 import random
+import re
 import sqlite3
+import subprocess
+import sys
+from typing import Any, Dict, List, Optional, Tuple
 from urllib.parse import urljoin
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, Tag
+from curl_cffi.requests import AsyncSession as CffiSession
 import html2text
 import nodriver as uc
 import trafilatura
 from tqdm import tqdm
 
-# Define absolute or relative paths for databases
 URL_DB = "db_outputs/urls_collection.db"
 KNOWLEDGE_DB = "db_outputs/cti_knowledge.db"
 
+BINARY_EXTENSIONS = (
+    ".png",
+    ".jpg",
+    ".jpeg",
+    ".gif",
+    ".svg",
+    ".webp",
+    ".pdf",
+    ".zip",
+    ".ico",
+)
+
+CLOUDFLARE_MARKERS = [
+    "Enable JavaScript and cookies to continue",
+    "cf-browser-verification",
+    "challenge-running",
+    "cf_clearance",
+    "Checking if the site connection is secure",
+    "Vérification de sécurité en cours",
+    "Ray ID:",
+]
+
+
+def is_cloudflare_challenge(html: str) -> bool:
+  return any(marker in html for marker in CLOUDFLARE_MARKERS)
+
 
 def init_knowledge_db():
-  """Initializes the CTI knowledge SQLite database and creates the 'knowledge' table."""
   conn = sqlite3.connect(KNOWLEDGE_DB, timeout=30.0)
   cursor = conn.cursor()
   cursor.execute("""
@@ -33,23 +63,19 @@ def init_knowledge_db():
 
 
 def save_and_mark(site_name, url, title, pub_date, content):
-  """Safely saves the extracted Markdown content and metadata into cti_knowledge.db,
-
-  then updates urls_collection.db to mark the URL as scraped (scraped = 1).
-  """
   conn_k = sqlite3.connect(KNOWLEDGE_DB, timeout=30.0)
   cursor_k = conn_k.cursor()
   try:
     cursor_k.execute(
         """
-            INSERT OR IGNORE INTO knowledge (site_name, url, title, publication_date, content)
+            INSERT OR REPLACE INTO knowledge (site_name, url, title, publication_date, content)
             VALUES (?, ?, ?, ?, ?)
         """,
         (site_name, url, title, pub_date, content),
     )
     conn_k.commit()
   except Exception as e:
-    print(f"❌ Error saving content for {url}: {e}")
+    tqdm.write(f"❌ Error saving content for {url}: {e}")
   finally:
     conn_k.close()
 
@@ -60,32 +86,168 @@ def save_and_mark(site_name, url, title, pub_date, content):
   conn_u.close()
 
 
-async def scrape_single_article(
-    browser, site_name, url, slow_mode, semaphore, pbar
-):
-  """Asynchronously scrapes a single article page using nodriver,
+async def fetch_with_curl_cffi(url: str) -> str:
+  async with CffiSession(impersonate="chrome124") as session:
+    resp = await session.get(
+        url,
+        headers={
+            "Accept": (
+                "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8"
+            ),
+            "Accept-Language": "en-US,en;q=0.9",
+            "sec-ch-ua": (
+                '"Chromium";v="124", "Google Chrome";v="124",'
+                ' "Not-A.Brand";v="99"'
+            ),
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": '"Windows"',
+            "sec-fetch-dest": "document",
+            "sec-fetch-mode": "navigate",
+            "sec-fetch-site": "none",
+            "sec-fetch-user": "?1",
+            "Upgrade-Insecure-Requests": "1",
+        },
+        timeout=60,
+        allow_redirects=True,
+    )
+    content_type = resp.headers.get("content-type", "").lower()
+    if "image/" in content_type or "application/pdf" in content_type:
+      raise ValueError(f"Content-Type binaire détecté : {content_type}")
+    return resp.text
 
-  converts images to absolute URLs, and transforms content to clean Markdown.
-  """
+
+def extract_accurate_date(soup: BeautifulSoup, html_content: str) -> str:
+  def publish_filter(c: Any) -> bool:
+    if not c:
+      return False
+    if isinstance(c, list):
+      c = " ".join(c)
+    lower_c = str(c).lower()
+    return any(
+        k in lower_c for k in ["publish_info", "published-date", "post-date"]
+    )
+
+  publish_div = soup.find(class_=publish_filter)
+  if publish_div and isinstance(publish_div, Tag):
+    p_tag = publish_div.find("p") or publish_div
+    text = p_tag.get_text(strip=True) if hasattr(p_tag, "get_text") else ""
+    date_match = re.search(
+        r"([A-Za-z]+\s+\d{1,2},\s+\d{4})|(\d{4}-\d{2}-\d{2})", text
+    )
+    if date_match:
+      return date_match.group(0)
+
+  meta_queries = [
+      {"property": "article:published_time"},
+      {"name": "publish-date"},
+      {"property": "og:published_time"},
+  ]
+  for query in meta_queries:
+    tag = soup.find("meta", attrs=query)  # type: ignore
+    if tag and tag.has_attr("content"):
+      content_val = tag.get("content")
+      if isinstance(content_val, str):
+        return content_val.split("T")[0]
+
+  for script in soup.find_all("script", type="application/ld+json"):
+    try:
+      if script.string:
+        data = json.loads(script.string)
+        items = data if isinstance(data, list) else data.get("@graph", [data])
+        for item in items:
+          if isinstance(item, dict) and any(
+              k in item.get("@type", "")
+              for k in ["Article", "BlogPosting", "NewsArticle"]
+          ):
+            cand = item.get("datePublished") or item.get("dateCreated")
+            if cand and isinstance(cand, str):
+              return cand.split("T")[0]
+    except Exception:
+      continue
+
+  meta = trafilatura.extract_metadata(html_content)
+  if meta and meta.date:
+    return meta.date
+
+  return "Date inconnue"
+
+
+async def scrape_single_article(
+    browser,
+    site_name,
+    url,
+    slow_mode,
+    semaphore,
+    pbar,
+    page_load_wait: float = 3.0,
+    cf_retries: int = 0,
+    use_curl_cffi: bool = False,
+):
   async with semaphore:
     try:
+      clean_url = url.split("?")[0].lower()
+      if (
+          clean_url.endswith(BINARY_EXTENSIONS)
+          or "/is/image/" in url
+          or "/content/dam/" in url
+      ):
+        tqdm.write(f"⏭️ Skipping binary URL: {url}")
+        conn_u = sqlite3.connect(URL_DB, timeout=30.0)
+        conn_u.cursor().execute(
+            "UPDATE articles SET scraped = 1 WHERE url = ?", (url,)
+        )
+        conn_u.commit()
+        conn_u.close()
+        return
+
       if slow_mode:
-        await asyncio.sleep(random.uniform(4.0, 8.0))
+        await asyncio.sleep(random.uniform(2.0, 4.0))
 
-      page = await browser.get(url, new_tab=True)
-      await asyncio.sleep(3)
-      html_content = await page.get_content()
-      await page.close()
+      if use_curl_cffi:
+        html_content = await fetch_with_curl_cffi(url)
+      else:
+        page = await browser.get(url, new_tab=True)
+        await asyncio.sleep(page_load_wait)
+        html_content = await page.get_content()
 
-      # Extract metadata (title, publication date) using Trafilatura
-      metadata = trafilatura.extract_metadata(html_content)
-      title = metadata.title if metadata and metadata.title else "Sans titre"
-      pub_date = metadata.date if metadata and metadata.date else "Date inconnue"
+        if is_cloudflare_challenge(html_content) and cf_retries > 0:
+          for _ in range(cf_retries):
+            await asyncio.sleep(5)
+            html_content = await page.get_content()
+            if not is_cloudflare_challenge(html_content):
+              break
 
-      # Universal generic parsing with BeautifulSoup
+        await page.close()
+
+      if is_cloudflare_challenge(html_content):
+        tqdm.write(f"🚫 [{site_name}] CF challenge actif — skipping: {url}")
+        return
+
+      if (
+          html_content.startswith(("\x89PNG", "\xff\xd8", "%PDF"))
+          or "PNG\r\n" in html_content[:20]
+          or "IHDR" in html_content[:50]
+      ):
+        tqdm.write(f"⚠️ Contenu binaire détecté pour {url}, ignoré.")
+        return
+
       soup = BeautifulSoup(html_content, "html.parser")
 
-      # Conversion des images en URLs absolues distantes (gère le lazy-loading data-src)
+      meta = trafilatura.extract_metadata(html_content)
+      h1_tag = soup.find("h1")
+      h1_text = (
+          h1_tag.get_text(strip=True)
+          if h1_tag and hasattr(h1_tag, "get_text")
+          else ""
+      )
+      title = (
+          meta.title
+          if meta and meta.title
+          else (h1_text if h1_text else "Sans titre")
+      )
+
+      pub_date = extract_accurate_date(soup, html_content)
+
       for img in soup.find_all("img"):
         real_src = (
             img.get("data-src") or img.get("data-original") or img.get("src")
@@ -94,19 +256,63 @@ async def scrape_single_article(
           real_src = real_src[0] if real_src else None
         if isinstance(real_src, str) and not real_src.startswith("data:image"):
           img["src"] = urljoin(url, real_src)
-          if "data-src" in img.attrs:
+          if img.has_attr("data-src"):
             del img["data-src"]
 
-      # Automatic detection of the main content container (fallback hierarchy)
+      def aem_blog_filter(c: Any) -> bool:
+        if not c:
+          return False
+        if isinstance(c, list):
+          c = " ".join(c)
+        return "container-wp--main-content-blog" in str(c)
+
+      def content_keywords_filter(c: Any) -> bool:
+        if not c:
+          return False
+        if isinstance(c, list):
+          c = " ".join(c)
+        lower_c = str(c).lower()
+        return any(
+            k in lower_c
+            for k in [
+                "post-content",
+                "article-content",
+                "entry-content",
+                "blog-content",
+                "cmp-text",
+            ]
+        )
+
+      def post_class_filter(c: Any) -> bool:
+        if not c:
+          return False
+        if isinstance(c, list):
+          c = " ".join(c)
+        lower_c = str(c).lower()
+        if "post" not in lower_c:
+          return False
+        return not any(
+            sub in lower_c
+            for sub in [
+                "image",
+                "thumb",
+                "header",
+                "banner",
+                "author",
+                "navigation",
+            ]
+        )
+
       target_area = (
-          soup.find("article")
+          soup.find(class_=aem_blog_filter)
+          or soup.find("article")
           or soup.find("main")
-          or soup.find(class_=lambda c: isinstance(c, str) and "post" in c.lower())
+          or soup.find(class_=content_keywords_filter)
+          or soup.find(class_=post_class_filter)
           or soup.body
       )
 
-      if target_area:
-        # Strip out common non-content clutter automatically
+      if target_area and isinstance(target_area, Tag):
         for unwanted in target_area([
             "script",
             "style",
@@ -114,20 +320,31 @@ async def scrape_single_article(
             "header",
             "footer",
             "aside",
+            "form",
+            ".blog_main_navigation",
+            ".cmp-experiencefragment--header",
+            ".cmp-experiencefragment--footer",
+            ".modal_insert_location",
+            ".container-wp--right-sidebar-blog",
         ]):
           unwanted.decompose()
 
-        # Convert clean HTML to Markdown, preserving links and absolute remote images
         h = html2text.HTML2Text()
         h.ignore_links = False
         h.ignore_images = False
         h.body_width = 0
 
-        extracted_markdown = h.handle(str(target_area))
+        extracted_markdown = h.handle(str(target_area)).strip()
       else:
         extracted_markdown = "Content could not be extracted automatically."
 
-      if not extracted_markdown.strip():
+      extracted_markdown = re.sub(
+          r"^\s*!\[\]\(https://assets\.crowdstrike\.com/is/image/[^\)]+\)\s*",
+          "",
+          extracted_markdown,
+      ).strip()
+
+      if not extracted_markdown or len(extracted_markdown) < 50:
         extracted_markdown = "Content could not be extracted automatically."
 
       save_and_mark(site_name, url, title, pub_date, extracted_markdown)
@@ -138,17 +355,120 @@ async def scrape_single_article(
       pbar.update(1)
 
 
+def select_sources_to_rescrape(sources_config: dict) -> None:
+  answer = (
+      input(
+          "\n🔄 Do you want to re-scrape already-scraped sources? (y/n)"
+          " [default: n]: "
+      )
+      .strip()
+      .lower()
+  )
+  if answer != "y":
+    return
+
+  source_names = list(sources_config.keys())
+  if not source_names:
+    print("⚠️  No sources found in sources.json.")
+    return
+
+  print("\n📋 Available sources:")
+  print("  [0] All sources")
+  for idx, name in enumerate(source_names, start=1):
+    print(f"  [{idx}] {name}")
+
+  raw = input(
+      "\n👉 Enter source numbers to re-scrape (comma-separated, e.g. 1,3) or 0"
+      " for all: "
+  ).strip()
+  if not raw:
+    print("⚠️  No selection made. Skipping re-scrape reset.")
+    return
+
+  try:
+    choices = [int(x.strip()) for x in raw.split(",")]
+  except ValueError:
+    print("❌ Invalid input. Skipping re-scrape reset.")
+    return
+
+  selected_sources = (
+      source_names
+      if 0 in choices
+      else [
+          source_names[c - 1] for c in choices if 1 <= c <= len(source_names)
+      ]
+  )
+
+  conn = sqlite3.connect(URL_DB, timeout=30.0)
+  cursor = conn.cursor()
+  placeholders = ",".join("?" * len(selected_sources))
+  cursor.execute(
+      f"UPDATE articles SET scraped = 0 WHERE site_name IN ({placeholders})",
+      selected_sources,
+  )
+  updated = cursor.rowcount
+  conn.commit()
+  conn.close()
+
+  print(
+      f"\n✅ Reset {updated} article(s) from {len(selected_sources)}"
+      " source(s) to re-scrape:"
+  )
+  for name in selected_sources:
+    print(f"   • {name}")
+
+
+def run_post_cleanup():
+  """Exécute dynamiquement tous les scripts de nettoyage présents
+
+  dans le dossier 'scripts/' du projet.
+  """
+  scripts_dir = os.path.join(
+      os.path.dirname(os.path.dirname(__file__)), "scripts"
+  )
+
+  if not os.path.isdir(scripts_dir):
+    print(f"⚠️ Le dossier de scripts '{scripts_dir}' est introuvable.")
+    return
+
+  script_files = [
+      f
+      for f in os.listdir(scripts_dir)
+      if f.endswith(".py") and f != "__init__.py"
+  ]
+
+  if not script_files:
+    print("✨ Aucun script de nettoyage trouvé dans le dossier 'scripts/'.")
+    return
+
+  print(
+      "\n🧹 Lancement automatique des scripts de nettoyage du dossier"
+      " 'scripts/'..."
+  )
+
+  for script_name in script_files:
+    script_path = os.path.join(scripts_dir, script_name)
+    print(f"   ▶️ Exécution de : {script_name}")
+    try:
+      result = subprocess.run(
+          [sys.executable, script_path], capture_output=True, text=True, check=True
+      )
+      if result.stdout.strip():
+        for line in result.stdout.strip().splitlines():
+          print(f"      {line}")
+    except subprocess.CalledProcessError as e:
+      print(f"❌ Erreur lors de l'exécution de {script_name} : {e}")
+      if e.stderr:
+        print(f"      {e.stderr.strip()}")
+
+
 async def main():
   init_knowledge_db()
 
-  print("\n--- CTI SCRAPER CONFIGURATION ---")
-  print("[1] Fast Mode (Parallel processing based on sources configuration)")
-  print("[2] Safe/Slow Mode (Forces 1 worker globally to prevent WAF blocks)")
-  choice = input("Select execution mode (1 or 2, default is 1): ").strip()
-  force_slow_all = choice == "2"
-
   with open("url_collector/sources.json", "r", encoding="utf-8") as f:
     sources_config = json.load(f)
+
+  select_sources_to_rescrape(sources_config)
 
   conn = sqlite3.connect(URL_DB)
   cursor = conn.cursor()
@@ -175,26 +495,43 @@ async def main():
   ]
 
   browser = await uc.start(browser_args=browser_args)
-  max_workers = 3 if force_slow_all else 20
+  max_workers = 3
   semaphore = asyncio.Semaphore(max_workers)
 
   try:
     with tqdm(
         total=len(pending_articles), desc="Scraping Progress", unit="art"
     ) as pbar:
-      tasks = []
-      for site_name, url in pending_articles:
-        site_slow_flag = (
-            sources_config.get(site_name, {}).get("slow_mode", False)
-        )
-        is_slow = force_slow_all or site_slow_flag
-        tasks.append(
-            scrape_single_article(
-                browser, site_name, url, is_slow, semaphore, pbar
-            )
-        )
+      # Traitement par lots de 10 articles pour protéger nodriver et éviter le timeout réseau
+      batch_size = 10
+      for i in range(0, len(pending_articles), batch_size):
+        batch = pending_articles[i : i + batch_size]
+        tasks = []
 
-      await asyncio.gather(*tasks)
+        for site_name, url in batch:
+          site_cfg = sources_config.get(site_name, {})
+          is_slow = site_cfg.get("slow_mode", False)
+
+          page_load_wait = float(site_cfg.get("page_load_wait", 3.0))
+          cf_retries = int(site_cfg.get("cf_retries", 0))
+          use_cffi = site_cfg.get("use_curl_cffi", False)
+
+          tasks.append(
+              scrape_single_article(
+                  browser,
+                  site_name,
+                  url,
+                  is_slow,
+                  semaphore,
+                  pbar,
+                  page_load_wait=page_load_wait,
+                  cf_retries=cf_retries,
+                  use_curl_cffi=use_cffi,
+              )
+          )
+
+        await asyncio.gather(*tasks)
+        await asyncio.sleep(1.0)  # Micro-pause entre les lots
 
   finally:
     try:
@@ -202,7 +539,16 @@ async def main():
     except RuntimeError:
       pass
 
+  run_post_cleanup()
+
 
 if __name__ == "__main__":
-  asyncio.run(main())
-  print("\n🎯 Content scraping process completed successfully!")
+  try:
+    asyncio.run(main())
+    print("\n🎯 Content scraping process completed successfully!")
+  except KeyboardInterrupt:
+    print(
+        "\n\n⚠️ Interruption utilisateur détectée (Ctrl+C). Fermeture propre"
+        " des processus..."
+    )
+    sys.exit(0)
