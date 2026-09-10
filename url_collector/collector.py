@@ -85,13 +85,22 @@ async def crawl_single_source(browser, site: str, data: dict, semaphore: asyncio
                 if not html: break
 
                 soup = BeautifulSoup(html, "html.parser")
-                page_title = soup.find("title").get_text().lower() if soup.find("title") else ""
+                title_tag = soup.find("title")
+                page_title = title_tag.get_text().lower() if title_tag and hasattr(title_tag, "get_text") else ""
                 
                 if "404" in page_title or "not found" in page_title or "page non trouvée" in page_title:
                     tqdm.write(f"🛑 [{site}] Arrêt : 404 dans le titre à la page {page_num}.")
                     break
 
-                cards = soup.find_all(["a", "div", "article", "li"], class_=lambda c: c and card_sel in c.split())
+                # Correction Pylance sur la lambda class_ et find_all
+                def class_filter(c):
+                    if not c:
+                        return False
+                    if isinstance(c, list):
+                        c = " ".join(c)
+                    return card_sel in str(c).split()
+
+                cards = soup.find_all(["a", "div", "article", "li"], class_=class_filter)
                 if not cards:
                     cards = soup.find_all(class_=re.compile(re.escape(card_sel), re.I))
 
@@ -101,8 +110,15 @@ async def crawl_single_source(browser, site: str, data: dict, semaphore: asyncio
                 for card in cards:
                     if keyword and keyword.lower() not in card.get_text().lower(): continue
                     link = card if card.name == "a" else card.find("a", href=True)
-                    if link and link.get("href"):
-                        abs_url = urljoin(base_url, link.get("href"))
+                    if link and link.has_attr("href"):
+                        href_val = link.get("href")
+                        # Sécurisation Pylance pour s'assurer que href est bien une string exploitable
+                        if isinstance(href_val, list):
+                            href_val = href_val[0] if href_val else ""
+                        if not href_val or not isinstance(href_val, str):
+                            continue
+
+                        abs_url = urljoin(base_url, href_val)
                         
                         low_url = abs_url.lower()
                         if any(err in low_url for err in ['403', '404', '500', 'error', 'access-denied', 'block']):
@@ -135,8 +151,7 @@ async def crawl_single_source(browser, site: str, data: dict, semaphore: asyncio
 async def main():
   init_db()
 
-  # Récupération du nombre de workers passé en argument (défaut à 3 si lancé seul)
-  workers = 3
+  workers = 20
   if len(sys.argv) > 1:
     try:
       workers = int(sys.argv[1])
@@ -163,7 +178,6 @@ async def main():
   ]
   browser = await uc.start(browser_args=browser_args)
 
-  # Utilisation dynamique du nombre de workers choisi par l'utilisateur
   semaphore = asyncio.Semaphore(workers)
   shared_urls = set()
 
