@@ -19,7 +19,20 @@ async def crawl_single_source(browser, site: str, data: dict, semaphore: asyncio
         pag_type = data.get("pagination_pattern", "page/{page}/")
         is_click_mode = pag_type == "click"
         card_sel = data.get("card_selector", "card")
-        keyword = data.get("keyword", "").strip()
+        tag_sel = data.get("tag_selector", "")
+        
+        # Gère à la fois une chaîne unique ou une liste de mots-clés
+        raw_keyword = data.get("keyword", "")
+        if isinstance(raw_keyword, str):
+            keyword = raw_keyword.strip()
+            keywords = [keyword.lower()] if keyword else []
+        elif isinstance(raw_keyword, list):
+            keywords = [kw.strip().lower() for kw in raw_keyword if kw.strip()]
+            keyword = raw_keyword[0] if raw_keyword else "" # Rétrocompatibilité pour le scroll
+        else:
+            keyword = ""
+            keywords = []
+            
         next_btn_sel = data.get("next_button_selector", "")
         max_scrolls = data.get("max_pages", 15)
 
@@ -42,7 +55,7 @@ async def crawl_single_source(browser, site: str, data: dict, semaphore: asyncio
             if pag_type == "scroll":
                 tqdm.write(f"📜 [{site}] Démarrage de la collecte par Infinite Scroll (max {max_scrolls} scrolls)...")
                 await handle_scroll_pagination(
-                    page, site, base_url, card_sel, keyword, next_btn_sel, shared_urls, pbar, max_scrolls
+                    page, site, base_url, card_sel, keywords, tag_sel, next_btn_sel, shared_urls, pbar, max_scrolls
                 )
                 return
 
@@ -92,27 +105,35 @@ async def crawl_single_source(browser, site: str, data: dict, semaphore: asyncio
                     tqdm.write(f"🛑 [{site}] Arrêt : 404 dans le titre à la page {page_num}.")
                     break
 
-                # Correction Pylance sur la lambda class_ et find_all
-                def class_filter(c):
-                    if not c:
-                        return False
-                    if isinstance(c, list):
-                        c = " ".join(c)
-                    return card_sel in str(c).split()
+                # Supporte à la fois les sélecteurs CSS complexes et les noms de classe simples
+                if any(char in card_sel for char in [".", ",", ">", "#"]):
+                    cards = soup.select(card_sel)
+                else:
+                    def class_filter(c):
+                        if not c:
+                            return False
+                        if isinstance(c, list):
+                            c = " ".join(c)
+                        return card_sel in str(c).split()
 
-                cards = soup.find_all(["a", "div", "article", "li"], class_=class_filter)
-                if not cards:
-                    cards = soup.find_all(class_=re.compile(re.escape(card_sel), re.I))
+                    cards = soup.find_all(["a", "div", "article", "li"], class_=class_filter)
+                    if not cards:
+                        cards = soup.find_all(class_=re.compile(re.escape(card_sel), re.I))
 
                 articles_found = 0
                 new_on_page = 0
 
                 for card in cards:
-                    if keyword and keyword.lower() not in card.get_text().lower(): continue
+                    # Recherche dans TOUT le texte de la carte (comme dans votre version d'origine)
+                    card_full_text = card.get_text().lower()
+                    
+                    if keywords:
+                        if not any(kw in card_full_text for kw in keywords):
+                            continue
+
                     link = card if card.name == "a" else card.find("a", href=True)
                     if link and link.has_attr("href"):
                         href_val = link.get("href")
-                        # Sécurisation Pylance pour s'assurer que href est bien une string exploitable
                         if isinstance(href_val, list):
                             href_val = href_val[0] if href_val else ""
                         if not href_val or not isinstance(href_val, str):

@@ -42,7 +42,7 @@ async def get_page_html(page) -> str:
     return ""
 
 async def handle_scroll_pagination(
-    page, site: str, base_url: str, card_sel: str, keyword: str, 
+    page, site: str, base_url: str, card_sel: str, keywords: list, tag_sel: str, 
     next_btn_sel: str | None, shared_urls: set, pbar: tqdm, max_scrolls: int
 ):
     """Gère l'Infinite Scroll avec une limite de sécurité (max_scrolls)."""
@@ -70,7 +70,8 @@ async def handle_scroll_pagination(
                 }}
                 if (!btn) {{
                     const elements = Array.from(document.querySelectorAll('a, button, div, span'));
-                    btn = elements.find(el => 
+                    // REVERSE the array to find the deepest element (the button) before its wrapper
+                    btn = elements.reverse().find(el => 
                         el.textContent && 
                         (el.textContent.trim().toLowerCase().includes('view more') || 
                          el.textContent.trim().toLowerCase().includes('load more'))
@@ -93,16 +94,25 @@ async def handle_scroll_pagination(
             continue
 
         soup = BeautifulSoup(html, "html.parser")
-        cards = soup.find_all(["a", "div", "article", "li"], class_=lambda c: c and card_sel in c.split())
-        if not cards:
-            cards = soup.find_all(class_=re.compile(re.escape(card_sel), re.I))
+        
+        # Supporte à la fois les sélecteurs CSS complexes et les noms de classe simples
+        if any(char in card_sel for char in [".", ",", ">", "#"]):
+            cards = soup.select(card_sel)
+        else:
+            cards = soup.find_all(["a", "div", "article", "li"], class_=lambda c: c and card_sel in c.split())
+            if not cards:
+                cards = soup.find_all(class_=re.compile(re.escape(card_sel), re.I))
 
         articles_found = 0
         new_found = 0
 
         for card in cards:
-            if keyword and keyword.lower() not in card.get_text().lower():
-                continue
+            # Recherche dans TOUT le texte de la carte (comme dans votre version d'origine)
+            card_full_text = card.get_text().lower()
+
+            if keywords:
+                if not any(kw in card_full_text for kw in keywords):
+                    continue
 
             link = card if card.name == "a" else card.find("a", href=True)
             if link and link.get("href"):
