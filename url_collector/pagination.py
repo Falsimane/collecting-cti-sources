@@ -41,8 +41,64 @@ async def get_page_html(page) -> str:
         await asyncio.sleep(1.0)
     return ""
 
+def extract_cards(soup, card_sel):
+    """Extrait les cartes de manière robuste via sélecteur CSS natif ou Fallback Regex."""
+    parts = []
+    for part in card_sel.split(','):
+        part = part.strip()
+        if not part.startswith('.') and not part.startswith('#') and not part.startswith('>'):
+            part = f".{part}"
+        parts.append(part)
+    
+    css_selector = ", ".join(parts)
+    
+    try:
+        cards = soup.select(css_selector)
+        if cards: return cards
+    except Exception:
+        pass
+        
+    fallback_class = [c.strip().lstrip('.') for c in card_sel.split(',')][0]
+    return soup.find_all(class_=re.compile(re.escape(fallback_class), re.I))
+
+def get_card_link(card):
+    """Extrait l'URL de l'article en privilégiant le titre et en ignorant les taxonomies."""
+    # 1. Si la carte elle-même est une balise <a>
+    if card.name == "a" and card.get("href"):
+        return card.get("href")
+
+    # 2. Priorité : chercher le lien dans un titre (h1-h6) ou une classe de titre
+    title_el = card.find(["h1", "h2", "h3", "h4", "h5", "h6"]) or card.find(
+        class_=re.compile(r"(title|heading|entry-title|post-title)", re.I)
+    )
+    if title_el:
+        link = title_el if title_el.name == "a" else title_el.find("a", href=True)
+        if link and link.get("href"):
+            href = link.get("href")
+            return href[0] if isinstance(href, list) else href
+
+    # 3. Parcourir tous les liens en éliminant les catégories, tags, auteurs et ancres
+    for a in card.find_all("a", href=True):
+        href = a.get("href")
+        if isinstance(href, list):
+            href = href[0] if href else ""
+        if not href or not isinstance(href, str):
+            continue
+        low_href = href.lower()
+        if any(tax in low_href for tax in ["/category/", "/tag/", "/tags/", "/author/", "/topic/", "/topics/", "#", "javascript:"]):
+            continue
+        return href
+
+    # 4. Fallback ultime
+    first_a = card.find("a", href=True)
+    if first_a:
+        href = first_a.get("href")
+        return href[0] if isinstance(href, list) else href
+
+    return None
+
 async def handle_scroll_pagination(
-    page, site: str, base_url: str, card_sel: str, keywords: list, tag_sel: str, 
+    page, site: str, base_url: str, card_sel: str, keywords: list, 
     next_btn_sel: str | None, shared_urls: set, pbar: tqdm, max_scrolls: int
 ):
     """Gère l'Infinite Scroll avec une limite de sécurité (max_scrolls)."""
@@ -51,8 +107,8 @@ async def handle_scroll_pagination(
 
     await page.evaluate("""
         (() => {
-            const overlay = document.getElementById('onetrust-consent-sdk');
-            if (overlay) overlay.style.display = 'none';
+            const overlays = document.querySelectorAll('#onetrust-consent-sdk, .cc-window, [id*="cookie"], [class*="cookie"]');
+            overlays.forEach(el => el.style.display = 'none');
         })();
     """)
 
@@ -66,18 +122,18 @@ async def handle_scroll_pagination(
             (() => {{
                 let btn = null;
                 if ('{next_btn_sel}') {{
-                    btn = document.querySelector('{next_btn_sel}');
+                    const btns = Array.from(document.querySelectorAll('{next_btn_sel}'));
+                    btn = btns.reverse().find(el => el.offsetParent !== null);
                 }}
                 if (!btn) {{
                     const elements = Array.from(document.querySelectorAll('a, button, div, span'));
-                    // REVERSE the array to find the deepest element (the button) before its wrapper
                     btn = elements.reverse().find(el => 
-                        el.textContent && 
+                        el.offsetParent !== null && el.textContent && 
                         (el.textContent.trim().toLowerCase().includes('view more') || 
                          el.textContent.trim().toLowerCase().includes('load more'))
                     );
                 }}
-                if (btn && btn.offsetParent !== null) {{
+                if (btn) {{
                     btn.scrollIntoView({{ behavior: 'smooth', block: 'center' }});
                     btn.click();
                     return true;
@@ -94,45 +150,41 @@ async def handle_scroll_pagination(
             continue
 
         soup = BeautifulSoup(html, "html.parser")
-        
-        # Supporte à la fois les sélecteurs CSS complexes et les noms de classe simples
-        if any(char in card_sel for char in [".", ",", ">", "#"]):
-            cards = soup.select(card_sel)
-        else:
-            cards = soup.find_all(["a", "div", "article", "li"], class_=lambda c: c and card_sel in c.split())
-            if not cards:
-                cards = soup.find_all(class_=re.compile(re.escape(card_sel), re.I))
+        cards = extract_cards(soup, card_sel)
 
         articles_found = 0
         new_found = 0
 
         for card in cards:
-            # Recherche dans TOUT le texte de la carte (comme dans votre version d'origine)
-            card_full_text = card.get_text().lower()
+            card_full_text = card.get_text(separator=' ', strip=True).lower()
 
             if keywords:
                 if not any(kw in card_full_text for kw in keywords):
                     continue
 
-            link = card if card.name == "a" else card.find("a", href=True)
-            if link and link.get("href"):
-                abs_url = urljoin(base_url, link.get("href"))
-                
-                low_url = abs_url.lower()
-                if any(err in low_url for err in ['403', '404', '500', 'error', 'access-denied', 'block']):
-                    continue
+            href_val = get_card_link(card)
+            if not href_val:
+                continue
 
-                articles_found += 1
-                if abs_url not in shared_urls:
-                    shared_urls.add(abs_url)
-                    save_to_db(site, abs_url)
-                    new_found += 1
+            abs_url = urljoin(base_url, href_val)
+            low_url = abs_url.lower()
 
-        if articles_found == 0:
+            if any(err in low_url for err in ['403', '404', '500', 'error', 'access-denied', 'block']):
+                continue
+            if any(tax in low_url for tax in ['/category/', '/tag/', '/tags/', '/author/']):
+                continue
+
+            articles_found += 1
+            if abs_url not in shared_urls:
+                shared_urls.add(abs_url)
+                save_to_db(site, abs_url)
+                new_found += 1
+
+        if new_found == 0:
             consecutive_empty += 1
-            tqdm.write(f"   ⚠️ [{site}] Scroll #{iteration} : 0 article ({consecutive_empty}/{MAX_EMPTY_PAGES_TOLERANCE}).")
+            tqdm.write(f"   ⚠️ [{site}] Scroll #{iteration} : {articles_found} articles vus, 0 inédit ({consecutive_empty}/{MAX_EMPTY_PAGES_TOLERANCE}).")
             if consecutive_empty >= MAX_EMPTY_PAGES_TOLERANCE:
-                tqdm.write(f"🛑 [{site}] Arrêt : flux épuisé.")
+                tqdm.write(f"🛑 [{site}] Arrêt : flux épuisé ou boucle détectée.")
                 break
         else:
             consecutive_empty = 0

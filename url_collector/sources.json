@@ -65,7 +65,6 @@
   "trendmicro": {
     "url": "https://www.trendmicro.com/en/research.html",
     "card_selector": ".grid-item, .featured-article, .trending-item",
-    "tag_selector": ".filter-tag, .article-filter-tag",
     "keyword": [
       "Cyber Crime",
       "Cyber Threats",
@@ -75,6 +74,16 @@
     ],
     "use_curl_cffi": true,
     "pagination_pattern": "scroll",
-    "max_pages": 10
+    "max_pages": 10,
+    "slow_mode": false
+  },
+  "dfir-report": {
+    "url": "https://thedfirreport.com/reports/",
+    "card_selector": "ep-item-inner", 
+    "keyword": "",
+    "use_curl_cffi":true,
+    "pagination_pattern":"?_paged={page}",
+    "max_pages":30,
+    "slow_mode": true
   }
 }
