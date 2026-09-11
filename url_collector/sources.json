@@ -14,7 +14,7 @@
     "keyword": "Threat Research",
     "use_curl_cffi": true,
     "max_pages": 10,
-    "pagination_pattern": "click",
+    "pagination_pattern": "?08108354_page={page}",
     "slow_mode": false
   },
   "rapid7": {
