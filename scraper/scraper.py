@@ -259,6 +259,13 @@ async def scrape_single_article(
           if img.has_attr("data-src"):
             del img["data-src"]
 
+      # --- DESTRUCTION PRÉVENTIVE DU BRUIT ---
+      # Avant même de chercher la zone de texte, on détruit les menus, popups, headers et footers
+      for unwanted in soup.find_all(["nav", "header", "footer", "aside", "form"]):
+          unwanted.decompose()
+      for unwanted in soup.select("#header, .header, .secondary-menu, .announcement-banner, #footer, .footer-page-content, #wrap_all > .header"):
+          unwanted.decompose()
+
       def aem_blog_filter(c: Any) -> bool:
         if not c:
           return False
@@ -303,8 +310,10 @@ async def scrape_single_article(
             ]
         )
 
+      # On priorise les conteneurs spécifiques (dont celui de DFIR Report) avant de fallback sur 'article' ou 'main'
       target_area = (
           soup.find(class_=aem_blog_filter)
+          or soup.find(class_=re.compile(r"entry-content-wrapper", re.I)) # Ciblage spécifique DFIR Report
           or soup.find("article")
           or soup.find("main")
           or soup.find(class_=content_keywords_filter)
@@ -313,6 +322,7 @@ async def scrape_single_article(
       )
 
       if target_area and isinstance(target_area, Tag):
+        # Ultime nettoyage de la zone cible trouvée
         for unwanted in target_area([
             "script",
             "style",
