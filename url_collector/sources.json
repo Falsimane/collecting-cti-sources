@@ -11,13 +11,13 @@
   "sekoia": {
     "url": "https://www.sekoia.com/blog",
     "card_selector": "blog-list_item",
-    "keyword":"Threat Research",
-    "use_curl_cffi":true,
-    "max_pages":10,
-    "pagination_pattern":"click",
-    "slow_mode":false
+    "keyword": "Threat Research",
+    "use_curl_cffi": true,
+    "max_pages": 10,
+    "pagination_pattern": "click",
+    "slow_mode": false
   },
-    "rapid7": {
+  "rapid7": {
     "url": "https://www.rapid7.com/blog/?blog_category=Threat+Research",
     "card_selector": "group",
     "keyword": "Threat Research",
@@ -49,17 +49,32 @@
     "url": "https://threatbook.io/blog/tag/threat-research/",
     "card_selector": "blog-index__post",
     "keyword": "Threat Research",
-    "use_nodriver":true,
-    "max_pages":4,
+    "use_nodriver": true,
+    "max_pages": 4,
     "pagination_pattern": "/page/{page}",
-    "slow_mode":false
+    "slow_mode": false
   },
   "crowdstrike": {
     "url": "https://www.crowdstrike.com/en-us/blog/category.counter-adversary-operations/",
     "card_selector": "row category_article flex-lg-row",
     "keyword": "Threat Hunting & Intel",
     "use_curl_cffi": true,
-    "pagination_pattern":"/#page={page}",
+    "pagination_pattern": "/#page={page}",
     "slow_mode": false
+  },
+  "trendmicro": {
+    "url": "https://www.trendmicro.com/en/research.html",
+    "card_selector": ".grid-item, .featured-article, .trending-item",
+    "tag_selector": ".filter-tag, .article-filter-tag",
+    "keyword": [
+      "Cyber Crime",
+      "Cyber Threats",
+      "Malware",
+      "Exploits & Vulnerabilities ",
+      "APT & Targeted Attacks"
+    ],
+    "use_curl_cffi": true,
+    "pagination_pattern": "scroll",
+    "max_pages": 10
   }
 }
