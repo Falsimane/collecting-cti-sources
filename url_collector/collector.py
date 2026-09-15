@@ -44,13 +44,13 @@ async def crawl_single_source(browser, site: str, data: dict, semaphore: asyncio
         page.add_handler(network.ResponseReceived, on_response)
         page_num = 1
         consecutive_empty_pages = 0
+        total_new = 0
 
         try:
             await page.get(base_url)
             await asyncio.sleep(4.5)
 
             if pag_type == "scroll":
-                tqdm.write(f"📜 [{site}] Démarrage de la collecte par Infinite Scroll (max {max_scrolls} scrolls)...")
                 await handle_scroll_pagination(
                     page, site, base_url, card_sel, keywords, next_btn_sel, shared_urls, pbar, max_scrolls
                 )
@@ -81,12 +81,12 @@ async def crawl_single_source(browser, site: str, data: dict, semaphore: asyncio
                                     return true;
                                 }}
                                 return false;
-                            }})()
+                            }})()\
                         """)
                         if click_success: 
                             await asyncio.sleep(4.0)
                         else:
-                            tqdm.write(f"🛑 [{site}] Arrêt : bouton page {page_num} introuvable ou masqué.")
+                            tqdm.write(f"🛑 [{site}] Arrêt page {page_num} (bouton introuvable)")
                             break
                     else:
                         target_url = build_paginated_url(base_url, page_num, pag_type)
@@ -95,12 +95,12 @@ async def crawl_single_source(browser, site: str, data: dict, semaphore: asyncio
                         await asyncio.sleep(3.5)
 
                         if current_status >= 400:
-                            tqdm.write(f"🛑 [{site}] Arrêt : code HTTP {current_status} à la page {page_num}.")
+                            tqdm.write(f"🛑 [{site}] HTTP {current_status} — arrêt")
                             break
 
                         current_browser_url = await page.evaluate("window.location.href")
                         if str(page_num) not in current_browser_url and ("page" not in current_browser_url or "/page/1" in current_browser_url):
-                            tqdm.write(f"🛑 [{site}] Arrêt : redirection vers {current_browser_url}.")
+                            tqdm.write(f"🛑 [{site}] Redirection — arrêt")
                             break
 
                 html = await get_page_html(page)
@@ -111,11 +111,10 @@ async def crawl_single_source(browser, site: str, data: dict, semaphore: asyncio
                 page_title = title_tag.get_text().lower() if title_tag and hasattr(title_tag, "get_text") else ""
                 
                 if "404" in page_title or "not found" in page_title or "page non trouvée" in page_title:
-                    tqdm.write(f"🛑 [{site}] Arrêt : 404 dans le titre à la page {page_num}.")
+                    tqdm.write(f"🛑 [{site}] 404 — arrêt")
                     break
 
                 cards = extract_cards(soup, card_sel)
-                articles_found = 0
                 new_on_page = 0
 
                 for card in cards:
@@ -137,29 +136,80 @@ async def crawl_single_source(browser, site: str, data: dict, semaphore: asyncio
                     if any(tax in low_url for tax in ['/category/', '/tag/', '/tags/', '/author/']):
                         continue
 
-                    articles_found += 1
                     if abs_url not in shared_urls:
                         shared_urls.add(abs_url)
                         save_to_db(site, abs_url)
                         new_on_page += 1
 
+                total_new += new_on_page
+                tqdm.write(f"   [{site}] {total_new}")
+
                 if new_on_page == 0:
                     consecutive_empty_pages += 1
-                    tqdm.write(f"   ⚠️ [{site}] Page {page_num} : {articles_found} articles vus, 0 inédit ({consecutive_empty_pages}/{MAX_EMPTY_PAGES_TOLERANCE}).")
                     if consecutive_empty_pages >= MAX_EMPTY_PAGES_TOLERANCE:
-                        tqdm.write(f"🛑 [{site}] Arrêt : catalogue épuisé ou boucle détectée.")
+                        tqdm.write(f"🛑 [{site}] {total_new} — terminé")
                         break
                 else:
                     consecutive_empty_pages = 0
-                    tqdm.write(f"   ➔ [{site}] Page {page_num} analysée ({articles_found} articles vus, {new_on_page} inédits).")
 
                 pbar.update(1)
                 page_num += 1
 
         except Exception as e:
-            tqdm.write(f"❌ Erreur sur {site}: {e}")
+            tqdm.write(f"❌ [{site}] Erreur: {e}")
         finally:
             await page.close()
+
+def select_sources(sources_cti: dict) -> dict:
+    """Affiche un menu interactif pour choisir les sources à scraper.
+    
+    Retourne le sous-ensemble sélectionné de sources_cti.
+    Si l'option --all est passée en argument CLI, retourne toutes les sources sans prompt.
+    """
+    if "--all" in sys.argv:
+        return sources_cti
+
+    source_names = list(sources_cti.keys())
+
+    print("\n================ SÉLECTION DES SOURCES ================")
+    print("[A] Toutes les sources")
+    for i, name in enumerate(source_names, start=1):
+        url = sources_cti[name]["url"]
+        print(f"[{i}] {name:20s}  ({url})")
+    print("========================================================")
+
+    choice = input(
+        "\nEntrez 'A' pour tout scraper, ou les numéros séparés par des virgules "
+        "(ex: 1,3,5) : "
+    ).strip()
+
+    if choice.lower() == "a" or choice == "":
+        print("✅ Toutes les sources sélectionnées.")
+        return sources_cti
+
+    selected = {}
+    for part in choice.split(","):
+        part = part.strip()
+        if not part:
+            continue
+        try:
+            idx = int(part)
+            if 1 <= idx <= len(source_names):
+                key = source_names[idx - 1]
+                selected[key] = sources_cti[key]
+            else:
+                print(f"⚠️  Numéro {idx} ignoré (hors limites 1-{len(source_names)}).")
+        except ValueError:
+            print(f"⚠️  Entrée '{part}' ignorée (pas un nombre valide).")
+
+    if not selected:
+        print("❌ Aucune source valide sélectionnée. Abandon.")
+        sys.exit(1)
+
+    names = ", ".join(selected.keys())
+    print(f"✅ {len(selected)} source(s) sélectionnée(s) : {names}")
+    return selected
+
 
 async def main():
     init_db()
@@ -177,6 +227,9 @@ async def main():
         encoding="utf-8",
     ) as f:
         sources_cti = json.load(f)
+
+    # Let the user pick which sources to scrape
+    sources_cti = select_sources(sources_cti)
 
     browser_args = [
         "--headless=new",

@@ -104,6 +104,7 @@ async def handle_scroll_pagination(
     """Gère l'Infinite Scroll avec une limite de sécurité (max_scrolls)."""
     iteration = 1
     consecutive_empty = 0
+    total_new = 0
 
     await page.evaluate("""
         (() => {
@@ -180,18 +181,19 @@ async def handle_scroll_pagination(
                 save_to_db(site, abs_url)
                 new_found += 1
 
+        total_new += new_found
+        tqdm.write(f"   [{site}] {total_new}")
+
         if new_found == 0:
             consecutive_empty += 1
-            tqdm.write(f"   ⚠️ [{site}] Scroll #{iteration} : {articles_found} articles vus, 0 inédit ({consecutive_empty}/{MAX_EMPTY_PAGES_TOLERANCE}).")
             if consecutive_empty >= MAX_EMPTY_PAGES_TOLERANCE:
-                tqdm.write(f"🛑 [{site}] Arrêt : flux épuisé ou boucle détectée.")
+                tqdm.write(f"🛑 [{site}] {total_new} — terminé")
                 break
         else:
             consecutive_empty = 0
-            tqdm.write(f"   ➔ [{site}] Scroll #{iteration} analysé ({articles_found} articles, {new_found} inédits).")
             pbar.update(1)
 
         iteration += 1
 
     if iteration > max_scrolls:
-        tqdm.write(f"🛑 [{site}] Arrêt : Limite maximale de {max_scrolls} scrolls atteinte.")
+        tqdm.write(f"🛑 [{site}] {total_new} — terminé")

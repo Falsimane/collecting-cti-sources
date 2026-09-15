@@ -17,6 +17,7 @@ from tqdm import tqdm
 
 URL_DB = "db_outputs/urls_collection.db"
 KNOWLEDGE_DB = "db_outputs/cti_knowledge.db"
+PDF_OUTPUT_DIR = "db_outputs/pdf"
 
 BINARY_EXTENSIONS = (
     ".png",
@@ -43,6 +44,89 @@ CLOUDFLARE_MARKERS = [
 
 def is_cloudflare_challenge(html: str) -> bool:
   return any(marker in html for marker in CLOUDFLARE_MARKERS)
+
+
+# --- PDF report detection & download ---
+
+PDF_DOWNLOAD_KEYWORDS = [
+    "download the full report",
+    "download the report",
+    "download report",
+    "download now",
+    "télécharger le rapport complet",
+    "télécharger le rapport",
+    "telecharger le rapport",
+]
+
+
+def detect_pdf_download_link(soup: BeautifulSoup, base_url: str) -> str | None:
+  """Scan the page for a download button whose href points to a PDF.
+
+  Returns the absolute PDF URL if found, otherwise None.
+  Looks for <a> tags whose visible text matches known download keywords
+  AND whose href ends with .pdf (or contains .pdf before query params).
+  """
+  for a_tag in soup.find_all("a", href=True):
+    text = a_tag.get_text(separator=" ", strip=True).lower()
+    if not any(kw in text for kw in PDF_DOWNLOAD_KEYWORDS):
+      continue
+    href = a_tag["href"]
+    if isinstance(href, list):
+      href = href[0]
+    abs_href = urljoin(base_url, href)
+    # Accept direct .pdf links or links that will likely resolve to a PDF
+    if ".pdf" in abs_href.lower().split("?")[0]:
+      return abs_href
+  return None
+
+
+async def download_pdf(pdf_url: str, site_name: str, article_title: str) -> bool:
+  """Download a PDF from pdf_url and save it to db_outputs/pdf/<site_name>/.
+
+  Returns True on success, False on failure.
+  """
+  dest_dir = os.path.join(PDF_OUTPUT_DIR, site_name)
+  os.makedirs(dest_dir, exist_ok=True)
+
+  # Build a safe filename from the last segment of the URL
+  pdf_basename = pdf_url.split("?")[0].rstrip("/").split("/")[-1]
+  if not pdf_basename.lower().endswith(".pdf"):
+    # Fallback: sanitize article title
+    safe_title = re.sub(r'[^\w\s-]', '', article_title)[:80].strip().replace(" ", "_")
+    pdf_basename = f"{safe_title}.pdf"
+
+  dest_path = os.path.join(dest_dir, pdf_basename)
+
+  if os.path.exists(dest_path):
+    tqdm.write(f"   📄 [{site_name}] PDF already exists: {pdf_basename}")
+    return True
+
+  try:
+    async with CffiSession(impersonate="chrome124") as session:
+      resp = await session.get(
+          pdf_url,
+          headers={
+              "Accept": "application/pdf,*/*",
+              "Accept-Language": "en-US,en;q=0.9",
+          },
+          timeout=120,
+          allow_redirects=True,
+      )
+      if resp.status_code != 200:
+        tqdm.write(
+            f"   ⚠️ [{site_name}] PDF download HTTP {resp.status_code}: {pdf_url}"
+        )
+        return False
+
+      with open(dest_path, "wb") as f:
+        f.write(resp.content)
+
+    tqdm.write(f"   📥 [{site_name}] PDF saved: {pdf_basename}")
+    return True
+
+  except Exception as e:
+    tqdm.write(f"   ❌ [{site_name}] PDF download error: {e}")
+    return False
 
 
 def init_knowledge_db():
@@ -358,6 +442,11 @@ async def scrape_single_article(
         extracted_markdown = "Content could not be extracted automatically."
 
       save_and_mark(site_name, url, title, pub_date, extracted_markdown)
+
+      # --- PDF report detection & download ---
+      pdf_url = detect_pdf_download_link(soup, url)
+      if pdf_url:
+        await download_pdf(pdf_url, site_name, title)
 
     except Exception as e:
       tqdm.write(f"❌ Error on {url}: {e}")

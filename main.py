@@ -40,9 +40,9 @@ def get_pending_urls_count():
 
 
 def run_collector():
-  """Lance automatiquement le collecteur d'URLs avec 20 workers."""
+  """Lance le collecteur d'URLs avec sélection interactive des sources."""
   print(
-      "\n🚀 Lancement automatique du collecteur d'URLs (20 workers par défaut)..."
+      "\n🚀 Lancement du collecteur d'URLs (20 workers par défaut)..."
   )
   script_path = os.path.join("url_collector", "collector.py")
 
@@ -92,7 +92,7 @@ def main():
     print("\n================ CTI PIPELINE MAIN MENU ================")
     print(f" Status: [{db_status}]")
     print("--------------------------------------------------------")
-    print("[1] Run URL Collector   (Step 1: Discover & store URLs in DB)")
+    print("[1] Run URL Collector   (Step 1: Discover & store URLs — select sources)")
     print("[2] Run Content Scraper (Step 2: Extract content, metadata & Markdown)")
     print("[3] Exit")
 
