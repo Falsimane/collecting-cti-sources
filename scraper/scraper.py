@@ -408,6 +408,11 @@ async def scrape_single_article(
 
             save_and_mark(site_name, url, title, pub_date, extracted_markdown)
 
+            # --- CORRECTION : AJOUT DU BLOC PDF MANQUANT ICI ---
+            pdf_url = detect_pdf_download_link(soup, url)
+            if pdf_url:
+                await download_pdf(pdf_url, site_name, title)
+
         except Exception as e:
             tqdm.write(f"❌ Error on {url}: {e}")
         finally:
