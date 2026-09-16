@@ -1,89 +1,101 @@
-{
-  "harfanglab": {
-    "url": "https://harfanglab.io/insidethelab/",
-    "card_selector": "card",
-    "keyword": "Cyber Threat Intelligence",
-    "use_curl_cffi": true,
-    "max_pages": 3,
-    "pagination_pattern": "page/{page}/",
-    "slow_mode": false
-  },
-  "sekoia": {
-    "url": "https://www.sekoia.com/blog",
-    "card_selector": "blog-list_item",
-    "keyword": "Threat Research",
-    "use_curl_cffi": true,
-    "max_pages": 10,
-    "pagination_pattern": "?08108354_page={page}",
-    "slow_mode": false
-  },
-  "rapid7": {
-    "url": "https://www.rapid7.com/blog/?blog_category=Threat+Research",
-    "card_selector": "group",
-    "keyword": "Threat Research",
-    "use_curl_cffi": true,
-    "max_pages": 5,
-    "pagination_pattern": "page/{page}/?blog_category=Threat+Research",
-    "slow_mode": true
-  },
-  "teamt5": {
-    "url": "https://teamt5.org/en/blog/",
-    "card_selector": "css-l7kkof",
-    "keyword": "cyber threat intelligence",
-    "use_nodriver": true,
-    "max_pages": 5,
-    "pagination_pattern": "click",
-    "slow_mode": false
-  },
-  "paloalto_unit42": {
-    "url": "https://unit42.paloaltonetworks.com/category/threat-research/",
-    "card_selector": "l-card",
-    "keyword": "Threat Research",
-    "use_nodriver": true,
-    "max_pages": 10,
-    "pagination_pattern": "scroll",
-    "next_button_selector": ".cc-button__wrapper .l-btn",
-    "slow_mode": false
-  },
-  "threatbook": {
-    "url": "https://threatbook.io/blog/tag/threat-research/",
-    "card_selector": "blog-index__post",
-    "keyword": "Threat Research",
-    "use_nodriver": true,
-    "max_pages": 4,
-    "pagination_pattern": "/page/{page}",
-    "slow_mode": false
-  },
-  "crowdstrike": {
-    "url": "https://www.crowdstrike.com/en-us/blog/category.counter-adversary-operations/",
-    "card_selector": "row category_article flex-lg-row",
-    "keyword": "Threat Hunting & Intel",
-    "use_curl_cffi": true,
-    "pagination_pattern": "/#page={page}",
-    "slow_mode": false
-  },
-  "trendmicro": {
-    "url": "https://www.trendmicro.com/en/research.html",
-    "card_selector": ".grid-item, .featured-article, .trending-item",
-    "keyword": [
-      "Cyber Crime",
-      "Cyber Threats",
-      "Malware",
-      "Exploits & Vulnerabilities ",
-      "APT & Targeted Attacks"
-    ],
-    "use_curl_cffi": true,
-    "pagination_pattern": "scroll",
-    "max_pages": 10,
-    "slow_mode": false
-  },
-  "dfir-report": {
-    "url": "https://thedfirreport.com/reports/",
-    "card_selector": "ep-item-inner", 
-    "keyword": "",
-    "use_curl_cffi":true,
-    "pagination_pattern":"?_paged={page}",
-    "max_pages":30,
-    "slow_mode": true
+  {
+    "harfanglab": {
+      "url": "https://harfanglab.io/insidethelab",
+      "card_selector": "card",
+      "keyword": "Cyber Threat Intelligence",
+      "use_curl_cffi": true,
+      "max_pages": 3,
+      "page_load_wait": 6.0,
+      "pagination_pattern": "/page/{page}/",
+      "slow_mode": true
+    },
+    "sekoia": {
+      "url": "https://www.sekoia.com/blog",
+      "card_selector": "blog-list_item",
+      "keyword": "Threat Research",
+      "use_curl_cffi": true,
+      "max_pages": 10,
+      "pagination_pattern": "?08108354_page={page}",
+      "slow_mode": false
+    },
+    "rapid7": {
+      "url": "https://www.rapid7.com/blog/category/threat-research/",
+      "card_selector": "article",
+      "url_must_include": "/blog/post",
+      "keyword": "",
+      "use_curl_cffi": true,
+      "max_pages": 15,
+      "page_load_wait": 3.5,
+      "pagination_pattern": "page/{page}/",
+      "slow_mode": true
+    },
+    "teamt5": {
+      "url": "https://teamt5.org/en/blog",
+      "card_selector": "css-l7kkof",
+      "keyword": "cyber threat intelligence",
+      "use_nodriver": true,
+      "max_pages": 5,
+      "pagination_pattern": "click",
+      "slow_mode": false
+    },
+    "paloalto_unit42": {
+      "url": "https://unit42.paloaltonetworks.com/category/threat-research",
+      "card_selector": "l-card",
+      "keyword": "Threat Research",
+      "use_nodriver": true,
+      "max_pages": 10,
+      "pagination_pattern": "scroll",
+      "next_button_selector": ".cc-button__wrapper .l-btn",
+      "slow_mode": false
+    },
+    "threatbook": {
+      "url": "https://threatbook.io/blog/tag/threat-research",
+      "card_selector": "blog-index__post",
+      "keyword": "Threat Research",
+      "use_nodriver": true,
+      "max_pages": 4,
+      "pagination_pattern": "/page/{page}",
+      "slow_mode": false
+    },
+    "crowdstrike": {
+      "url": "https://www.crowdstrike.com/en-us/blog/category.counter-adversary-operations",
+      "card_selector": "row category_article flex-lg-row",
+      "keyword": "Threat Hunting & Intel",
+      "use_curl_cffi": true,
+      "pagination_pattern": "/#page={page}",
+      "slow_mode": false
+    },
+    "trendmicro": {
+      "url": "https://www.trendmicro.com/en/research.html",
+      "card_selector": ".grid-item, .featured-article, .trending-item",
+      "keyword": [
+        "Cyber Crime",
+        "Cyber Threats",
+        "Malware",
+        "Exploits & Vulnerabilities ",
+        "APT & Targeted Attacks"
+      ],
+      "use_curl_cffi": true,
+      "pagination_pattern": "scroll",
+      "max_pages": 10,
+      "slow_mode": false
+    },
+    "dfir-report": {
+      "url": "https://thedfirreport.com/reports/",
+      "card_selector": "ep-item-inner",
+      "keyword": "",
+      "use_curl_cffi": true,
+      "pagination_pattern": "?_paged={page}",
+      "max_pages": 30,
+      "slow_mode": true
+    },
+    "intrinsec": {
+      "url": "https://www.intrinsec.com/en/category/threat-intelligence-report/",
+      "card_selector": ".uicore-blog-grid .uicore-grid-item",
+      "keyword": "",
+      "use_curl_cffi": true,
+      "pagination_pattern": "page/{page}/",
+      "max_pages": 10,
+      "slow_mode": false
+    }
   }
-}
