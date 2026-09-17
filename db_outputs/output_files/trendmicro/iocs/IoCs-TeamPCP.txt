@@ -1,0 +1,102 @@
+================================================================================
+INDICATORS OF COMPROMISE
+================================================================================
+
+CORE INDICATORS
+----------------
+Primary IoCs are consolidated in the table below. Hashes are SHA256 unless a
+sample's SHA256 is not available, in which case SHA1 or MD5 is used and the hash
+type is stated in the Context column. Network indicators are defanged.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+IoC                                                                                   Detection                    Description
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+24680027afadea90c7c713821e214b15cb6c922e67ac01109fb1edb3ee4741d9                      Trojan.JS.SPCSTEALER.A       mcpAddon.js — KICS credential stealer; Bun-runtime JavaScript stealer; ~10 MB; Checkmarx KICS incident
+2a6a35f06118ff7d61bfd36a5788557b695095e7c9a609b4a01956883f146f50                      —                            KICS ELF binary (trojanized); distributed via poisoned Docker images; Checkmarx KICS incident
+18f784b3bc9a0bcdcb1a8d7f51bc5f54323fc40cbd874119354ab609bef6e4cb                      —                            bw_setup.js — Bitwarden CLI loader; downstream npm hijack; Bitwarden CLI incident
+8605e365edf11160aad517c7d79a3b26b62290e5072ef97b102a01ddbb343f14                      TrojanSpy.JS.SPCSTEALER.A    bw1.js — Bitwarden CLI payload; shares encryption and C2 with KICS variant; Bitwarden CLI incident
+167ce57ef59a32a6a0ef4137785828077879092d7f83ddbc1755d6e69116e0ad                      —                            @bitwarden/cli tampered metadata; signals malicious v2026.4.0 publication; Bitwarden CLI incident
+d37874c6c8a2d2a7a252810a1999ece8bb39e9b3ab2b7e8bf40da15bd36a1584                      Pattern detection pending    elementary.pth — Python credential stealer; 46 KB loader; MD5-XOR decrypts 11 KB inner stealer; elementary-data incident
+b1e4b1f3aad0d489ab0e9208031c67402bbb8480 (SHA1)                                       —                            Forged orphan Git commit; Git SHA1 of malicious release commit containing elementary.pth; elementary-data incident
+audit[.]checkmarx[.]cx                                                                —                            Primary C2 domain; shared between KICS and Bitwarden variants; Checkmarx KICS incident
+94[.]154[.]172[.]43                                                                   —                            C2 IP resolving audit[.]checkmarx[.]cx; AS209101 (IP Vendetta, SC/BG); Checkmarx KICS incident
+hxxps[://]audit[.]checkmarx[.]cx/v1/telemetry                                         —                            Exfiltration endpoint; HTTPS POST of AES-256-GCM ciphertext; Checkmarx KICS incident
+hxxps[://]api[.]github[.]com/search/commits?q=LongLiveTheResistanceAgainstMachines    —                            Dead-drop query; PAT staging — double-base64 encoded tokens in commit messages; Checkmarx KICS incident
+checkmarx[.]zone                                                                      —                            Prior campaign C2 domain; March 2026; pre-April infrastructure
+83[.]142[.]209[.]203                                                                  —                            IP associated with checkmarx[.]zone; prior campaign infrastructure
+91[.]195[.]240[.]123                                                                  —                            IP resolving checkmarx[.]cx root; prior campaign infrastructure
+igotnofriendsonlineorirl-imgonnakmslmao[.]skyhanni[.]cloud                            —                            C2 exfiltration endpoint; returned HTTP 404 at analysis time; elementary-data incident
+188[.]114[.]96[.]3                                                                    —                            Cloudflare IP fronting C2; infrastructure cycled rapidly post-operation; elementary-data incident
+hxxps[://]litter[.]catbox[.]moe/iqesmbhukgd2c7hq[.]sh                                 —                            Shell stager URL; fetched by GitHub Actions runner after comment injection; elementary-data incident
+hxxp[://]169[.]254[.]169[.]254/latest/meta-data/iam/security-credentials/             —                            AWS EC2 IMDS endpoint; targeted for credential theft; elementary-data incident
+hxxp[://]169[.]254[.]170[.]2                                                          —                            AWS ECS task credential endpoint; targeted for credential theft; elementary-data incident
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+TREND AI VISION ONE — DETECTIONS
+---------------------------------
+
+---------------------------------------------------------------------------------------------------------------------------------------
+Detection / Signature                                                   Type          Incident Coverage
+---------------------------------------------------------------------------------------------------------------------------------------
+Trojan.JS.SPCSTEALER.A                                                  Pattern       Checkmarx KICS credential stealer
+TrojanSpy.JS.SPCSTEALER.A                                               Pattern       Bitwarden CLI credential stealer
+Bun command-line execution behavioral detection                         Behavioral    Bun runtime invocation on CI agents
+Azure CLI credential harvesting via JavaScript runtime child process    Behavioral    Multi-cloud credential harvesting
+GCloud credential harvesting via JavaScript-spawned shell on Unix       Behavioral    Multi-cloud credential harvesting
+GCP credential theft via JavaScript-spawned shell                       Behavioral    Multi-cloud credential harvesting
+GitHub CLI credential theft via JavaScript-spawned shell                Behavioral    GitHub PAT theft via gh auth token
+Cloud credential files read in container                                Behavioral    Docker-based poisoned image detection
+HTTP_BUN_DOWNLOAD_REQUEST                                               Network       Bun runtime download from GitHub Releases
+HTTP_DEADDROP_C2_RESPONSE                                               Network       GitHub commit-search API used as C&C dead-drop
+HTTP_CX_EXFIL_C2_REQUEST                                                Network       HTTPS POST exfiltration to audit[.]checkmarx[.]cx
+Pattern detection for elementary-data payload                           Pattern       Pending
+---------------------------------------------------------------------------------------------------------------------------------------
+
+NON-EDR ARTIFACTS
+------------------
+These are operational observables that endpoint security products typically cannot
+detect on a generic basis, including package versions, container digests, file paths,
+and commit patterns. Defenders should treat these as hunting signals and inventory
+baselines rather than expecting automated alerts.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Artifact                                                          Category              Description
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+checkmarx/kics Docker — alpine, v2.1.20, v2.1.21                  Docker variant        Malicious tags sharing index digest sha256:2588a44890263a8185bd5d9fadb6bc9220b60245dbcbc4da35e1b62a6f8c230d
+checkmarx/kics Docker — debian, v2.1.20-debian, v2.1.21-debian    Docker variant        Malicious tags sharing index digest sha256:222e6bfed0f3bb1937bf5e719a2342871ccd683ff1c0cb967c8e31ea58beaf7b
+checkmarx/kics Docker — latest                                    Docker variant        Malicious tag with index digest sha256:a0d9366f6f0166dcbf92fcdc98e1a03d2e6210e8d7e8573f74d50849130651a0
+ghcr[.]io/elementary-data/elementary:0[.]23[.]3                   Container digest      Malicious image digest sha256:31ecc5939de6d24cf60c50d4ca26cf7a8c322db82a8ce4bd122ebd89cf634255
+ghcr[.]io/elementary-data/elementary pre-compromise baseline      Container digest      Known-clean baseline digest sha256:b3bbfafde1a0db3a4d47e70eb0eb2ca19daef4a19410154a71abee567b35d3d9
+cx-dev-assist VS Code                                             Package version       Malicious v1.17.0, v1.19.0; safe v1.18.0
+ast-results VS Code                                               Package version       Malicious v2.63.0, v2.66.0; safe v2.64.0
+checkmarx/ast-github-action                                       Package version       Malicious: any version prior to v2.3.36; safe v2.3.36
+@bitwarden/cli npm                                                Package version       Malicious v2026.4.0; safe v2026.3.0 or earlier (exposure window ~93 min on April 23, 2026)
+elementary-data PyPI                                              Package version       Malicious 0.23.3; safe 0.23.4 (exposure window 2026-04-24 22:20:47 UTC through 2026-04-25)
+~/.checkmarx/mcp/mcpAddon.js                                      Dropped file path     KICS credential stealer drop location
+.github/workflows/format-check.yml                                Injected workflow     Malicious GitHub Actions workflow in Checkmarx repositories
+<site-packages>/elementary.pth >100 KB                            File size anomaly     Any elementary.pth exceeding 100 KB in site-packages is suspect
+$TMPDIR/.trinny-security-update                                   Persistence marker    Written after elementary-data payload run
+trin.tar.gz                                                       Credential archive    Written before exfiltration, auto-deleted on exit; elementary-data incident
+bun / bun.exe in working directories                              Runtime artifact      Indicates KICS or Bitwarden payload execution
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ACTOR MARKERS
+-------------
+These are cross-campaign signatures that are not themselves IoCs but are useful for
+threat-hunting and attribution pivots.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Marker                                                                                             Description
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Orphan-tagged Git commits in Checkmarx KICS repository                                             Backdated commits used to stage malicious content; full commit SHA1s not published in public reporting at time of writing. The forged release commit SHA1 for the elementary-data incident is listed in the core indicators table.
+<dune-word>-<dune-word>-<3 digits> GitHub repository naming                                        Auto-created exfil staging repos using words from Dune (e.g., sardaukar, fremen, atreides, sandworm)
+Repository description "Shai-Hulud: The Third Coming"                                              Consistent description applied to Dune-themed staging repositories
+LongLiveTheResistanceAgainstMachines:                                                              PAT staging marker in GitHub commit messages
+beautifulcastle                                                                                    Signed fallback domain recovery commit marker used by Bitwarden variant
+X-Rise-To-The-Trinny: agree HTTP header                                                            Custom server-side gate header for elementary-data exfiltration
+X-Filename: tpcp.tar.gz HTTP header                                                                Analogous gate header used in LiteLLM payload
+X-QT-SR: 14 HTTP header                                                                            Analogous gate header used in Xinference payload
+Session messenger identifier 050afbe046d7545f5af1a0d3fcfbaf6e993fd93d487b431f09bc9e963c7220a135    Operator contact method embedded as XOR cipher seed across LiteLLM, Xinference, and elementary-data payloads
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+================================================================================

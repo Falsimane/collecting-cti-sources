@@ -1,0 +1,19 @@
+Watering Hole Attack Targets EmEditor Users With Information-Stealing Malware
+===========================================================================================================================================================
+Observables 						Detection name				Description
+===========================================================================================================================================================
+EmEditorjp[.]com 					N/A 					Download URL from trojanized setup 
+EmEditorgb.com/run/mg8heP0r 				N/A 					Download URL for credential theft, disable ETW component 
+EmEditorde.com/gate/start/2daef8cd 			N/A 					Download URL for fingerprinting, geofencing component 
+hxxps://cachingdrive[.]com/gate/init/2daef8cd 		N/A 					Exfiltration/C&C Server 
+e5678fd66ac09205f55dc4fae9601185a76b2f50 		N/A 					Trojanized installer file 
+a3ab5e58a9330dd673dec17777e5110bf3c9eba3 		N/A 					1st Stage (downloader) 
+65b0853abb656c6cc342d87b872fbe21482e9bae 		N/A 					2nd Stage (credential theft) 
+938325004e44ab1a65e948b4d07b05229309f630 		N/A 					3rd Stage (report and exfiltration) 
+ff78a86746bdcc6ed1390ff291a6c599e96e8487  		Trojan.Win32.EMPOWLOAD.ERA 		Trojanized installer file 
+e5678fd66ac09205f55dc4fae9601185a76b2f50 		Trojan.Win32.EMPOWLOAD.ER 		Trojanized installer file 
+826af8619430e7363e9eb3b2395b36cf6365b7bd		Trojan.Win32.EMPOWLOAD.ERB
+81e1ccbd3b4ed5a7593cfba21315c65ad4635f73		Trojan.Win32.EMPOWLOAD.ERC
+
+
+

@@ -1,0 +1,64 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Shibboleth Service Provider Security Advisory [12 June 2023]
+
+An updated version of the XMLTooling library that is part of the
+OpenSAML and Shibboleth Service Provider software is now available
+which corrects a server-side request forgery (SSRF) vulnerability.
+
+Parsing of KeyInfo elements can cause remote resource access.
+=============================================================
+Including certain legal but "malicious in intent" content in the
+KeyInfo element defined by the XML Signature standard will result
+in attempts by the SP's shibd process to dereference untrusted
+URLs.
+
+While the content of the URL must be supplied within the message
+and does not include any SP internal state or dynamic content,
+there is at minimum a risk of denial of service, and the attack
+could be combined with others to create more serious vulnerabilities
+in the future.
+
+This issue is *not* specific to the V3 XMLTooling software and is
+believed to impact all versions prior to V3.2.4.
+
+Recommendations
+===============
+Update to V3.2.4 or later of the XMLTooling library, which is
+now available. Note that on Linux and similar platforms, upgrading
+this component will require restarting the shibd process to correct
+the bug.
+
+The updated version of the library has been included in a V3.4.1.3
+patch release of the Service Provider software on Windows.
+
+Other Notes
+===========
+The xmltooling git commit containing the fix for this issue is
+6080f6343f98fec085bc0fd746913ee418cc9d30 and may be in general terms
+applicable to V2 of the library.
+
+Credits
+=======
+Juriën de Jong, an independent security researcher in the Netherlands
+
+URL for this Security Advisory:
+https://shibboleth.net/community/advisories/secadv_20230612.txt
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCgAdFiEE3KoVAHvtneaQzZUjN4uEVAIneWIFAmSHDk4ACgkQN4uEVAIn
+eWKdwg/9H2DoBB5xU53ZkNPHQW2MLHvhT/EKXp+1TfL1YD6fpqBrsY1A4pJmwamA
+U/PRkEGV7EitP0AJZ+lWxJoMcDupu8wsPh2nm0MJUUcgkuYdD38/ixyLs1HQ4jwT
+SMDQsfTDlEZvbMqdr7B20HxzIGU/bX8pxgvkP1IyclfiSOBIPdbDOQG3OvdZYl5u
+aJv0mACkPkiH1/JbRI9ODm3zYpwe8C2vpPyBhNrOARB9QzdogN2zx7l5xDyUiHtC
+YJHWnSMUEn9xvZJUTS+dHZpCmh2R3cpxmbL7WsT5xHq/LH7UUXELwcOiCgUNQgDn
+rz5lwF2FpXKw4qQ8u49Emqjb9pqPOD+OT1gRc/j3oibqINQunmrdjWt4m8MAK6Bh
+eS4S3zjGw7JNfaO91PV2TYypYf6hSqGemQBlCmnVHTZqVf068S87ZpFyG1F/VRB5
+voEbdoOMBVGpeaan8snRoQTHEMG/tUdlmL7g076NvExH8W9dmhcWW/SiP/gWQ8ko
+NdUKfqYxONOBCDOlBzC9lBk6D106qbcCsnInwBHdPvWlX36M56oZU/DjV/lNMK+Y
+j2HS3DtBWxX+1nsrg/DLzyi+8ULOqbawyOqCaaolVjZzTOHGFwpd35XYblyb3iwb
+JbpmuRuk5cHGTwlHwXNI/5FzECOOe4KMLUzvrgzSiTWU89XBQ1M=
+=XkeU
+-----END PGP SIGNATURE-----

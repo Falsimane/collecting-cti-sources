@@ -1,0 +1,49 @@
+One Man, One AI, One Fake Persona: Inside the 5-Year Influence and Fraud 'Patriot Bait' Campaign
+Indicators of Compromise (IOCs)
+TrendAI Research | May 2026
+
+================================================================================
+EXECUTABLES
+================================================================================
+
+981036cec38c6fd9796fc64a102100b97983f56b3482cc3e1f1610e14a1fae58    StellarMonSetup.exe
+
+================================================================================
+IP ADDRESSES
+================================================================================
+
+213.165.51.115      Primary VPS (content machine, QBOT)
+34.34.57.141        Ghost Proxy (GCP Netherlands, SOCKS5 port 1080)
+34.34.81.129        Windows C&C Server (GCP europe-west4-a, RDP 3389)
+35.192.41.201       Temp mail server (Mailpit)
+
+================================================================================
+DOMAINS
+================================================================================
+
+tralalarkefe[.]com              Primary Cloudflare domain
+c2.tralalarkefe[.]com           C&C server public endpoint
+payloads.tralalarkefe[.]com     Payload distribution server
+catchall1.tralalarkefe[.]com    Catch-all email (Mailpit)
+dzbank[.]capital                Impersonates DZ Bank AG (dzbank.com); phishing infra (May-Jul 2022)
+www.dzbank[.]capital            Subdomain of above
+bpfi[.]digital                  Impersonates Banking & Payments Federation Ireland (bpfi.ie); Njalla privacy NS
+www.bpfi[.]digital              Subdomain of above
+docs.bpfi[.]digital             Credential-harvesting portal subdomain
+security.bpfi[.]digital         Credential-harvesting portal subdomain
+induspayments[.]com             INDUS.exchange fraud domain (now offline)
+indusx[.]tech                   Bulletproof origin; Njalla NS (active 2022-Sep 2025)
+www.indusx[.]tech               Subdomain of above
+
+================================================================================
+TELEGRAM IDs
+================================================================================
+
+@americanpatriotus  ID: 1482211747    Channel    Primary IO broadcast channel
+@QFS_Terminal_Bot                     Bot        QAnon-themed AI chatbot
+@PatriotTruthAI_bot                   Bot        Earlier name of QFS Terminal Bot
+@patriotstats_bot                     Bot        Admin control bot for content machine
+@bandcampro         ID: 6329112928    User       Threat actor admin Telegram handle
+@Whiplash347                          Channel    Popular crypto fraud channel
+
+================================================================================

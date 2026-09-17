@@ -1,0 +1,55 @@
+Smart Contracts for C&C: How ClearFake Hid in Plain Sight on BSC Testnet 
+
+Smart Contract IOCs (BNB Smart Chain Testnet) 
+
+Contract Address:	0xA1decFB75C8C0CA28C10517ce56B710baf727d2e 	
+Discovered in:		Stage 1 JS injected into www.badischwaendi[.]ch (data:text/javascript;base64 tag in <head>) 		
+			Stage 1 - Entry point; stores Stage 2 dispatcher JS on-chain; queried by injected script via eth_call 
+
+Contract Address:	0x46790e2Ac7F3CA5a7D1bfCe312d11E91d23383Ff 
+Discovered in:		Stage 2 JS decoded from Smart Contract A 
+			Stage 3.A - Stores ~43KB ClickFix overlay JS for Windows victims 
+
+Contract Address:	0x68DcE15C1002a2689E19D33A3aE509DD1fEb11A5 
+Discovered in:		Stage 2 JS decoded from Smart Contract A 
+			Stage 3.B - Stores ~41KB ClickFix overlay JS for macOS victims 
+
+Contract Address:	0xf4a32588b50a59a82fbA148d436081A48d80832A 
+Discovered in:		Stage 3 JS decoded from Smart Contract B 
+			Execution confirmation tracker; threat actor writes victim public IP to confirm execution; browser polls isGoalReached() to detect confirmation and dismiss overlay
+
+---
+
+Threat actor Infrastructure
+
+Address/Identifier:	0xd71f4cdC84420d2bd07F50787B4F998b4c2d5290 
+			BSC testnet wallet that deployed all four ClearFake contracts; confirmed via BSCScan contract creator field on all four addresses 
+
+
+---
+
+Network IOCs
+
+Domain/Endpoint 					Remarks 
+
+bsc-testnet-rpc.publicnode[.]com 			BSC testnet RPC endpoint 
+root-cul.xamir3on[.]lat 				Primary WebDAV host observed in endpoint telemetry; hosts put34b.camp 
+getcfgs.qen9varol[.]lat 				Alternate WebDAV host hardcoded in Stage 3 JS; domain rotation infrastructure 
+afraid.veloitall[.]cfd 					Queried by rundll32.exe 
+ren.trytoken[.]life 					Queried by rundll32.exe and powershell.exe 
+ohn.stainedunstitch[.]work 				Queried by rundll32.exe 
+ootid.srv-auth-dlt-msh.in[.]net 			Queried by both rundll32.exe and dllhost.exe 
+www.badischwaendi[.]ch 					Legitimate recreational Swiss WordPress site, ClearFake JS injected at line 146 of <head> 
+ip-info.ff.avast[.]com 					ClearFake geo-targeting + victim UUID capture 
+download2324.mediafire[.]com 				Queried by dllhost.exe 
+mc.yandex[.]ru 						Yandex Metrika analytics injected by macOS Stage 3 payload 
+
+---
+
+File IoCs
+SHA256									File Path									Description
+9c235a84d15087719e59c09f41d43e3574de4544d490aab619184a7d65b02910 	\\root-cul.xamir3on.lat\sh1ne-apps-testsh-zec833-lives7z\put34b.camp 		Malicious DLL delivered over WebDAV (using the non-standard .camp extension to evade DLL-monitoring rules). 
+a5691a4fc69faa4f0fe08f12347783e1dde3c617552be7efd1c5ed89a793e885 	C:\Users\[User]\AppData\Local\FileZilla\Data\DC80D99D\helper.py 		A Python script deployed as part of the BYOI (Bring Your Own Interpreter) RAT staging in FileZilla\Data\DC80D99D\. It is executed by pythonw.exe and serves as a shellcode loader. 
+46add4a5fb2da6fe12759a06fe1c6bc43e987da3ea7c28bff0a7f2a349088f0d 	C:\Users\[User]\AppData\Local\Mozilla/Firefox/361e6e66.default/libvlccore.dll 	A malicious DLL masquerading as a legitimate VLC media player component, sideloaded by the legitimate vlc.exe. 
+	
+

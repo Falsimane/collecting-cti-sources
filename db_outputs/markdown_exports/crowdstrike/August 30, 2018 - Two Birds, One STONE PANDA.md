@@ -1,0 +1,112 @@
+# Two Birds, One STONE PANDA
+
+- **Source :** crowdstrike
+- **URL :** https://www.crowdstrike.com/en-us/blog/two-birds-one-stone-panda/
+- **Date :** August 30, 2018
+
+---
+
+# Two Birds, One STONE PANDA
+
+August 30, 2018
+
+• [ kozy](/en-us/blog/author.kozy/ "Posts by kozy") • [Threat Hunting & Intel](/en-us/blog/category.counter-adversary-operations/ "Threat Hunting & Intel")
+
+
+### Introduction
+
+In April 2017, a previously unknown group calling itself [IntrusionTruth](https://intrusiontruth.wordpress.com) began releasing blog posts detailing individuals believed to be associated with major Chinese intrusion campaigns. Although the group’s exact motives remain unclear, its initial tranche of information exposed individuals connected to long-running GOTHIC PANDA (APT3) operations, culminating in a [connection](https://intrusiontruth.wordpress.com/2017/05/09/apt3-is-boyusec-a-chinese-intelligence-contractor.html) to the Chinese firm Boyusec (博御信息) and, ultimately, Chinese Ministry of State Security (MSS) entities in Guangzhou. Recently, in July and August 2018, IntrusionTruth has returned with new reporting regarding actors with ties to historic STONE PANDA (APT10) activity and has ultimately [associated](https://intrusiontruth.wordpress.com/2018/08/15/apt10-was-managed-by-the-tianjin-bureau-of-the-chinese-ministry-of-state-security.html) them with the MSS Tianjin Bureau (天津市国家安全局). Though CrowdStrike® Falcon Intelligence™ is currently unable to confirm all of the details provided in these most recent posts with a high degree of confidence, several key pieces of information can be verified.
+
+  * Several of the named individuals have been active registering domains as recently as June 2018, and they responded to the IntrusionTruth blog posts by scrubbing their social media or by following IntrusionTruth’s Twitter account.
+  * Named individuals ZHANG Shilong and GAO Qiang have significant connections to known Chinese hacking forums, and they have sourced tools currently in use by China-based cyber adversaries. 
+  * ZHANG has registered several sites with overlapping registrant details that show both his affiliation with several physical technology firm addresses as well as his residence in Tianjin. 
+  * Named firm Huaying Haitai has been connected to a Chinese Ministry of Industry and Information Technology (MIIT) sponsored attack and defense competition; this is similar to GOTHIC PANDA’s ties to an active defense lab sponsored by China Information Technology Evaluation Center (CNITSEC).
+  * Huaying Haitai has previously hired Chinese students with Japanese language skills; this is significant, as STONE PANDA has engaged in several campaigns targeting Japanese firms. 
+  * The MSS Tianjin Bureau is confirmed to be located at the described address, not far from many of the registrant addresses listed by ZHANG as well the firms GAO was likely recruiting for.
+
+
+
+More details that may further illuminate these findings and provide a higher confidence in connecting STONE PANDA to the MSS Tianjin Bureau are likely to emerge.
+
+### Background
+
+Throughout May 2017, using a variety of historical information and open-source intelligence (OSINT), IntrusionTruth released several blog posts identifying [several](https://intrusiontruth.wordpress.com/2017/05/02/who-is-mr-wu.html) [individuals](https://intrusiontruth.wordpress.com/2017/05/05/who-is-mr-dong.html) connected to Boyusec. Though CrowdStrike's [Threat Intelligence team](/en-us/endpoint-security-products/falcon-x-threat-intelligence/) had suspected GOTHIC PANDA was an MSS contractor for several years, the IntrusionTruth posts and subsequent research by [RecordedFuture](https://www.recordedfuture.com/chinese-mss-behind-apt3/) into MSS ties to the China Information Technology Evaluation Center (CNITSEC/中国信息安全测评中心) corroborated additional details from various sources and provided a higher degree of confidence. Confidence in these findings was further boosted when the U.S. Department of Justice named Boyusec and several of the described individuals in an [indictment](https://www.justice.gov/opa/press-release/file/1013866/download), and detailed GOTHIC PANDA tactics, techniques, and procedures (TTPs) in detail. CrowdStrike Falcon® Intelligence was able to independently verify the majority of this information and concluded that not only is CNITSEC associated with the MSS, but its former director WU Shizhong (吴世忠) was simultaneously dual-hatted as the director of the MSS Technology/13th Bureau (国家安全部科技局局长)1 2 3, implying that the MSS plays a crucial role in China’s code review of foreign products and is now able to cherry pick high-value vulnerabilities from its own capable domestic bug hunting teams. CNITSEC’s role in code review for foreign entities has led to its access to Microsoft’s source code dating back to 2003 and the use by KRYPTONITE PANDA of a high-value vulnerability (CVE-2018-0802), discovered by Chinese firm Qihoo 360, a month before it was publicly revealed.
+
+![](https://www.crowdstrike.com/content/dam/crowdstrike/www/en-us/wp/2018/08/Stone-Panda-fig-1.png)WU Shizhong Presenting on the “Digital Silk Road” at the Second Wuzhen World Internet Conference in 2015
+
+As research into the IntrusionTruth leads on STONE PANDA continues, Falcon Intelligence has already observed some consistencies with known MSS operations.
+
+### Sinking Like a STONE
+
+#### **GAO Qiang (高/郜 强)**
+
+Many of the personal details for GAO were scrubbed shortly after IntrusionTruth’s post [introducing him](https://intrusiontruth.wordpress.com/2018/08/02/who-is-mr-gao.html) went live, including his![](https://www.crowdstrike.com/content/dam/crowdstrike/www/en-us/wp/2018/08/Stone-Panda-fig-2.png) Tencent QQ account. The blog connects him to the moniker _fisherxp_ via an initial spear-phishing campaign from 2010 previously attributed to STONE PANDA. Multiple sites with profile pictures appear to show the owner of the _fisherxp_ accounts, though this has yet to be independently confirmed as GAO. _Fisherxp_ ’s QQ shows his alternate username as 肥猪 or “big porker”. IntrusionTruth later links GAO to several [documented Uber rides](https://intrusiontruth.wordpress.com/2018/08/15/apt10-was-managed-by-the-tianjin-bureau-of-the-chinese-ministry-of-state-security.html) to the MSS Tianjin Bureau’s office address where both his first name, Qiang/强, and 猪 are used by the app to identify him and tie him to the QQ number 420192. CrowdStrike cannot confirm the validity of these Uber receipts at this time. However, _fisherxp_ ’s account on popular Chinese technology forum 51CTO is still active and shows that he has downloaded not only the open-source _DarkComet_ RAT and numerous password cracking tools, but more importantly, several favorite tools used by a plethora of known Chinese cyber adversaries including _Gh0st RAT 3.6_ , _zxarps_ (an ARP-spoofing tool by legacy hacker LZX), and _lcx.exe_ (a port-forwarding tool by legacy hacker LCX)4.
+
+#### **ZHANG Shilong (张世龙)**
+
+ZHANG was originally [introduced](https://intrusiontruth.wordpress.com/2018/08/06/who-is-mr-zhang.html) by IntrusionTruth as a reciprocal follower of _fisherxp_ ’s Twitter account via his own @baobeilong account. _Baobeilong_ (宝贝龙/”Baby Dragon”) also maintained a GitHub account that had forked both the _Quasar![](https://www.crowdstrike.com/content/dam/crowdstrike/www/en-us/wp/2018/08/Stone-Panda-fig-3.png)_ and _Trochilus_ RATs, two open-source tools historically used by STONE PANDA, but the account has since been scrubbed. This information was verified by CrowdStrike before being removed completely. Falcon Intelligence recently independently conducted detailed analysis of the _RedLeaves_ malware used to target numerous Japanese defense groups and found it was directly sourced from Trochilus code, but it has undergone several evolutions and contains prefixes suggesting it could also be used to target Russia and the DPRK. There is no conclusive evidence at this time that RedLeaves is solely attributed to STONE PANDA. _Baobeilong_ did maintain a Flickr account with numerous pictures that proved key in identifying his location later, similar to how _cpyy_ ’s photos helped identify his affiliation to the People’s Liberation Army (PLA) in CrowdStrike’s [PUTTER PANDA report](/en-us/blog/hat-tribution-pla-unit-61486/). IntrusionTruth then drew connections from _baobeilong_ ’s other online accounts to registrant details for _xiaohong <.>org_, which dated back to 2007 and revealed ZHANG’s full name—ZHANG Shilong. From there, a trail of overlapping registrant details reveals ZHANG’s hanzi characters for his name (张世龙), likely one of his personal home addresses, potential work addresses and several email addresses:
+
+  * long@xiaohong<.>org
+  * baobei@xiaohong<.>org
+  * atreexp@yahoo<.>com.cn 
+  * robin4700@foxmail<.>com
+  * eshilong@vip.qq<.>com
+
+
+
+
+Specifically tracing registrant details from atreexp → robin4700 → eshilong shows that ZHANG was active registering sites as recently as June 5, 2018, including a personal blog where his picture and name features prominently along with several technology-related blog posts.
+
+![](https://www.crowdstrike.com/content/dam/crowdstrike/www/en-us/wp/2018/08/Stone-Panda-fig-4.png)A picture from baobeilong’s Flickr account shows a fire at the Tianjin Medical Center 120
+
+#### **Laoying Baichen Instruments**
+
+The original blog post on GAO lists his contact information in recruitment postings for two separate companies, one of which is Laoying Baichen Instruments (characters unknown at the time of this writing). No records could be found for such a firm, however, IntrusionTruth lists the address associated with it as Room 1102, Guanfu Mansion, 46 Xinkai Road, Hedong District, Tianjin (天津市河东区新开路46号冠福大厦1102). During the course of investigating Laoying and the Guanfu mansion, Falcon Intelligence noticed that the Guanfu Mansion is also the registered address of a firm called Tianjin Henglide Technology Co., Ltd. (恒利德天津科技有限公司), which is listed as one of only a few “review centers” certified by CNITSEC in Tianjin5. Laoying and Henglide are listed as being on different floors, however having a CNITSEC review center in the same building is noteworthy given CNITSEC’s connection to MSS and previous linkage to Boyusec/GOTHIC PANDA.
+
+![](https://www.crowdstrike.com/content/dam/crowdstrike/www/en-us/wp/2018/08/Stone-Panda-fig-5.png)Zhang is believed to have taken the photo of the fire from the Wanchan Meizhuan Mansion. This is relatively close to both the Yuyang Complex (one of Zhang’s listed registrant addresses) and the Guanfu Mansion, Laoying Baichen’s listed address.
+
+#### **Tianjin Huaying Haitai Science and Technology Development Company**
+
+The other firm GAO appears to have been recruiting for is Huaying Haitai (天津华盈海泰科技发展有限公司). As the IntrusionTruth blog post mentions, it is a registered firm with two listed representatives, Fang Ting (方亭) and Sun Lei (孙杰), and a listed address of 1906 Fuyu Mansion (天津市河西区解放南路中段西侧富裕大厦1-1906). Searches for more information on Huaying Haitai turned up two interesting government documents. One is a recruitment Excel sheet detailing recent graduates, their majors and their new employers and addresses. Huaying Haitai is listed as having hired a recently graduated female student from Nankai University in 2013 who majored in Japanese. This is interesting considering STONE PANDA’s extensive targeting of Japanese defense firms after this time period, but it is by no means conclusive evidence that the firm is connected to STONE PANDA. ![](https://www.crowdstrike.com/content/dam/crowdstrike/www/en-us/wp/2018/08/Stone-Panda-fig-6.png) The second government document lists Huaying Haitai as the co-organizer of a Network Security Attack and Defense competition with the Ministry of Industry and Information Technology’s (MIIT) national training entity, NSACE6. It was open for all students of Henan Province. NSACE appears to be a national education body that teaches network information security, including offensive activity7. This information is particularly interesting given Boyusec’s previous work at CNITSEC’s Guangdong subsidiary setting up a joint active defense lab8.
+
+It suggests that these technology firms act as both shell companies and recruitment grounds for potential MSS use in cyber operations. ![](https://www.crowdstrike.com/content/dam/crowdstrike/www/en-us/wp/2018/08/Stone-Panda-fig-7-2.png)
+
+### MSS Tianjin Bureau
+
+The most recent IntrusionTruth post assesses that GAO’s Uber rides frequently took him from Huaying’s address at the Fuyu Mansion to 85 Zhujiang Road (珠江道85号). ![](https://www.crowdstrike.com/content/dam/crowdstrike/www/en-us/wp/2018/08/Stone-Panda-fig-8.png) When observed closely, the compound is a striking one complete with towers, a fenced perimeter with surveillance cameras, guarded entrances, and a building with a significant number of satellite dishes. ![](https://www.crowdstrike.com/content/dam/crowdstrike/www/en-us/wp/2018/08/Stone-Panda-fig-9.png) There are no markers on the building and no government listed address; however, it is apparently difficult for locals to determine where the Tianjin Bureau’s location is as well. There are several Baidu questions asking what transportation routes are best to get to that specific address. Three separate ones specifically mention the 85 Zhujiang Road address as the headquarters for the MSS’s Tianjin Bureau and the difficulty in finding its location9 10 11. ![](https://www.crowdstrike.com/content/dam/crowdstrike/www/en-us/wp/2018/08/Stone-Panda-fig-10.png) As with most cyber-enabled operations, satellite arrays are often indicative of installations with significant signals intelligence (SIGINT) capabilities. The Tianjin Bureau appears to have the potential for such capabilities, housing several large arrays that appear to have existed since at least January 2004.
+
+![](https://www.crowdstrike.com/content/dam/crowdstrike/www/en-us/wp/2018/08/Stone-Panda-fig-11-12-1024x311.png)Barely visible satellite dishes from the street view of 85 Zhujiang Road outside the compound
+
+## Conclusion
+
+There are still significant intelligence gaps that prevent Falcon Intelligence from making an assessment about STONE PANDA’s potential connections to the MSS Tianjin Bureau with a high degree of confidence. However, additional information is likely to materialize either directly from IntrusionTruth or from other firms in the infosec community who are undoubtedly looking at this material as well and may have unique insight of their own. Ultimately, IntrusionTruth’s prior releases on GOTHIC PANDA proved accurate and led to a U.S. Department of Justice indictment resulting in the dismantling of Boyusec. From their latest post, which contains GAO’s Uber receipts, it is clear the group’s information likely goes beyond merely available OSINT data. It cannot be ignored that there are striking similarities between the entities associated with GOTHIC PANDA and the actors and firms mentioned in the blogs about STONE PANDA. In addition, FalconIntelligence notes that following the late 2015 Sino-U.S. brief cyber detente, much of the responsibility for western cyber intrusion operations was handed to the MSS as the PLA underwent an extensive reform that is still currently underway, and which is consolidating its military cyber forces under the Strategic Support Force. Though the detente saw an initial drop in Chinese intrusion activity, it has steadily been increasing over the past several years, with a majority of the intrusions into western firms being conducted by suspected contractors. These adversaries are tracked by CrowdStrike as GOTHIC PANDA, STONE PANDA, WICKED PANDA, JUDGMENT PANDA, and KRYPTONITE PANDA. Many of these adversaries have begun targeting supply chain and upstream providers to establish a potential platform for future operations and enable the collection of larger sets of data. While the APT1, PUTTER PANDA, and Operation CameraShy reports all exposed PLA units at a time when Chinese military hacking against western firms was rampant, the attention has now swung toward identifying MSS contractors. The exposure of STONE PANDA as an MSS contractor would be another blow to China’s current cyber operations given STONE PANDA’s prolific targeting of a variety of sectors, and may prompt an additional U.S. investigation at a tenuous time for Sino-U.S. relations during an ongoing trade war. However, it is important to note that such public revelations often force these actors to cease operations, improve their operational security (OPSEC), and then return stronger than before. As such, CrowdStrike Falcon® Intelligence assesses that although Boyusec may have shuttered, elements of GOTHIC PANDA are likely to still be active. The same is likely to be true for STONE PANDA following a period of silence.
+
+The activities of STONE PANDA impact entities in the [Aerospace & Defense](https://falcon.crowdstrike.com/intelligence/actors?filter=target_industries.value.raw%3A%27Aerospace%20%26%20Defense%27), [Government](https://falcon.crowdstrike.com/intelligence/actors?filter=target_industries.value.raw%3A%27Government%27),
+
+[Healthcare](https://falcon.crowdstrike.com/intelligence/actors?filter=target_industries.value.raw%3A%27Healthcare%27), [Technology](https://falcon.crowdstrike.com/intelligence/actors?filter=target_industries.value.raw%3A%27Technology%27),
+
+[Telecommunications Services](https://falcon.crowdstrike.com/intelligence/actors?filter=target_industries.value.raw%3A%27Telecommunications%20Services%27) of several nations. _For more information on how to incorporate intelligence on threat actors like STONE PANDA into your security strategy, please visit the [Falcon Intelligence product page](/en-us/endpoint-security-products/falcon-x-threat-intelligence/)._
+
+##### Footnotes
+
+  1. http://kjbz.mca.gov<.>cn/article/mzbzhzcwj/201106/20110600157934.shtml
+  2. http://bjgwql<.>com/a/hezuojiaoliu/2011/0422/288.htm
+  3. http://alumni.ecnu.edu<.>cn/s/328/t/528/3b/02/info80642.htm
+  4. http://down.51cto<.>com/424761/down/1/
+  5. http://www.djbh<.>net/webdev/web/LevelTestOrgAction.do?p=nlbdLv3&id=402885cb35d11a540135d168e41e000c
+  6. http://rjzyjsxy.zzia.edu<.>cn/picture/article/25/27/01/6c8b24a143f9959a85301d4527f0/801f81cf-8f30-4aa4-8428-7f9d4e778e76.doc
+  7. http://www.yingjiesheng<.>com/job-001-607-536.html
+  8. https://www.recordedfuture.com/chinese-mss-behind-apt3/
+  9. https://zhidao.baidu<.>com/question/1046720364336588899.html?fr=iks&word=%CC%EC%BD%F2%CA%D0%D6%E9%BD%AD%B5%C085%BA%C5%CA%C7%CA%B2%C3%B4%B5%A5%CE%BB%C2%EF&ie=gbk
+  10. https://zhidao.baidu<.>com/question/146035392.html?fr=iks&word=%CC%EC%BD%F2%CA%D0%D6%E9%BD%AD%B5%C085%BA%C5%CA%C7%CA%B2%C3%B4%B5%A5%CE%BB%C2%EF&ie=gbk
+  11. https://zhidao.baidu<.>com/question/223614321.html?fr=iks&word=%CC%EC%BD%F2%CA%D0%D6%E9%BD%AD%B5%C085%BA%C5%CA%C7%CA%B2%C3%B4%B5%A5%CE%BB%C2%EF&ie=gbk
+
+
+
+[ ](https://www.linkedin.com/shareArticle) [ ](https://twitter.com/share)
+
+* * *
+
+#### Related Content
+
+[ ![PhantomRaven: An LLM-Generated Information Stealer Developed for Bug Bounty Hunting](https://assets.crowdstrike.com/is/image/crowdstrikeinc/Blog-InfoStealer?wid=2048&hei=1349&fmt=png-alpha&qlt=95,0&resMode=sharp2&op_usm=3.0,0.3,2,0) Threat Hunting & Intel | Sep 15, 2026  PhantomRaven: An LLM-Generated Information Stealer Developed for Bug Bounty Hunting ](/en-us/blog/phantomraven-llm-generated-information-stealer-for-bug-bounty-hunting/) [ ![Peer Pressure: Inside the Sality Botnet Disruption Operation](https://assets.crowdstrike.com/is/image/crowdstrikeinc/Blog-FalCon-Sality?wid=1060&hei=698&fmt=png-alpha&qlt=95,0&resMode=sharp2&op_usm=3.0,0.3,2,0) Threat Hunting & Intel | Sep 01, 2026  Peer Pressure: Inside the Sality Botnet Disruption Operation ](/en-us/blog/inside-sality-botnet-disruption-operation/) [ ![CrowdStrike 2026 Threat Hunting Report: Exploitation Window Closes as AI Use Accelerates](https://assets.crowdstrike.com/is/image/crowdstrikeinc/Blog-THR-2026?wid=1060&hei=698&fmt=png-alpha&qlt=95,0&resMode=sharp2&op_usm=3.0,0.3,2,0) Threat Hunting & Intel | Aug 03, 2026  CrowdStrike 2026 Threat Hunting Report: Exploitation Window Closes as AI Use Accelerates ](/en-us/blog/crowdstrike-2026-threat-hunting-report/)

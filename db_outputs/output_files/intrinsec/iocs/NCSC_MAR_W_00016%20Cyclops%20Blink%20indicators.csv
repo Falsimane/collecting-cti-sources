@@ -1,0 +1,42 @@
+type,value,context,description
+md5,d01e2c2e8df92edeb8298c55211bc4b6,Cyclops Blink sample,"Cyclops Blink - Linux ELF PowerPC big-endian. The size corresponds to the complete file, but the hash values correspond to the executable code segment only."
+sha1,3adf9a59743bc5d8399f67cab5eb2daf28b9b863,Cyclops Blink sample,"Cyclops Blink - Linux ELF PowerPC big-endian. The size corresponds to the complete file, but the hash values correspond to the executable code segment only."
+sha256,50df5734dd0c6c5983c21278f119527f9fdf6ef1d7e808a29754ebc5253e9a86,Cyclops Blink sample,"Cyclops Blink - Linux ELF PowerPC big-endian. The size corresponds to the complete file, but the hash values correspond to the executable code segment only."
+md5,bbb76de7654337fb6c2e851d106cebc7,Cyclops Blink sample,"Cyclops Blink - Linux ELF PowerPC big-endian. The size corresponds to the complete file, but the hash values correspond to the executable code segment only."
+sha1,c59bc17659daca1b1ce65b6af077f86a648ad8a8,Cyclops Blink sample,"Cyclops Blink - Linux ELF PowerPC big-endian. The size corresponds to the complete file, but the hash values correspond to the executable code segment only."
+sha256,c082a9117294fa4880d75a2625cf80f63c8bb159b54a7151553969541ac35862,Cyclops Blink sample,"Cyclops Blink - Linux ELF PowerPC big-endian. The size corresponds to the complete file, but the hash values correspond to the executable code segment only."
+md5,3c9d46dc4e664e20f1a7256e14a33766,Cyclops Blink sample,Cyclops Blink embedded ELF - Linux ELF PowerPC big-endian
+sha1,7d61c0dd0cd901221a9dff9df09bb90810754f10,Cyclops Blink sample,Cyclops Blink embedded ELF - Linux ELF PowerPC big-endian
+sha256,4e69bbb61329ace36fbe62f9fb6ca49c37e2e5a5293545c44d155641934e39d1,Cyclops Blink sample,Cyclops Blink embedded ELF - Linux ELF PowerPC big-endian
+md5,3f22c0aeb1eec4350868368ea1cc798c,Cyclops Blink sample,Cyclops Blink embedded ELF - Linux ELF PowerPC big-endian
+sha1,438cd40caca70cafe5ca436b36ef7d3a6321e858,Cyclops Blink sample,Cyclops Blink embedded ELF - Linux ELF PowerPC big-endian
+sha256,ff17ccd8c96059461710711fcc8372cfea5f0f9eb566ceb6ab709ea871190dc6,Cyclops Blink sample,Cyclops Blink embedded ELF - Linux ELF PowerPC big-endian
+path,/usr/bin/cpd,"derived from Cyclops Blink sample MD5s: d01e2c2e8df92edeb8298c55211bc4b6, bbb76de7654337fb6c2e851d106cebc7",Path location of Cyclops Blink executable
+path,/pending/bin/install_upgraded,"derived from Cyclops Blink sample MD5s: 3c9d46dc4e664e20f1a7256e14a33766, 3f22c0aeb1eec4350868368ea1cc798c",Path location to backed-up legitimate install_upgrade executable
+ipv4-address,100.43.220.234,derived from Cyclops Blink sample MD5s: d01e2c2e8df92edeb8298c55211bc4b6,C2 server IP address
+ipv4-address,96.80.68.193,derived from Cyclops Blink sample MD5s: d01e2c2e8df92edeb8298c55211bc4b6,C2 server IP address
+ipv4-address,188.152.254.170,derived from Cyclops Blink sample MD5s: d01e2c2e8df92edeb8298c55211bc4b6,C2 server IP address
+ipv4-address,208.81.37.50,derived from Cyclops Blink sample MD5s: d01e2c2e8df92edeb8298c55211bc4b6,C2 server IP address
+ipv4-address,70.62.153.174,derived from Cyclops Blink sample MD5s: d01e2c2e8df92edeb8298c55211bc4b6,C2 server IP address
+ipv4-address,2.230.110.137,derived from Cyclops Blink sample MD5s: d01e2c2e8df92edeb8298c55211bc4b6,C2 server IP address
+ipv4-address,90.63.245.175,derived from Cyclops Blink sample MD5s: d01e2c2e8df92edeb8298c55211bc4b6,C2 server IP address
+ipv4-address,212.103.208.182,derived from Cyclops Blink sample MD5s: d01e2c2e8df92edeb8298c55211bc4b6,C2 server IP address
+ipv4-address,50.255.126.65,derived from Cyclops Blink sample MD5s: d01e2c2e8df92edeb8298c55211bc4b6,C2 server IP address
+ipv4-address,78.134.89.167,derived from Cyclops Blink sample MD5s: d01e2c2e8df92edeb8298c55211bc4b6,C2 server IP address
+ipv4-address,81.4.177.118,derived from Cyclops Blink sample MD5s: bbb76de7654337fb6c2e851d106cebc7,C2 server IP address
+ipv4-address,24.199.247.222,derived from Cyclops Blink sample MD5s: bbb76de7654337fb6c2e851d106cebc7,C2 server IP address
+ipv4-address,37.99.163.162,derived from Cyclops Blink sample MD5s: bbb76de7654337fb6c2e851d106cebc7,C2 server IP address
+ipv4-address,37.71.147.186,derived from Cyclops Blink sample MD5s: bbb76de7654337fb6c2e851d106cebc7,C2 server IP address
+ipv4-address,105.159.248.137,derived from Cyclops Blink sample MD5s: bbb76de7654337fb6c2e851d106cebc7,C2 server IP address
+ipv4-address,80.155.38.210,derived from Cyclops Blink sample MD5s: bbb76de7654337fb6c2e851d106cebc7,C2 server IP address
+ipv4-address,217.57.80.18,derived from Cyclops Blink sample MD5s: bbb76de7654337fb6c2e851d106cebc7,C2 server IP address
+ipv4-address,151.0.169.250,derived from Cyclops Blink sample MD5s: bbb76de7654337fb6c2e851d106cebc7,C2 server IP address
+ipv4-address,212.202.147.10,derived from Cyclops Blink sample MD5s: bbb76de7654337fb6c2e851d106cebc7,C2 server IP address
+ipv4-address,212.234.179.113,derived from Cyclops Blink sample MD5s: bbb76de7654337fb6c2e851d106cebc7,C2 server IP address
+ipv4-address,185.82.169.99,derived from Cyclops Blink sample MD5s: bbb76de7654337fb6c2e851d106cebc7,C2 server IP address
+ipv4-address,93.51.177.66,derived from Cyclops Blink sample MD5s: bbb76de7654337fb6c2e851d106cebc7,C2 server IP address
+ipv4-address,80.15.113.188,derived from Cyclops Blink sample MD5s: bbb76de7654337fb6c2e851d106cebc7,C2 server IP address
+ipv4-address,80.153.75.103,derived from Cyclops Blink sample MD5s: bbb76de7654337fb6c2e851d106cebc7,C2 server IP address
+ipv4-address,109.192.30.125,derived from Cyclops Blink sample MD5s: bbb76de7654337fb6c2e851d106cebc7,C2 server IP address
+path,/var/tmp/a.tmp,"derived from Cyclops Blink sample MD5s: d01e2c2e8df92edeb8298c55211bc4b6, bbb76de7654337fb6c2e851d106cebc7",Default path location for downloaded files
+filename,rootfs_cfg,"derived from Cyclops Blink sample MD5s: d01e2c2e8df92edeb8298c55211bc4b6, bbb76de7654337fb6c2e851d106cebc7",Name of file used to persist C2 server IP addresses on the device filesystem

