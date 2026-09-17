@@ -790,4 +790,4 @@ Internal case #17386 Share this entry
   * [Share on WhatsApp](https://api.whatsapp.com/send?text=https://thedfirreport.com/2023/01/09/unwrapping-ursnifs-gifts/)
   * [Share on Linkedin](https://linkedin.com/shareArticle?mini=true&title=Unwrapping%20Ursnifs%20Gifts&url=https://thedfirreport.com/2023/01/09/unwrapping-ursnifs-gifts/)
   * [Share on Reddit](https://reddit.com/submit?url=https://thedfirreport.com/2023/01/09/unwrapping-ursnifs-gifts/&title=Unwrapping%20Ursnifs%20Gifts)
-  * [Share by Mail](/cdn-cgi/l/email-protection#a29dd1d7c0c8c7c1d69ff7ccd5d0c3d2d2cbccc5879092f7d0d1cccbc4d1879092e5cbc4d6d1848192919a99c0cdc6db9fcad6d6d2d1988d8dd6cac7c6c4cbd0d0c7d2cdd0d68cc1cdcf8d909290918d92938d929b8dd7ccd5d0c3d2d2cbccc58fd7d0d1cccbc4d18fc5cbc4d6d18d)
+  * [Share by Mail](/cdn-cgi/l/email-protection#407f3335222a2523347d152e3732213030292e276572701532332e292633657270072926343366637073787b222f24397d28343430337a6f6f342825242629323225302f32346e232f2d6f727072736f70716f70796f352e3732213030292e276d3532332e2926336d27292634336f)

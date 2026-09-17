@@ -32,6 +32,8 @@ How an IAM solution works
 
 In the next part of this blog post, we will look at how Sekoia set up detection rules for Okta and JumpCloud technologies.
 
+‍
+
 ## Okta and JumpCloud: the big picture
 
 Okta and JumpCloud are two major IAM solutions, offering powerful features for organisation’s identity management.
@@ -184,9 +186,9 @@ It is essential to take the time to reflect on the effectiveness of these simple
 
 The aim is to strike a balance between effectively identifying potential threats and minimising false positives. An effective approach to this evaluation is to use test tools, such as [Dorothy](https://github.com/elastic/dorothy), in a simulated environment. This method provides a concrete validation of the rules' performance in the face of suspicious behaviour.
 
-![Dorothy is a free and open source tool that offers various modules simulating the actions of an attacker in an Okta environment, aligned with MITRE ATT&CK tactics.](https://cdn.prod.website-files.com/69b190e7f47e4c44b0ee07d8/6a92a5efc5553634ac94f164_6a92a32c3e6167cebbf6508e_6a2a7c7ee2d8f7e583ca926d.webp)
+![Dorothy is a free and open source tool that offers various modules simulating the actions of an attacker in an Okta environment, aligned with MITRE ATT&CK tactics](https://cdn.prod.website-files.com/69b190e7f47e4c44b0ee07d8/6aaab625de070f3e0b74c74a_Dorothy.webp)
 
-Dorothy is a free and open source tool that offers various modules simulating the actions of an attacker in an Okta environment, aligned with MITRE ATT&CK tactics.
+Dorothy is a free and open source tool that offers various modules simulating the actions of an attacker in an Okta environment, aligned with MITRE ATT&CK tactics
 
 Dorothy is a free and open source tool that offers various modules simulating the actions of an attacker in an Okta environment, aligned with MITRE ATT&CK tactics. It aims at helping defenders evaluate their visibility and security controls. It does not allow initial access or privilege escalation, but it provides many commands related to Discovery, Defense Evasion, Persistence and Impact : The use of Dorothy requires a valid Okta API token with administrative roles. The user-friendly shell interface, accompanied by context-sensitive help, facilitates navigation and intrusion simulation. Additional features include configuration profiles and detailed logging with event indexing in Elasticsearch, ensuring full traceability of actions performed with Dorothy. The following figure shows how Sekoia rules matched when played a Dorothy scenario performing discovery and defense evasion activities on an Okta tenant :
 

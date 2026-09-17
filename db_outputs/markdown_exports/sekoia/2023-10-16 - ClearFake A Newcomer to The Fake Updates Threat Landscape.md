@@ -22,9 +22,9 @@ Sekoia.io’s Threat & Detection Research (TDR) team investigated this emerging 
 
 Here is an overview of the infection chains’ stages observed distributing commodity malware via ClearFake:
 
-![](https://cdn.prod.website-files.com/69b190e7f47e4c44b0ee07d8/6a92a6033e6167cebbf7e0be_6a92a36ebd6424423eef490a_6a5a93ec3a812fde363403db.webp)
+![ClearFake installation flow, as of 30 September 2023](https://cdn.prod.website-files.com/69b190e7f47e4c44b0ee07d8/6aaaa6029806294b5e00f266_ClearFake%20installation%20flow%2C%20as%20of%2030%20September%202023.webp)
 
-**ClearFake installation flow, as of 30 September 2023** _(Click on the image for a better view)_
+ClearFake installation flow, as of 30 September 2023
 
 ### Injected JavaScript code
 
@@ -363,13 +363,13 @@ Injected JavaScript code by ClearFake operators
 
 Injected JavaScript used since 28 September 2023:
 
-![Injected JavaScript code by ClearFake operators](https://cdn.prod.website-files.com/69b190e7f47e4c44b0ee07d8/6a92a6033e6167cebbf7e0b9_6a92a36b2b0ef7af46bd10e0_6a2a7c31bf2797708e089f8b.webp)
+![Injected JavaScript code by ClearFake operators](https://cdn.prod.website-files.com/69b190e7f47e4c44b0ee07d8/6aaaa66eb43a8714c003c331_Injected%20JavaScript%20code%20by%20ClearFake%20operators.webp)
 
 Injected JavaScript code by ClearFake operators
 
 The script decodes to:
 
-![Injected JavaScript code by ClearFake operators](https://cdn.prod.website-files.com/69b190e7f47e4c44b0ee07d8/6a92a6033e6167cebbf7e0b6_6a92a36ccd1cab63350cb4a4_6a2a7c31bf2797708e089f90.webp)
+![Injected JavaScript code by ClearFake operators](https://cdn.prod.website-files.com/69b190e7f47e4c44b0ee07d8/6aaaa6f24db7f1f0e032888e_Injected%20JavaScript%20code%20by%20ClearFake%20operators.webp)
 
 Injected JavaScript code by ClearFake operators
 
@@ -383,7 +383,7 @@ Injected JavaScript code by ClearFake operators
 
 First next stage payload downloaded by the injected JavaScript from the Binance Smart Chain:
 
-![Injected JavaScript code by ClearFake operators](https://cdn.prod.website-files.com/69b190e7f47e4c44b0ee07d8/6a92a6033e6167cebbf7e0d0_6a92a36dcd1cab63350cb4fe_6a2a7c31bf2797708e08a01c.webp)
+![Injected JavaScript code by ClearFake operators](https://cdn.prod.website-files.com/69b190e7f47e4c44b0ee07d8/6aaaa54c81c23739c0e6b555_Injected%20JavaScript%20code%20by%20ClearFake%20operators.webp)
 
 Injected JavaScript code by ClearFake operators
 
@@ -395,6 +395,6 @@ Injected JavaScript code by ClearFake operators
 
 Third next stage payload serving as a fake update interface and downloading the fake update content:
 
-![Injected JavaScript code by ClearFake operators](https://cdn.prod.website-files.com/69b190e7f47e4c44b0ee07d8/6a92a6033e6167cebbf7e0c1_6a92a369e36224e46e90f4d8_6a2a7c30bf2797708e089f72.webp)
+![](https://cdn.prod.website-files.com/69b190e7f47e4c44b0ee07d8/6aaaa7484db7f1f0e032e6d4_Injected%20JavaScript%20code%20by%20ClearFake%20operators.webp)
 
-Injected JavaScript code by ClearFake operators
+Injected JavaScript code by ClearFake operator

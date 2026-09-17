@@ -322,4 +322,4 @@ Internal case 3580
   * [Share on WhatsApp](https://api.whatsapp.com/send?text=https://thedfirreport.com/2021/06/03/weblogic-rce-leads-to-xmrig/)
   * [Share on Linkedin](https://linkedin.com/shareArticle?mini=true&title=WebLogic%20RCE%20Leads%20to%20XMRig&url=https://thedfirreport.com/2021/06/03/weblogic-rce-leads-to-xmrig/)
   * [Share on Reddit](https://reddit.com/submit?url=https://thedfirreport.com/2021/06/03/weblogic-rce-leads-to-xmrig/&title=WebLogic%20RCE%20Leads%20to%20XMRig)
-  * [Share by Mail](/cdn-cgi/l/email-protection#f8c78b8d9a929d9b8cc5af9d9ab4979f919bddcac8aabbbdddcac8b49d999c8bddcac88c97ddcac8a0b5aa919fdedbc8cbc0c39a979c81c5908c8c888bc2d7d78c909d9c9e918a8a9d88978a8cd69b9795d7cac8cac9d7c8ced7c8cbd78f9d9a94979f919bd58a9b9dd5949d999c8bd58c97d580958a919fd7)
+  * [Share by Mail](/cdn-cgi/l/email-protection#96a9e5e3f4fcf3f5e2abc1f3f4daf9f1fff5b3a4a6c4d5d3b3a4a6daf3f7f2e5b3a4a6e2f9b3a4a6cedbc4fff1b0b5a6a5aeadf4f9f2efabfee2e2e6e5acb9b9e2fef3f2f0ffe4e4f3e6f9e4e2b8f5f9fbb9a4a6a4a7b9a6a0b9a6a5b9e1f3f4faf9f1fff5bbe4f5f3bbfaf3f7f2e5bbe2f9bbeefbe4fff1b9)

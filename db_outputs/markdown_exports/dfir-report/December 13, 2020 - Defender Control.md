@@ -192,4 +192,4 @@ Internal case 1011
   * [Share on WhatsApp](https://api.whatsapp.com/send?text=https://thedfirreport.com/2020/12/13/defender-control/)
   * [Share on Linkedin](https://linkedin.com/shareArticle?mini=true&title=Defender%20Control&url=https://thedfirreport.com/2020/12/13/defender-control/)
   * [Share on Reddit](https://reddit.com/submit?url=https://thedfirreport.com/2020/12/13/defender-control/&title=Defender%20Control)
-  * [Share by Mail](/cdn-cgi/l/email-protection#92ade1e7f0f8f7f1e6afd6f7f4f7fcf6f7e0b7a0a2d1fdfce6e0fdfeb4b1a2a1aaa9f0fdf6ebaffae6e6e2e1a8bdbde6faf7f6f4fbe0e0f7e2fde0e6bcf1fdffbda0a2a0a2bda3a0bda3a1bdf6f7f4f7fcf6f7e0bff1fdfce6e0fdfebd)
+  * [Share by Mail](/cdn-cgi/l/email-protection#bd82cec8dfd7d8dec980f9d8dbd8d3d9d8cf988f8dfed2d3c9cfd2d19b9e8d8e8586dfd2d9c480d5c9c9cdce879292c9d5d8d9dbd4cfcfd8cdd2cfc993ded2d0928f8d8f8d928c8f928c8e92d9d8dbd8d3d9d8cf90ded2d3c9cfd2d192)

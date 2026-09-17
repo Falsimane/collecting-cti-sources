@@ -277,13 +277,13 @@ In this way, it is fairly easy to administer these different websites from a tec
 
 **Website**| **Yandex Metrika counter**| **Creation date**  
 ---|---|---  
-` newsroad[.]online`| 88289747| 2022-04-06  
-`newsbd[.]ru`| 2022-03-18  
-`nnewws[.]ru`| 2022-03-10  
-`lastminutenews[.]ru`| 2022-03-10  
-`eventality[.]ru`| 2022-03-10  
-`myfreshnews[.]ru`| 2021-07-12  
-`edurustoday[.]ru`| 2020-05-13  
+newsroad[.]online| 88289747| 2022-04-06  
+newsbd[.]ru| 2022-03-18  
+nnewws[.]ru| 2022-03-10  
+lastminutenews[.]ru| 2022-03-10  
+eventality[.]ru| 2022-03-10  
+myfreshnews[.]ru| 2021-07-12  
+edurustoday[.]ru| 2020-05-13  
   
 According to [VIGINUM](https://www.sgdsn.gouv.fr/files/files/20230619_NP_VIGINUM_RAPPORT-CAMPAGNE-RRN_VF.pdf), these websites were operational during the period of "increased manoeuvring" identified as June to September 2022. In addition, for sites such as eventality[.]ru and lastminutesnews[.]ru, we note the use of urlbox[.]online at the second level, which is used to generate shortened URLs redirecting to legitimate journalistic sites. 
 
@@ -294,7 +294,7 @@ Sekoia analysts identified four campaign IDs written in Russian: “**Prez** ”
 
 A detailed analysis of the content of these websites is presented in the table below:
 
-![__wf_reserved_inherit](https://cdn.prod.website-files.com/69b190e7f47e4c44b0ee07d8/6a92a5bc3e6167cebbf7b79c_6a92a2b93e6167cebbf60965_6a54f72337e32c3270a31382.webp)
+![](https://cdn.prod.website-files.com/69b190e7f47e4c44b0ee07d8/6a92a5bc3e6167cebbf7b79c_6a92a2b93e6167cebbf60965_6a54f72337e32c3270a31382.webp)
 
 Content analysis of Russian disinformation websites.  
 Source: Sekoia TDR Team

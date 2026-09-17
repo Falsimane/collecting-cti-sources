@@ -90,7 +90,7 @@ The macro embedded in the second document is much more straightforward. It gets 
 
 The full chain can be summarised in the scheme below:
 
-![Mapping of the infection chain related to the cyber espionage campaign targeting Central Asia, Kazakhstan and leading to the execution of the HATVIBE malware. Source: Sekoia TDR Team](https://cdn.prod.website-files.com/69b190e7f47e4c44b0ee07d8/6a271a16e10814cc674063a2_Hatvibe-execution.svg)
+![Mapping of the infection chain related to the cyber espionage campaign targeting Central Asia, Kazakhstan and leading to the execution of the HATVIBE malware](https://cdn.prod.website-files.com/69b190e7f47e4c44b0ee07d8/6aab9a8a83de71ccef656322_Mapping%20of%20the%20infection%20chain%20hatvibe.webp)
 
 Mapping of the infection chain related to the cyber espionage campaign targeting Central Asia, Kazakhstan and leading to the execution of the HATVIBE malware. Source: Sekoia TDR Team
 
@@ -100,7 +100,7 @@ What makes this Double-Tap infection chain quite unique is that it employs many 
 
 The HTA launched by the scheduled task contains the VBS backdoor named “HATVIBE” by the CERT-UA. The aim of this backdoor is to receive VBS modules for execution from a remote C2 server. Once received, HATVIBE uses a simple XOR algorithm to decrypt each module, contact it between two <script> tags before adding it to the HTML body of the HTA file, leading to the automatic execution of the received module.
 
-![Mapping of the infection chain leading to the execution of the HATVIBE malware. Source: Sekoia TDR Team](https://cdn.prod.website-files.com/69b190e7f47e4c44b0ee07d8/6a92a57da2f46752fd02ecfd_6a92a21c3e6167cebbf5b6a9_6a2a7ec186e50b3f6152f6f2.webp)
+![Mapping of the infection chain leading to the execution of the HATVIBE malware. Source: Sekoia TDR Team](https://cdn.prod.website-files.com/69b190e7f47e4c44b0ee07d8/6aab9919f3d16abffcc7b4b9_Mapping%20of%20the%20infection%20chain%20leading%20to%20the%20execution%20of%20the%20HATVIBE%20malware.webp)
 
 Mapping of the infection chain leading to the execution of the HATVIBE malware. Source: Sekoia TDR Team
 
@@ -254,7 +254,7 @@ download-resourses[.]info| 213.159.79[.]56| 22/10/2024
 
 ### Deobfuscated HATVIBE VBA code
 
-![Deobfuscated HATVIBE VBA code](https://cdn.prod.website-files.com/69b190e7f47e4c44b0ee07d8/6a92a57da2f46752fd02ed03_6a92a21d65cc84bc266e812e_6a2a7ec286e50b3f6152f70a.webp)
+![Deobfuscated HATVIBE VBA code](https://cdn.prod.website-files.com/69b190e7f47e4c44b0ee07d8/6aab98961fe8e6775acfb9ef_Deobfuscated%20HATVIBE%20VBA%20code.webp)
 
 Deobfuscated HATVIBE VBA code
 

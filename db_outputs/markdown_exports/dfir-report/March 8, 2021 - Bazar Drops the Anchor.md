@@ -714,4 +714,4 @@ Internal case #1017
   * [Share on WhatsApp](https://api.whatsapp.com/send?text=https://thedfirreport.com/2021/03/08/bazar-drops-the-anchor/)
   * [Share on Linkedin](https://linkedin.com/shareArticle?mini=true&title=Bazar%20Drops%20the%20Anchor&url=https://thedfirreport.com/2021/03/08/bazar-drops-the-anchor/)
   * [Share on Reddit](https://reddit.com/submit?url=https://thedfirreport.com/2021/03/08/bazar-drops-the-anchor/&title=Bazar%20Drops%20the%20Anchor)
-  * [Share by Mail](/cdn-cgi/l/email-protection#5e612d2b3c343b3d2a631c3f243f2c7b6c6e1a2c312e2d7b6c6e2a363b7b6c6e1f303d36312c787d6e6d66653c313a2763362a2a2e2d6471712a363b3a38372c2c3b2e312c2a703d3133716c6e6c6f716e6d716e66713c3f243f2c733a2c312e2d732a363b733f303d36312c71)
+  * [Share by Mail](/cdn-cgi/l/email-protection#3b04484e59515e584f06795a415a491e090b7f49544b481e090b4f535e1e090b7a55585354491d180b08030059545f4206534f4f4b480114144f535e5f5d5249495e4b54494f1558545614090b090a140b08140b0314595a415a49165f49544b48164f535e165a555853544914)

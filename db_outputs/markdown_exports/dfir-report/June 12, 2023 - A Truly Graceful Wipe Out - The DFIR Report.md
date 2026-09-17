@@ -979,4 +979,4 @@ Internal case #21619
   * [Share on WhatsApp](https://api.whatsapp.com/send?text=https://thedfirreport.com/2023/06/12/a-truly-graceful-wipe-out/)
   * [Share on Linkedin](https://linkedin.com/shareArticle?mini=true&title=A%20Truly%20Graceful%20Wipe%20Out&url=https://thedfirreport.com/2023/06/12/a-truly-graceful-wipe-out/)
   * [Share on Reddit](https://reddit.com/submit?url=https://thedfirreport.com/2023/06/12/a-truly-graceful-wipe-out/&title=A%20Truly%20Graceful%20Wipe%20Out)
-  * [Share by Mail](/cdn-cgi/l/email-protection#b986caccdbd3dcdacd84f89c8b89edcbccd5c09c8b89fecbd8dadcdfccd59c8b89eed0c9dc9c8b89f6cccd9f9a898a8182dbd6ddc084d1cdcdc9ca839696cdd1dcdddfd0cbcbdcc9d6cbcd97dad6d4968b898b8a96898f96888b96d894cdcbccd5c094decbd8dadcdfccd594ced0c9dc94d6cccd96)
+  * [Share by Mail](/cdn-cgi/l/email-protection#efd09c9a8d858a8c9bd2aecadddfbb9d9a8396cadddfa89d8e8c8a899a83cadddfb8869f8acadddfa09a9bc9ccdfdcd7d48d808b96d2879b9b9f9cd5c0c09b878a8b89869d9d8a9f809d9bc18c8082c0dddfdddcc0dfd9c0deddc08ec29b9d9a8396c2889d8e8c8a899a83c298869f8ac2809a9bc0)

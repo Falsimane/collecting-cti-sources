@@ -1,0 +1,80 @@
+PeckBirdy: A Versatile Script Framework for LOLBins Exploitation Used by China-aligned Threat Groups
+==============================================================================================================================================		
+SHADOW-VOID-044	
+==============================================================================================================================================			
+Type	Indicator								Description								Detection name
+SHA256	336a0be2dfa60e6beee133cff185bc258b480fb231d5d7eacaca6dfde0db3f81	PeckBirdy script							Backdoor.JS.PECKBIRDY.AJ26
+ 							
+SHA256	81ceb679d9bc51a451393a2ed9edcd588c2760e39c9758303c5929c7412112f0	PeckBirdy script							Backdoor.JS.PECKBIRDY.AJ26 
+
+SHA256	74a73e1461dffcf445f195cede0204f44afef8c4b6f37391a0c314e20ed8f7b7	PeckBirdy script							Backdoor.JS.PECKBIRDY.AJ26 
+
+SHA256	691d3a5ea614b5bf371001941635788e680ad938f06ee4dfd25768422eaedd6f	PeckBirdy script							Trojan.JS.PECKBIRDY.CP25 
+
+SHA256	ef67e340d31cbc7bd0d5f77581801142b25b0bc636bb97c04e4ed3c757532227	PeckBirdy script							Backdoor.JS.PECKBIRDY.AJ26 
+
+SHA256	7e989948c2b9bb4cd9f7031882e5400171d574610f0dfd06a8d60b860f6e984a	PeckBirdy script							Backdoor.JS.PECKBIRDY.AJ26 
+
+SHA256	7e396dda39d3497097b82d98920fa174f883b04d03295493dd3b13676d5ac321	GRAYRABBIT UUID-format payload						Backdoor.Win32.GRAYRABBIT.ZYMC 
+
+SHA256	0a0b25e9565bd41bdadcaab88f0c8c425582c248bdbc4d981ee3ad57a58c6476	Encrypted powershell script used to load and inject UUID shellcode 	Trojan.PS1.DULLOAD.ZYNA 
+
+SHA256	776b4fb58d76105a60bccfbc09abad82330b8ee5138b93b826deaa7689030bbf	GRAYRABBIT								Trojan.Win32.GRAYRABBIT.ZYNA / Backdoor.Win32.GRAYRABBIT.ZYNA 																			
+SHA256	bb67fa07897b73aca77311e4d23bbbbe496e8570338f36305704e487034fd0ad	Powershell script used to load UUID shellcode				Trojan.Win32.GRAYRABBIT.ZYNA 
+
+SHA256	5992b0d8bd342ff4a298402830b68c4e4565bf1fd5717a404d8a3ab7a5760204	Encrypted payload							Trojan.Win64.GRAYRABBIT.ZYMD / Trojan.Win32.NEXLOAD.ZYNA
+																			
+SHA256	fb69135d10c087f72c7cf82a1441e6de3e3d2abfde8546c9012b15c63d5c50e5	Downloader and loader for GRAYRABBIT
+
+SHA256	ecafb4ad14c96007f2873e5e4d0e173d27340427f512448515f64e4f58268741	Downloader of GRAYRABBIT
+
+SHA256	5dc7b4a618076662b5993b392eb0e402b9f6c27f88b6561791475dc1069c318e	NEXLOAD
+
+IP	47[.]86[.]190[.]245							File hosting server
+IP	8[.]218[.]50[.]207							File hosting server
+IP	47[.]238[.]219[.]111							File hosting server
+IP	43[.]135[.]35[.]84							File hosting server
+IP	43[.]156[.]94[.]185							File hosting server
+IP	8[.]218[.]124[.]102							GRAYRABBIT C&C server
+IP	8[.]222[.]143[.]246							GRAYRABBIT C&C server
+IP	43[.]154[.]202[.]197							HOLODONUT C&C server
+
+Domain	ai[.]microsoftgpt[.]net							GRAYRABBIT C2
+Domain	update[.]myrnicrosoft[.]com 						GRAYRABBIT C&C server
+Domain	mkdmcdn[.]com								HOLODONUT C&C server
+Domain	tt.oss-cdn[.]com							HOLODONUT C&C server
+Domain	study[.]mso-cdn[.]com							MKDOOR C&C server
+Domain	updates[.]oss-cdn[.]com							MKDOOR C&C server
+Domain	linux[.]mso-cdn[.]com							MKDOOR C&C server
+Domain	dayday[.]is-cdn[.]com							MKDOOR C&C server
+Domain	aq[.]crackflyvpn[.]org							MKDOOR C&C server
+Domain	ads[.]microsoft-ads[.]com						MKDOOR C&C server
+Domain	efficaciousserver9527[.]org						MKDOOR C&C server
+Domain	update[.]microsoft-edges[.]com						MKDOOR C&C server
+Domain	a1icdn[.]com								PeckBirdy C&C and file hosting server
+Domain	as-cdn[.]net								PeckBirdy C&C server
+Domain	ppcn-cdn[.]xyz 								PeckBirdy C&C server
+Domain	static-alicdn[.]com 							PeckBirdy C&C server
+Domain	www[.]jsunpkg[.]com							PeckBirdy C&C server
+Domain	static-alicdn[.]com							PeckBirdy C&C server
+Domain	static-resource[.]org							PeckBirdy C&C server
+Domain	app[.]css-alicdn[.]com							PeckBirdy C&C server
+Domain	os-js[.]com 	 							PeckBirdy C&C server
+Domain	kyo-cdn[.]com								PeckBirdy C&C server
+Domain	m[.]mod-js[.]org							PeckBirdy C&C server
+Domain	m[.]as-cdn[.]org	 						PeckBirdy C&C server
+Domain	cdn[.]js-cdn[.]xyz	 						PeckBirdy C&C server
+Domain	js[.]cache-cdn[.]org							PeckBirdy C&C server
+		
+SHADOW-EARTH-045
+==============================================================================================================================================		
+Type	Indicator								Description
+SHA256	612e534e695269ac6408bf1f5f62372756bb354bd01bea6073e9fe1d9b548597	PeckBirdy script
+
+Domain	static[.]img-cache[.]com						PeckBirdy C&C server
+Domain	static[.]img-caches[.]com						PeckBirdy C&C server
+Domain	github[.]githubassets[.]net						PeckBirdy C&C server
+Domain	cloudflare[.]hcaphcha[.]com						PeckBirdy C&C server
+Domain	www[.]githubgressaccess[.]info						PeckBirdy C&C server
+
+IP	47[.]238[.]184[.]9							PeckBirdy C&C server

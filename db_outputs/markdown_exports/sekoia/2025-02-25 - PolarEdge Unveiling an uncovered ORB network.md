@@ -41,7 +41,7 @@ Between 22 and 31 January, an attacker attempted to deploy a webshell by exploit
 
 To achieve persistence, the attacker replaced the router’s authentication **CGI script** (`/usr/local/EasyAccess/www/cgi-bin/userLogin.cgi`) with their webshell.
 
-![CVE-2023-20118 - HTTP request used to compromise the vulnerable asset](https://cdn.prod.website-files.com/69b190e7f47e4c44b0ee07d8/6a92a56f3e6167cebbf78ca3_6a92a20032517fc4025f62a0_6a2a7f03e16dd066f42a6f30.webp)
+![CVE-2023-20118 - HTTP request used to compromise the vulnerable asset](https://cdn.prod.website-files.com/69b190e7f47e4c44b0ee07d8/6aab9e7162f7347dad1c7e6d_CVE-2023-20118%20-%20HTTP%20request%20used%20to%20compromise%20the%20vulnerable%20asset.webp)
 
 CVE-2023-20118 - HTTP request used to compromise the vulnerable asset
 
@@ -284,7 +284,7 @@ This certificate is present on Cisco, Asus and Synology, aligning with the vario
 
 As shown in the diagram below, the USA is the most affected country by the botnet, with 540 IPs. Taiwan, where many samples have been submitted to VirusTotal, ranks 6th with 115 IPs. The botnet appears to be particularly prevalent in Asia and South-America. However, it is unclear whether this is due to these regions being a primary target or because it hosts more vulnerable devices.
 
-![__wf_reserved_inherit](https://cdn.prod.website-files.com/69b190e7f47e4c44b0ee07d8/6a6b453629e6d7ffcd5f2dca_blog-location-of-devices-compromised-by-polaredge.webp)
+![](https://cdn.prod.website-files.com/69b190e7f47e4c44b0ee07d8/6a6b453629e6d7ffcd5f2dca_blog-location-of-devices-compromised-by-polaredge.webp)
 
 PolarEdge botnet - location of compromised device
 

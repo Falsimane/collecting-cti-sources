@@ -80,8 +80,7 @@ Any Skills file sourced from outside of verified, trusted channels should be sub
 
 For broader governance, ThreatBook's OneSEC platform now includes dedicated OpenClaw controls: automated asset inventory, department-level and version-specific access policies, and time-based usage restrictions — giving security teams the ability to enable AI productivity tools without accepting unmanaged risk.
 
-  * [Tweet](https://twitter.com/share)
-  * Share
+  *   * Share
   * 
 
 

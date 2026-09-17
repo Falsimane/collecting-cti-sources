@@ -640,4 +640,4 @@ Reports covered in review:
   * [Share on WhatsApp](https://api.whatsapp.com/send?text=https://thedfirreport.com/2023/03/06/2022-year-in-review/)
   * [Share on Linkedin](https://linkedin.com/shareArticle?mini=true&title=2022%20Year%20in%20Review&url=https://thedfirreport.com/2023/03/06/2022-year-in-review/)
   * [Share on Reddit](https://reddit.com/submit?url=https://thedfirreport.com/2023/03/06/2022-year-in-review/&title=2022%20Year%20in%20Review)
-  * [Share by Mail](/cdn-cgi/l/email-protection#c5fab6b0a7afa0a6b1f8f7f5f7f7e0f7f59ca0a4b7e0f7f5acabe0f7f597a0b3aca0b2e3e6f5f6fdfea7aaa1bcf8adb1b1b5b6ffeaeab1ada0a1a3acb7b7a0b5aab7b1eba6aaa8eaf7f5f7f6eaf5f6eaf5f3eaf7f5f7f7e8bca0a4b7e8acabe8b7a0b3aca0b2ea)
+  * [Share by Mail](/cdn-cgi/l/email-protection#b887cbcddad2dddbcc858a888a8a9d8a88e1ddd9ca9d8a88d1d69d8a88eaddced1ddcf9e9b888b8083dad7dcc185d0ccccc8cb829797ccd0dddcded1cacaddc8d7cacc96dbd7d5978a888a8b97888b97888e978a888a8a95c1ddd9ca95d1d695caddced1ddcf97)

@@ -120,7 +120,7 @@ Rapid7 communicated these findings with US-CERT (VU#993645) and has reached out 
 
 The raw data from this study is available on [Rapid7 Opendata](https://opendata.rapid7.com/), along with all of our [UDP](https://opendata.rapid7.com/sonar.udp/) and other studies. [Metasploit modules](https://github.com/rapid7/metasploit-framework/pull/11338) and Nexpose/InsightVM coverage are in the works for discovering Ubiquiti devices using this method.
 
-Rapid7 will continue to monitor this situation and will update here/elsewhere as appropriate. We welcome any feedback on this topic and encourage collaboration. Reach out to us via the comments, on Twitter ([@rapid7](https://twitter.com/rapid7)), or via [[email protected]](/cdn-cgi/l/email-protection#33415640565241505b734152435a57041d505c5e).
+Rapid7 will continue to monitor this situation and will update here/elsewhere as appropriate. We welcome any feedback on this topic and encourage collaboration. Reach out to us via the comments, on Twitter ([@rapid7](https://twitter.com/rapid7)), or via [[email protected]](/cdn-cgi/l/email-protection#8dffe8fee8ecffeee5cdffecfde4e9baa3eee2e0).
 
 ## Updates
 

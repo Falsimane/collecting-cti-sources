@@ -585,4 +585,4 @@ __Regsvr32 – T1117
   * [Share on WhatsApp](https://api.whatsapp.com/send?text=https://thedfirreport.com/2020/10/18/ryuk-in-5-hours/)
   * [Share on Linkedin](https://linkedin.com/shareArticle?mini=true&title=Ryuk%20in%205%20Hours&url=https://thedfirreport.com/2020/10/18/ryuk-in-5-hours/)
   * [Share on Reddit](https://reddit.com/submit?url=https://thedfirreport.com/2020/10/18/ryuk-in-5-hours/&title=Ryuk%20in%205%20Hours)
-  * [Share by Mail](/cdn-cgi/l/email-protection#f4cb8781969e919780c9a68d819fd1c6c49d9ad1c6c4c1d1c6c4bc9b818687d2d7c4c7cccf969b908dc99c80808487cedbdb809c9190929d868691849b8680da979b99dbc6c4c6c4dbc5c4dbc5ccdb868d819fd99d9ad9c1d99c9b818687db)
+  * [Share by Mail](/cdn-cgi/l/email-protection#427d313720282721367f103b37296770722b2c677072776770720a2d373031646172717a79202d263b7f2a36363231786d6d362a2726242b303027322d30366c212d2f6d707270726d73726d737a6d303b37296f2b2c6f776f2a2d3730316d)

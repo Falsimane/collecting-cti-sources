@@ -696,4 +696,4 @@ Internal case #11462
   * [Share on WhatsApp](https://api.whatsapp.com/send?text=https://thedfirreport.com/2022/05/09/seo-poisoning-a-gootloader-story/)
   * [Share on Linkedin](https://linkedin.com/shareArticle?mini=true&title=SEO%20Poisoning%20-%20A%20Gootloader%20Story&url=https://thedfirreport.com/2022/05/09/seo-poisoning-a-gootloader-story/)
   * [Share on Reddit](https://reddit.com/submit?url=https://thedfirreport.com/2022/05/09/seo-poisoning-a-gootloader-story/&title=SEO%20Poisoning%20-%20A%20Gootloader%20Story)
-  * [Share by Mail](/cdn-cgi/l/email-protection#744b0701161e1117004927313b514644241b1d071b1a1d1a135146445951464435514644331b1b00181b1510110651464427001b060d525744474c4f161b100d491c000004074e5b5b001c1110121d060611041b06005a171b195b464446465b44415b444d5b07111b59041b1d071b1a1d1a13591559131b1b00181b151011065907001b060d5b)
+  * [Share by Mail](/cdn-cgi/l/email-protection#310e4244535b5452450c62747e140301615e58425e5f585f561403011c14030170140301765e5e455d5e5055544314030162455e434817120102090a535e55480c59454541420b1e1e455954555758434354415e43451f525e5c1e030103031e01041e01081e42545e1c415e58425e5f585f561c501c565e5e455d5e505554431c42455e43481e)

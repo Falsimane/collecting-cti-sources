@@ -169,7 +169,7 @@ Our desire for an always-on, always-accessible, dirt-cheap, and easy-to-use solu
 
 In many ways, we have just scratched the surface of the possibilities related to rsync’s true exposure and risk. It is likely that there is a vast, unexplored treasure trove of sensitive data exposed by simple misconfigurations of rsync-enabled storage, backup, and archive devices.
 
-We welcome any feedback on this topic and encourage collaboration. Reach out to us via the comments, on Twitter ([@rapid7](https://twitter.com/rapid7)), or via [[email protected]](/cdn-cgi/l/email-protection#502235233531223338102231203934677e333f3d). Also, check out another view of rsync exposure from our friends over at BinaryEdge.
+We welcome any feedback on this topic and encourage collaboration. Reach out to us via the comments, on Twitter ([@rapid7](https://twitter.com/rapid7)), or via [[email protected]](/cdn-cgi/l/email-protection#17657264727665747f576576677e73203974787a). Also, check out another view of rsync exposure from our friends over at BinaryEdge.
 
 ####   
 Like security research? Learn more about our other research projects. 

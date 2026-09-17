@@ -75,7 +75,7 @@ Areas for potential future research could include:
 
 Rapid7's [InsightVM](/products/insightvm/) and [Metasploit](/products/metasploit/) have fingerprinting coverage to identify RDP, and InsightVM has vulnerability coverage for all of the above mentioned RDP vulnerabilities.
 
-Interested in this RDP research? Have ideas for more? Want to collaborate? We'd love to hear from you, either in the comments below or at [[email protected]](/cdn-cgi/l/email-protection#601205130501120308201201100904574e030f0d).
+Interested in this RDP research? Have ideas for more? Want to collaborate? We'd love to hear from you, either in the comments below or at [[email protected]](/cdn-cgi/l/email-protection#07756274626675646f477566776e63302964686a).
 
 ## Article tags
 

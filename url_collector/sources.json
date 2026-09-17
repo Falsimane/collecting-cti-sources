@@ -1,12 +1,12 @@
   {
     "harfanglab": {
-      "url": "https://harfanglab.io/insidethelab",
+      "url": "https://harfanglab.io/insidethelab/",
       "card_selector": "card",
-      "keyword": "Cyber Threat Intelligence",
+      "keyword": "CYBER THREAT INTELLIGENCE",
       "use_curl_cffi": true,
-      "max_pages": 3,
+      "max_pages": 100,
       "page_load_wait": 6.0,
-      "pagination_pattern": "/page/{page}/",
+      "pagination_pattern": "page/{page}/",
       "slow_mode": true
     },
     "sekoia": {
@@ -24,7 +24,7 @@
       "url_must_include": "/blog/post",
       "keyword": "",
       "use_curl_cffi": true,
-      "max_pages": 15,
+      "max_pages": 30,
       "page_load_wait": 3.5,
       "pagination_pattern": "page/{page}/",
       "slow_mode": true
@@ -97,5 +97,24 @@
       "pagination_pattern": "page/{page}/",
       "max_pages": 10,
       "slow_mode": false
+    },
+    "ClearSky Cybersecurity": {
+      "url": "https://www.clearskysec.com/blog/",
+      "card_selector": "blog-card",
+      "keyword": "",
+      "use_curl_cffi": false,
+      "pagination_pattern": "page/{page}/",
+      "page_load_wait": 7.0,
+      "max_pages": 10,
+      "slow_mode": true
+    },
+    "ShadowServer": {
+      "url": "https://www.shadowserver.org/topics/threat-intelligence/",
+      "card_selector": "article",
+      "keyword": "",
+      "use_curl_cffi": true,
+      "pagination_pattern": "page/{page}/",
+      "max_pages": 999,
+      "slow_mode": false
     }
-  }
+}

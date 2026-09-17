@@ -95,7 +95,7 @@ Current Time 0:00
 
 /
 
-Duration 15:18
+Duration 0:00
 
 Loaded: 0%
 
@@ -103,7 +103,7 @@ Progress: 0%
 
 Stream Type LIVE
 
-Remaining Time -15:18
+Remaining Time -0:00
 
 Playback Rate
 
@@ -126,8 +126,7 @@ Descriptions
 
 Captions
 
-  * captions settings, opens captions settings dialog
-  * captions off, selected
+  * captions and subtitles off, selected
 
 
 

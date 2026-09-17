@@ -261,4 +261,4 @@ Enjoy our report? Please consider donating $1 or more to the project using [Patr
   * [Share on WhatsApp](https://api.whatsapp.com/send?text=https://thedfirreport.com/2020/04/30/tricky-pyxie/)
   * [Share on Linkedin](https://linkedin.com/shareArticle?mini=true&title=Tricky%20Pyxie&url=https://thedfirreport.com/2020/04/30/tricky-pyxie/)
   * [Share on Reddit](https://reddit.com/submit?url=https://thedfirreport.com/2020/04/30/tricky-pyxie/&title=Tricky%20Pyxie)
-  * [Share by Mail](/cdn-cgi/l/email-protection#90afe3e5f2faf5f3e4adc4e2f9f3fbe9b5a2a0c0e9e8f9f5b6b3a0a3a8abf2fff4e9adf8e4e4e0e3aabfbfe4f8f5f4f6f9e2e2f5e0ffe2e4bef3fffdbfa2a0a2a0bfa0a4bfa3a0bfe4e2f9f3fbe9bde0e9e8f9f5bf)
+  * [Share by Mail](/cdn-cgi/l/email-protection#1d226e687f77787e6920496f747e7664382f2d4d646574783b3e2d2e25267f727964207569696d6e273232697578797b746f6f786d726f69337e7270322f2d2f2d322d29322e2d32696f747e7664306d6465747832)

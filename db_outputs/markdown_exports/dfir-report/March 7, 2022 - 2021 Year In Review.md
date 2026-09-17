@@ -373,4 +373,4 @@ Australia specifically announced their “Ransomware Action Plan” and planned 
   * [Share on WhatsApp](https://api.whatsapp.com/send?text=https://thedfirreport.com/2022/03/07/2021-year-in-review/)
   * [Share on Linkedin](https://linkedin.com/shareArticle?mini=true&title=2021%20Year%20In%20Review&url=https://thedfirreport.com/2022/03/07/2021-year-in-review/)
   * [Share on Reddit](https://reddit.com/submit?url=https://thedfirreport.com/2022/03/07/2021-year-in-review/&title=2021%20Year%20In%20Review)
-  * [Share by Mail](/cdn-cgi/l/email-protection#4a75393f28202f293e77787a787b6f787a132f2b386f787a03246f787a182f3c232f3d6c697a79727128252e3377223e3e3a397065653e222f2e2c2338382f3a25383e6429252765787a7878657a79657a7d65787a787b67332f2b3867232467382f3c232f3d65)
+  * [Share by Mail](/cdn-cgi/l/email-protection#7d420e081f17181e09404f4d4f4c584f4d24181c0f584f4d3413584f4d2f180b14180a5b5e4d4e45461f121904401509090d0e475252091518191b140f0f180d120f09531e1210524f4d4f4f524d4e524d4a524f4d4f4c5004181c0f501413500f180b14180a52)

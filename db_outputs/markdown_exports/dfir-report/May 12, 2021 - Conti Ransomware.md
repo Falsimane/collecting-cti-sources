@@ -657,4 +657,4 @@ Internal case: 3584
   * [Share on WhatsApp](https://api.whatsapp.com/send?text=https://thedfirreport.com/2021/05/12/conti-ransomware/)
   * [Share on Linkedin](https://linkedin.com/shareArticle?mini=true&title=Conti%20Ransomware&url=https://thedfirreport.com/2021/05/12/conti-ransomware/)
   * [Share on Reddit](https://reddit.com/submit?url=https://thedfirreport.com/2021/05/12/conti-ransomware/&title=Conti%20Ransomware)
-  * [Share by Mail](/cdn-cgi/l/email-protection#9da2eee8fff7f8fee9a0def2f3e9f4b8afadcffcf3eef2f0eafceff8bbbeadaea5a6fff2f9e4a0f5e9e9edeea7b2b2e9f5f8f9fbf4efeff8edf2efe9b3fef2f0b2afadafacb2ada8b2acafb2fef2f3e9f4b0effcf3eef2f0eafceff8b2)
+  * [Share by Mail](/cdn-cgi/l/email-protection#3b04484e59515e584f067854554f521e090b695a554854564c5a495e1d180b08030059545f4206534f4f4b480114144f535e5f5d5249495e4b54494f1558545614090b090a140b0e140a09145854554f5216495a554854564c5a495e14)

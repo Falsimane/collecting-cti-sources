@@ -1,0 +1,24 @@
+Indicators of Compromise - Unraveling Water Saci's New Multi-Format, AI-Enhanced Attacks Propagated via WhatsApp
+ 
+[SHA256]								[Detection]				[File name]
+2d95769a016b397333ba90fdc2f668f883c64774a2c0aaaf6b2d942bebaee9e0	Trojan.Win32.SORVEPOTEL.YAFJ4 		installer.msi
+c03fecbf52c38cf363bbc4f94bbe183e394f921af756442b674f4fe5f2b2090c	Trojan.BAT.SORVEPOTEL.YAFJ5 		starter.bat
+12f2e7e997480a3ea3150614664d6de4e6e229dacd6e8ff0ed74cd22207e753d	TrojanSpy.Win32.CASBANEIRO.YAFKU.enc	HWI4Yz.dmp
+495697717be4a80c9db9fe2dbb40c57d4811ffe5ebceb9375666066b3dda73c3	Trojan.Win32.CASBANEIRO.YAFKU.enc	MA15tj.tda
+9b0996380c61060ed3bfec25962c56131ea0eac42c7f373216aab72fdb7b8ac7	Trojan.Win32.SORVEPOTEL.YAFJ5		n0GvoCT3.log
+15e8f315901ea12639665f1adb9d18a9ace1074a33d70e47ad43203eb8ebfba4	Trojan.VBS.SORVEPOTEL.YAFJ5 		run.vbs
+6745bb11b8c692be78ec7ade285094beef907ecb3a99f475afa284ccbe7565f2	TrojanSpy.AutoIt.SORVEPOTEL.YAFJ5	script.au3
+6ee5355b786282a6904806a4f55e59e9aad8067ae01b37afaf0009527e5c0205	Trojan.VBS.SORVEPOTEL.YAFKM		kajr.vbs
+ec69a53fd3ff11327aa98248bf55572f4ea8c1b40a12f49f5669f3df1f598353	Trojan.BAT.SORVEPOTEL.YAFKM		kajr.bat
+5db59a8a8c2ca54615a6079fa9035d2886c1ec2270ee508efbb0ff98c98b90be	Trojan.Win32.SORVEPOTEL.YAFKM		zaRuRjxD.log
+de07516f39845fb91d9b4f78abeb32933f39282540f8920fe6508057eedcbbea	TrojanSpy.Win32.CASBANEIRO.YAFKU.enc	OxrL9Y.dmp
+a416cad095a6e77857f8fba4552ddc8ece41ce997b5086a4fbea5ac0fdfc4860	Trojan.HTML.SORVEPOTEL.YAFJ4		A-e16a0959680ac8cbb.hta
+67ad7a950257cc5920b2119539049bcea3863bb2002f7118fcef57788f7eca59	Trojan.HTML.SORVEPOTEL.YAFJ4		A-d23a426f10337cfd9.hta
+ebe37505fa162461515d50bd86cb0fd983a000d418f0be0f9098e087170909bd	Trojan.Win32.SORVEPOTEL.YAFJ4		installer.msi
+f262434276f3fa09915479277f696585d0b0e4e72e72cbc924c658d7bb07a3ff	Worm.Python.SORVEPOTEL.YAFJ3		whatsz.py 
+
+[URLs]								[Description]
+storeshomeestusfluworkss[.]online				Disease Vector
+hxxps://centrogauchodabahia123[.]com/altor/installer[.]msi	Disease Vector
+centrogauchodabahia123[.]com					Disease Vector
+hxxps://centrogauchodabahia123[.]com/altor/whatsz[.]py		Disease Vector

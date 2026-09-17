@@ -675,4 +675,4 @@ Internal case #13842
   * [Share on WhatsApp](https://api.whatsapp.com/send?text=https://thedfirreport.com/2022/11/14/bumblebee-zeros-in-on-meterpreter/)
   * [Share on Linkedin](https://linkedin.com/shareArticle?mini=true&title=BumbleBee%20Zeros%20in%20on%20Meterpreter&url=https://thedfirreport.com/2022/11/14/bumblebee-zeros-in-on-meterpreter/)
   * [Share on Reddit](https://reddit.com/submit?url=https://thedfirreport.com/2022/11/14/bumblebee-zeros-in-on-meterpreter/&title=BumbleBee%20Zeros%20in%20on%20Meterpreter)
-  * [Share by Mail](/cdn-cgi/l/email-protection#78470b0d1a121d1b0c453a0d151a141d3a1d1d5d4a48221d0a170b5d4a4811165d4a4817165d4a48351d0c1d0a080a1d0c1d0a5e5b484b40431a171c0145100c0c080b4257570c101d1c1e110a0a1d08170a0c561b1715574a484a4a57494957494c571a0d151a141d1a1d1d55021d0a170b55111655171655151d0c1d0a080a1d0c1d0a57)
+  * [Share by Mail](/cdn-cgi/l/email-protection#2d125e584f47484e59106f58404f41486f4848081f1d77485f425e081f1d4443081f1d4243081f1d604859485f5d5f4859485f0b0e1d1e15164f424954104559595d5e170202594548494b445f5f485d425f59034e4240021f1d1f1f021c1c021c19024f58404f41484f48480057485f425e00444300424300404859485f5d5f4859485f02)

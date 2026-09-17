@@ -491,4 +491,4 @@ Internal case 1012
   * [Share on WhatsApp](https://api.whatsapp.com/send?text=https://thedfirreport.com/2021/01/11/trickbot-still-alive-and-well/)
   * [Share on Linkedin](https://linkedin.com/shareArticle?mini=true&title=Trickbot%20Still%20Alive%20and%20Well&url=https://thedfirreport.com/2021/01/11/trickbot-still-alive-and-well/)
   * [Share on Reddit](https://reddit.com/submit?url=https://thedfirreport.com/2021/01/11/trickbot-still-alive-and-well/&title=Trickbot%20Still%20Alive%20and%20Well)
-  * [Share by Mail](/cdn-cgi/l/email-protection#241b5751464e4147501970564d474f464b5001161477504d484801161465484d5241011614454a4001161473414848020714171c1f464b405d194c505054571e0b0b504c4140424d565641544b56500a474b490b161416150b14150b15150b50564d474f464b500957504d48480945484d524109454a4009534148480b)
+  * [Share by Mail](/cdn-cgi/l/email-protection#8eb1fdfbece4ebedfab3dafce7ede5ece1faabbcbeddfae7e2e2abbcbecfe2e7f8ebabbcbeefe0eaabbcbed9ebe2e2a8adbebdb6b5ece1eaf7b3e6fafafefdb4a1a1fae6ebeae8e7fcfcebfee1fcfaa0ede1e3a1bcbebcbfa1bebfa1bfbfa1fafce7ede5ece1faa3fdfae7e2e2a3efe2e7f8eba3efe0eaa3f9ebe2e2a1)

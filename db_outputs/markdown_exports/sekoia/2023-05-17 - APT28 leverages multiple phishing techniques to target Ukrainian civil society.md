@@ -78,9 +78,9 @@ APT28 uses the [getforge](https://getforge.com/) service since 2022, which produ
 
 The final point pertains to the use of HTTP webhooks and [mocking-free services in APT28's operations](https://cert.gov.ua/article/4492467). They appear to use these services to host payloads and retrieve victim data because getforge doesn't allow to host dynamic webpages. Moreover, these services are free, legit and do not require specific infrastructure setup. Although we currently only see APT28 using these services, it is possible that other intrusion sets may follow, as was the case with the use of pastebin-like services to host payloads.
 
-![](https://cdn.prod.website-files.com/69b190e7f47e4c44b0ee07d8/6a92a61aadf0bb92a6516be4_6a92a3aa4b4041c69342ccd8_6a5a753ab58695c27114d38c.webp)
+![Drone Shot of Motherland Monument and the City of Kyiv](https://cdn.prod.website-files.com/69b190e7f47e4c44b0ee07d8/6aaaafe294c1b9e219020a70_Drone%20Shot%20of%20Motherland%20Monument%20and%20the%20City%20of%20Kyiv%20-%20CC%20Petkevich%20Evgeniy.webp)
 
-Featured image: [Drone Shot of Motherland Monument and the City of Kyiv](https://www.pexels.com/photo/drone-shot-of-motherland-monument-and-the-city-of-kyiv-9955064/) \- CC Petkevich Evgeniy
+[Drone Shot of Motherland Monument and the City of Kyiv ](https://www.pexels.com/photo/drone-shot-of-motherland-monument-and-the-city-of-kyiv-9955064/)\- CC Petkevich Evgeniy
 
 ‍
 

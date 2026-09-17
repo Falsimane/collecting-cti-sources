@@ -1,0 +1,40 @@
+Active Water Saci Campaign in WhatsApp Features Multi-Vector Persistence and Sophisticated C&C 
+Indicators of Compromise
+
+File name				SHA256									Detection name
+-308d1ac9-0a6.vbs 			2c0dff7f8f724476dffd07b0f51ceaae9600073e927d3694d167664eec194b4d 	Backdoor.VBS.SORVEPOTEL.YXFJM 
+-e4b1d448-8e8.vbs 			341252a437e7535f9ea8707e41f0ff2a775eddb16190eeb9f0c0f524214e4f3d 	Backdoor.VBS.SORVEPOTEL.YXFJM 
+-d58fc83f-80f.vbs 			fe10ce5fede53d88f8d06fbf533e1d9416b1c423c556915313fe52e9fa70dcec 	Backdoor.VBS.SORVEPOTEL.YAFJM 
+e7f_7d3a76-f4cf26cc-e7f.vbs 		b05f07e5709dc25ec544ff64dabf54682f15cc2d34d2367102a096232fb3822a 	Trojan.VBS.SORVEPOTEL.YAFJP 
+Orcamento para avalicaco .vbs 		536864994d1916fe45824abf0276796284c3d36c0dd98c62d5a55892623a5de0 	Backdoor.VBS.SORVEPOTEL.YAFJI 
+tadeu.ps1 				1fc9dc27a7a6da52b64592e3ef6f8135ef986fc829d647ee9c12f7cea8e84645 	Worm.PS1.SORVEPOTEL.YAFJI 
+Orcamento.vbs 				3ff9c9cc7cc65bef73bf75d222b8ba56728aeb4fc5e8882e82a4fab970dbe1c6 	Backdoor.VBS.SORVEPOTEL.YAFJI 
+
+
+
+
+Category		Domain 
+Disease Vector		hxxps://cld[.]pt/dl/download/ac23c304-aa9d-4d27-a845-272ec4de533d/sapotransfer-640a60194938b1/tadeu[.]ps1?download=true 
+Disease Vector		hxxps://cld[.]pt/dl/download/0f58f6f3-e3bb-4cbd-a4fb-d9ddfd4e56bf/sapotransfer-640a2b919605fph/Orcamento%20para%20avalicaco%20[.]zip?download=true 
+C&C Server		adoblesecuryt[.]com 
+C&C Server		intelligentopennetworkingawards[.]com 
+C&C Server		vinhomeshungyentheempires[.]com 
+C&C Server		lefthandsuperstructures[.]com 
+Malware Accomplice	wbdiamonds[.]com 
+C&C Server		cursosgratiss[.]com[.]br 
+C&C Server		ricardasphotography[.]com 
+C&C Server		mazdafinancialsevrices[.]com 
+C&C Server		miportuarios[.]com 
+C&C Server		hxxps://pastebin[.]com/raw/SmCz4cp8 
+C&C Server		jornalistaaurelianoborgesmidia[.]com 
+C&C Server		clhttradinglimited[.]com 
+C&C Server		miportuarios[.]com/sisti/api[.]ps1 
+Disease Vector		hxxp://aspeimoveis342235[.]online/ 
+Disease Vector		hxxp://saborizerefeicoes34[.]site/ 
+Disease Vector		hxxp://casadoconector[.]online/ 
+Disease Vector		hxxp://albacosmeticos[.]shop/ 
+Disease Vector		hxxp://motopartshonda[.]shop/ 
+Disease Vector		hxxp://motopartshonda[.]site/ 
+Disease Vector		hxxp://saborizerefeicoes34[.]online/ 
+Disease Vector		hxxp://albacosmeticos[.]online/ 
+

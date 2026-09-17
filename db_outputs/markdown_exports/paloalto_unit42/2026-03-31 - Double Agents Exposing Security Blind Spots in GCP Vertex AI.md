@@ -53,8 +53,8 @@ Tags:
 
 
 
-  * [ ![Download Icon](https://unit42.paloaltonetworks.com/wp-content/themes/unit42-v6/dist/images/icons/icon-download.svg)](https://unit42.paloaltonetworks.com/double-agents-vertex-ai/?pdf=download&lg=en&_wpnonce=ac4b3be3b8 "Click here to download")
-  * [ ![Print Icon](https://unit42.paloaltonetworks.com/wp-content/themes/unit42-v6/dist/images/icons/icon-print.svg)](https://unit42.paloaltonetworks.com/double-agents-vertex-ai/?pdf=print&lg=en&_wpnonce=ac4b3be3b8 "Click here to print")
+  * [ ![Download Icon](https://unit42.paloaltonetworks.com/wp-content/themes/unit42-v6/dist/images/icons/icon-download.svg)](https://unit42.paloaltonetworks.com/double-agents-vertex-ai/?pdf=download&lg=en&_wpnonce=252a1929a6 "Click here to download")
+  * [ ![Print Icon](https://unit42.paloaltonetworks.com/wp-content/themes/unit42-v6/dist/images/icons/icon-print.svg)](https://unit42.paloaltonetworks.com/double-agents-vertex-ai/?pdf=print&lg=en&_wpnonce=252a1929a6 "Click here to print")
 
 
 
@@ -173,9 +173,7 @@ While attempts to access the repositories via the consumer service account confi
 
 Figures 6 and 7 show that regular, customer-managed user identities cannot access the restricted reasoning-engine and llm-extension repositories.
 
-![A screenshot of Google Cloud Artifact Registry interface. A warning message states "Failed to load" with further text explaining there was an error while loading a specific URL, suggesting a network issue. There's a tracking number provided and a link to troubleshoot the issue.](https://unit42.paloaltonetworks.com/wp-content/uploads/2026/03/word-image-263456-176231-6.png)Figure 6. Restricted reasoning-engine repository is inaccessible to a regular user.
-
-![A screenshot of Google Cloud interface showing a notification that says, "You need additional access." There are links for contacting support and menu options for "Repositories" and "Settings" on the left.](https://unit42.paloaltonetworks.com/wp-content/uploads/2026/03/word-image-265920-176231-7.png)Figure 7. Restricted llm-extension repository is inaccessible to a regular user.
+![A screenshot of Google Cloud Artifact Registry interface. A warning message states "Failed to load" with further text explaining there was an error while loading a specific URL, suggesting a network issue. There's a tracking number provided and a link to troubleshoot the issue.](https://unit42.paloaltonetworks.com/wp-content/uploads/2026/03/word-image-263456-176231-6.png)Figure 6. Restricted reasoning-engine repository is inaccessible to a regular user.![A screenshot of Google Cloud interface showing a notification that says, "You need additional access." There are links for contacting support and menu options for "Repositories" and "Settings" on the left.](https://unit42.paloaltonetworks.com/wp-content/uploads/2026/03/word-image-265920-176231-7.png)Figure 7. Restricted llm-extension repository is inaccessible to a regular user.
 
 ## Misconfigured Artifact Registry Exposes Restricted Images
 
@@ -388,8 +386,8 @@ Back to top
 [![ category icon](https://unit42.paloaltonetworks.com/wp-content/uploads/2025/08/Insights-icon-white.svg)Insights](https://unit42.paloaltonetworks.com/category/insights/) September 16, 2026 #### [Atomic macOS (AMOS) Stealer Activity ](https://unit42.paloaltonetworks.com/atomic-macos-amos-stealer-activity/)
 
   * [MacOS](https://unit42.paloaltonetworks.com/tag/macos/ "macOS")
-  * [Malware](https://unit42.paloaltonetworks.com/tag/malware/ "malware")
   * [Threat intelligence](https://unit42.paloaltonetworks.com/tag/threat-intelligence/ "threat intelligence")
+  * [Unit 42](https://unit42.paloaltonetworks.com/tag/unit-42/ "Unit 42")
 
 
 
@@ -508,8 +506,8 @@ Back to top
 [![ category icon](https://unit42.paloaltonetworks.com/wp-content/uploads/2025/08/Insights-icon-white.svg)Insights](https://unit42.paloaltonetworks.com/category/insights/) September 16, 2026 #### [Atomic macOS (AMOS) Stealer Activity ](https://unit42.paloaltonetworks.com/atomic-macos-amos-stealer-activity/)
 
   * [MacOS](https://unit42.paloaltonetworks.com/tag/macos/ "macOS")
-  * [Malware](https://unit42.paloaltonetworks.com/tag/malware/ "malware")
   * [Threat intelligence](https://unit42.paloaltonetworks.com/tag/threat-intelligence/ "threat intelligence")
+  * [Unit 42](https://unit42.paloaltonetworks.com/tag/unit-42/ "Unit 42")
 
 
 

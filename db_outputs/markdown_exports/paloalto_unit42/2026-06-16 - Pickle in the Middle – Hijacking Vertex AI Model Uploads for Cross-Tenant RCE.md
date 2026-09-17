@@ -52,8 +52,8 @@ Tags:
 
 
 
-  * [ ![Download Icon](https://unit42.paloaltonetworks.com/wp-content/themes/unit42-v6/dist/images/icons/icon-download.svg)](https://unit42.paloaltonetworks.com/hijacking-vertex-ai-model/?pdf=download&lg=en&_wpnonce=ac4b3be3b8 "Click here to download")
-  * [ ![Print Icon](https://unit42.paloaltonetworks.com/wp-content/themes/unit42-v6/dist/images/icons/icon-print.svg)](https://unit42.paloaltonetworks.com/hijacking-vertex-ai-model/?pdf=print&lg=en&_wpnonce=ac4b3be3b8 "Click here to print")
+  * [ ![Download Icon](https://unit42.paloaltonetworks.com/wp-content/themes/unit42-v6/dist/images/icons/icon-download.svg)](https://unit42.paloaltonetworks.com/hijacking-vertex-ai-model/?pdf=download&lg=en&_wpnonce=252a1929a6 "Click here to download")
+  * [ ![Print Icon](https://unit42.paloaltonetworks.com/wp-content/themes/unit42-v6/dist/images/icons/icon-print.svg)](https://unit42.paloaltonetworks.com/hijacking-vertex-ai-model/?pdf=print&lg=en&_wpnonce=252a1929a6 "Click here to print")
 
 
 

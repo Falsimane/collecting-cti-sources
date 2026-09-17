@@ -1,0 +1,16 @@
+Through the Lens of MDR: Analysis of KongTuke’s ClickFix Abuse of Compromised WordPress Sites
+=====================================================================================================================
+SHA256									FILE		DETECTION NAME
+c15f44d6abb3a2a882ffdc9b90f7bb5d1a233c0aa183eb765aa8bfba5832c8c6	modes.py	Trojan.Python.MODELORAT.SM
+7d03573b8f1dbb62cd25aecd82e790450fce4aa3f29ef07a0d02c8dd5bd29995	udp.pyw		Trojan.Python.MODELORAT.A
+90553fc9208cd64f1f827fd07edec3c2aa0a4510471015ce44c7411898f35039	run.pyw		Trojan.Python.MODELORAT.A
+=====================================================================================================================
+IP/DOMAIN								DETECTION
+hxxp://45[.]61[.]138[.]224						C&C Server
+hxxp[://]158[.]247[.]252[.]178/beacon/024a143b				C&C Server
+hxxp[://]170[.]168[.]103[.]208/beacon/024a143b				C&C Server
+hxxp[://]170[.]168[.]103[.]208/beacon/765885f4				C&C Server
+hxxps://www[.]dropbox[.]com/sc/fi/q7Wv7uly06okwokmjshy7/1[.]zip	 	Malware Accomplice
+hxxps[://]ainttby[.]com/6f54[.]js					Disease Vector
+hxxps[://]foodgefy[.]com/6o0jk[.]js					Disease Vector
+hxxps[://]ctpsih[.]com/2d5h[.]js					Disease Vector

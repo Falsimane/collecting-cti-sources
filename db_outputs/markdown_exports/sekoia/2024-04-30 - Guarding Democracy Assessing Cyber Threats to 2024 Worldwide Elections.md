@@ -15,7 +15,9 @@
 
 
 
-![](https://cdn.prod.website-files.com/69b190e7f47e4c44b0ee07d8/6a2a7d62b7c63a873a2a0757_ketedits.svg)
+![Past elections impacted by cyber operations, 2014 to 2023.](https://cdn.prod.website-files.com/69b190e7f47e4c44b0ee07d8/6aaba0054ca95ec8c2053d7e_Past%20elections%20impacted%20by%20cyber%20operations-2014%20to%202023.webp)
+
+Past elections impacted by cyber operations, 2014 to 2023.
 
   * "Hack-and-leak operations" involve planning a long-term cyber intrusion looking for compromising documents published to fuel narrative undermining a candidate. The most critical exemples are the DCleaks and MacronLeaks operations, conducted by Russian military intelligence against US and French presidential elections in 2016 and 2017.
 
@@ -33,7 +35,9 @@
 
 
 
-![](https://cdn.prod.website-files.com/69b190e7f47e4c44b0ee07d8/6a2a7d62b7c63a873a2a076b_group9.svg)
+![Major cyber threats to 2024 elections](https://cdn.prod.website-files.com/69b190e7f47e4c44b0ee07d8/6aaba0813017369152c683f3_Major%20cyber%20threats%20to%202024%20elections.webp)
+
+Major cyber threats to 2024 elections
 
 ## Introduction
 

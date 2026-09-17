@@ -289,4 +289,4 @@ External Remote Services – T1133 Valid Accounts – T1078 Graphical User Inter
   * [Share on WhatsApp](https://api.whatsapp.com/send?text=https://thedfirreport.com/2020/11/23/pysa-mespinoza-ransomware/)
   * [Share on Linkedin](https://linkedin.com/shareArticle?mini=true&title=PYSA%2FMespinoza%20Ransomware&url=https://thedfirreport.com/2020/11/23/pysa-mespinoza-ransomware/)
   * [Share on Reddit](https://reddit.com/submit?url=https://thedfirreport.com/2020/11/23/pysa-mespinoza-ransomware/&title=PYSA%2FMespinoza%20Ransomware)
-  * [Share by Mail](/cdn-cgi/l/email-protection#fac5898f98909f998ec7aaa3a9bbdfc8bcb79f898a939495809bdfc8caa89b948995978d9b889fdcd9cac9c2c198959e83c7928e8e8a89c0d5d58e929f9e9c9388889f8a95888ed4999597d5c8cac8cad5cbcbd5c8c9d58a83899bd7979f898a939495809bd7889b948995978d9b889fd5)
+  * [Share by Mail](/cdn-cgi/l/email-protection#5a65292f38303f392e670a03091b7f681c173f292a333435203b7f686a083b342935372d3b283f7c796a69626138353e2367322e2e2a296075752e323f3e3c3328283f2a35282e7439353775686a686a756b6b756869752a23293b77373f292a333435203b77283b342935372d3b283f75)

@@ -353,4 +353,4 @@ YARA:
   * [Share on WhatsApp](https://api.whatsapp.com/send?text=https://thedfirreport.com/2020/06/21/snatch-ransomware/)
   * [Share on Linkedin](https://linkedin.com/shareArticle?mini=true&title=Snatch%20Ransomware&url=https://thedfirreport.com/2020/06/21/snatch-ransomware/)
   * [Share on Reddit](https://reddit.com/submit?url=https://thedfirreport.com/2020/06/21/snatch-ransomware/&title=Snatch%20Ransomware)
-  * [Share by Mail](/cdn-cgi/l/email-protection#1b24686e79717e786f2648757a6f78733e292b497a756874766c7a697e3d382b28232079747f6226736f6f6b682134346f737e7f7d7269697e6b74696f3578747634292b292b342b2d34292a3468757a6f787336697a756874766c7a697e34)
+  * [Share by Mail](/cdn-cgi/l/email-protection#0b34787e69616e687f3658656a7f68632e393b596a657864667c6a796e2d283b38333069646f7236637f7f7b783124247f636e6f6d6279796e7b64797f2568646624393b393b243b3d24393a2478656a7f686326796a657864667c6a796e24)

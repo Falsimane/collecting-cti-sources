@@ -92,15 +92,9 @@ The following figures present an example of request and response for the dir com
 
 Figure 5. Example of dir request
 
-  
-
-
 ![Hello packet from the implant.](https://cdn.prod.website-files.com/69b190e7f47e4c44b0ee07d8/6a92a65b51d97c29d2a36885_6a92a45451d97c29d2a31aa9_6a2a79c7009bb67f3ecc7ac0.webp)
 
 Figure 6. Hello packet from the implant.
-
-  
-
 
 A keepalive message is sent to the C2 server every 40 seconds. The server must echo this message. Based on this observation, we created a Suricata rule to spot this threat in your network flows (see Appendix). 
 

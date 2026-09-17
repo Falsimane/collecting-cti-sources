@@ -218,8 +218,7 @@ Indicator | Type
 
 _ThreatBook Research Team monitors active threats in real time. For questions about this report or ThreatBook's detection capabilities, contact your regional ThreatBook representative._
 
-  * [Tweet](https://twitter.com/share)
-  * Share
+  *   * Share
   * 
 
 

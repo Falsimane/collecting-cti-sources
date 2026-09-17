@@ -1,0 +1,30 @@
+Indicators of Compromise - The Rise of Collaborative Tactics Among China-aligned Cyber Espionage Campaigns
+
+[Type] 		[IOC]									[Description] 
+sha256 		bd6988826d26c986912a07837c69775359cdb05b4db9ad300052e81391d5678d 	Cobalt Strike payload (Earth Estries) 
+sha256 		b053e8694ab492b0051d4c18f56d9da7e4ce13b3cd2daa023a031e8e58b36a22 	DRACULOADER (Earth Estries) 
+sha256 		21442da01117afc571c25f3944c3f05796f73920af850027ac75a17e45942eb2 	CrowDoor Payload (Earth Estries) 
+sha256 		fe216710b8579c314008bbda96a5e302bd75e3543c57a2f4318cf490470858d6 	DRACULOADER (Earth Estries) 
+sha256 		b5b2cba6da79e608a7009bfa702d56eeba23b26d159646b250f5a32222b6395b 	DRACULOADER (Earth Estries) 
+sha256 		4a0a776fb69f90837eb03ad394273e187f0466fd8293268e5d4896bd2722e356 	DRACULOADER (Earth Estries) 
+sha256 		1bd50c76cbe79111d3df12f812b4ac4a53a3f8fba3266a04721d964a5c125323 	CrowDoor Payload (Earth Estries) 
+sha256 		68525e41f3faaa1b03dc8cbdd4f428d1f9f0242421f704862461c4ac350afb71 	BLINDSIGHT (Earth Estries) 
+sha256 		843f8aea7842126e906cadbad8d81fa456c184fb5372c6946978a4fe115edb1c 	DRACULOADER (Earth Estries) 
+sha256 		cc008024faf71eed6f2e7bc4efeea1df2238fd5947bf369015edb6efd46bd906 	DRACULOADER (Earth Estries) 
+sha256 		07b1f5d83b83f9fb38efbee596b508099bfe4b986f3701a6cf1e093b65a27eeb 	CrowDoor Payload (Earth Estries) 
+sha256 		2b617962b5691f27bd6c48700496710b9a82326a89499308dfdb7b505a585e6f 	CrowDoor Payload (Earth Estries) 
+sha256 		c76009638e6e36785fcaea9eb25214c5a0d25eb4fa49d725984ef44d953228b9 	Earthworm (Earth Estries) 
+sha256 		000f30792da01647cf040c0734bfa968af24b430e8bfa0886b1b4fe8b1caa753 	ShadowPad loader (Earth Naga) 
+sha256 		ac29c2dbec74dd4c05fa4ea4544c2e619f62cfe3b874746d94a13cf7ce3cbeff 	ShadowPad loader (Earth Naga) 
+
+domain 		myoffice[.]techralsolution[.]com 					CrowDoor C&C (Earth Estries) 
+domain 		helpdesk[.]athenatechlabs[.]com 					CrowDoor C&C (Earth Estries) 
+domain 		updata[.]mgil01[.]workers[.]dev  					Cobalt Strike C&C (Earth Estries) 
+domain 		back-trust-aurora[.]cluster-ctrjumtpbmf[.]mnl-east-2.timcorpnet[.]com  	CrowDoor C&C (Earth Estries) 
+domain		service[.]oneipsoft[.]com 						Cobalt Strike C&C (Earth Estries)
+domain		afddd9d14453d4f9-1e185df7e4.ap-southeast-mnl[.]timcorpnet[.]com 	CrowDoor C&C (Earth Estries)
+
+ipv4 		45[.]92[.]158[.]50 							ShadowPad C&C (Earth Naga) 
+
+
+

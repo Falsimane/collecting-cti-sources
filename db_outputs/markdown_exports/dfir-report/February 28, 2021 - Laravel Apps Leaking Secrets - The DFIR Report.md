@@ -131,4 +131,4 @@ ip-src| 64.86.198.22| RDP Unauthorized Access
   * [Share on WhatsApp](https://api.whatsapp.com/send?text=https://thedfirreport.com/2021/02/28/laravel-debug-leaking-secrets/)
   * [Share on Linkedin](https://linkedin.com/shareArticle?mini=true&title=Laravel%20Apps%20Leaking%20Secrets&url=https://thedfirreport.com/2021/02/28/laravel-debug-leaking-secrets/)
   * [Share on Reddit](https://reddit.com/submit?url=https://thedfirreport.com/2021/02/28/laravel-debug-leaking-secrets/&title=Laravel%20Apps%20Leaking%20Secrets)
-  * [Share by Mail](/cdn-cgi/l/email-protection#cef1bdbbaca4abadbaf382afbcafb8aba2ebfcfe8fbebebdebfcfe82abafa5a7a0a9ebfcfe9dabadbcabbabde8edfefdf6f5aca1aab7f3a6bababebdf4e1e1baa6abaaa8a7bcbcabbea1bcbae0ada1a3e1fcfefcffe1fefce1fcf6e1a2afbcafb8aba2e3aaabacbba9e3a2abafa5a7a0a9e3bdabadbcabbabde1)
+  * [Share by Mail](/cdn-cgi/l/email-protection#28175b5d4a424d4b5c1564495a495e4d440d1a186958585b0d1a18644d494341464f0d1a187b4d4b5a4d5c5b0e0b181b10134a474c5115405c5c585b1207075c404d4c4e415a5a4d58475a5c064b4745071a181a1907181a071a100744495a495e4d44054c4d4a5d4f05444d494341464f055b4d4b5a4d5c5b07)

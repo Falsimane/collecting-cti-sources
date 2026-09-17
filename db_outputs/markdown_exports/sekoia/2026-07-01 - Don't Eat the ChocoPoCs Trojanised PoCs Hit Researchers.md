@@ -21,7 +21,7 @@ Running a PoC safely is harder than it sounds. Time pressure competes with cauti
 
 A few days ago, YesWeHack started contributing templates and PoCs to the [Nuclei community](https://github.com/projectdiscovery/nuclei-templates) to share ongoing vulnerability research and increase the visibility of the Vulnerability Intelligence team. Then, on Thursday, 25 June 2026, shortly after publishing a [Joomla JCE template](https://www.yeswehack.com/fr/news/rce-joomla-content-editor-extension), we received an intriguing GitHub notification:
 
-![__wf_reserved_inherit](https://cdn.prod.website-files.com/69b190e7f47e4c44b0ee07d8/6a92a5123e6167cebbf7534a_6a92a11f878de395f10e57de_6a43c7cfba6bdd45083b37d1.webp)
+![](https://cdn.prod.website-files.com/69b190e7f47e4c44b0ee07d8/6a92a5123e6167cebbf7534a_6a92a11f878de395f10e57de_6a43c7cfba6bdd45083b37d1.webp)
 
 Figure 1. GitHub issue that share the infected PoC repo
 
@@ -33,7 +33,7 @@ Someone suggested two PoCs for a critical unauthenticated RCE affecting a Joomla
 
 Things soon got truly colorful: the `PyInit_gradient` entrypoint decompiled into an obfuscated function, featuring hash-based module check, PEB walking and several compressed, XOR-encrypted blobs hidden in the `.rodata` section. At that point, our appreciation for "beautiful terminal colors" reached a whole new level, so we decided:
 
-![__wf_reserved_inherit](https://cdn.prod.website-files.com/69b190e7f47e4c44b0ee07d8/6a92a5123e6167cebbf75350_6a92a12232517fc4025ee2a6_6a43caa6fa111c5567caa9ce.webp)
+![](https://cdn.prod.website-files.com/69b190e7f47e4c44b0ee07d8/6a92a5123e6167cebbf75350_6a92a12232517fc4025ee2a6_6a43caa6fa111c5567caa9ce.webp)
 
 Together with our friends at Sekoia TDR, we dug deeper into this surprisingly sophisticated dependency chain. What we eventually uncovered was a fully functional - and almost completely undocumented - Python remote access trojan (RAT).
 
@@ -58,7 +58,7 @@ The infection chain is as follows:
 
 ‍
 
-![__wf_reserved_inherit](https://cdn.prod.website-files.com/69b190e7f47e4c44b0ee07d8/6a92a5123e6167cebbf7534d_6a92a120693fca262e1a204e_6a43cde26c2e239867528b3f.webp)
+![](https://cdn.prod.website-files.com/69b190e7f47e4c44b0ee07d8/6a92a5123e6167cebbf7534d_6a92a120693fca262e1a204e_6a43cde26c2e239867528b3f.webp)
 
 Figure 2. ChocoPoC infection chain
 
@@ -78,11 +78,9 @@ This report only details the analysis of the Windows library (`gradient.pyd`). L
 
 The library minimises its footprint by eschewing standard import tables, instead dynamically resolving the Python C-API and `kernel32.dll` functions via Process Environment Block (PEB) walking the export-hashing.
 
-
 _Code 1. Python equivalent of the Windows API resolution primitive_
 
 Before proceeding, it executes anti-analysis routines, by calling `CheckRemoteDebuggerPresent` and inspecting debugging registers `Dr0` to `Dr1` via `GetThreadContext` to detect hardware breakpoints.
-
 
 _Code 2. Decompiled code excerpt showing dynamic API resolution coupled with debugger identification_
 
@@ -90,7 +88,7 @@ Besides, in the init of the export function (`PyInit_gradient`), the malware als
 
 To ensure it only executes in the intended context, the payload employs environmental key gating; it hashes the basenames of all loaded Python modules via their `__file__` attributes, proceeding only if a module matches the hash `0xF4835C9C` (corresponding to uppercased **`EXPLOIT_POC.py`**). The same characteristic hash-based gating algorithm appears in related campaigns (see next sections), using either uppercased **`exploit.py`** or **`exploit_poc.py`**. This explains why isolated detonation doesn’t trigger any malicious behavior nor detection in a typical sandbox: malware execution is conditioned to the full lure PoC runtime.
 
-![__wf_reserved_inherit](https://cdn.prod.website-files.com/69b190e7f47e4c44b0ee07d8/6a92a5123e6167cebbf75353_6a92a121a49553afbaf272e2_6a43cf2b034e246617210967.webp)
+![](https://cdn.prod.website-files.com/69b190e7f47e4c44b0ee07d8/6a92a5123e6167cebbf75353_6a92a121a49553afbaf272e2_6a43cf2b034e246617210967.webp)
 
 Figure 3. Hashing algorithm
 
@@ -228,7 +226,7 @@ According to these findings, we assess with high confidence that the attacker pr
 
 According to [pepy.tech](https://pepy.tech) and [pypistats.org](https://pypistats.org), the “ _skytext_ ” package alone has accumulated roughly 2,400 downloads across both Linux and Windows environments, with Linux systems accounting for the majority. While download statistics cannot prove successful compromises, they strongly suggest that researchers and pentesters installed these packages while executing the associated PoCs. More interestingly, download trends for “ _frint_ ” and “ _skytext_ ” closely follow the disclosure of FortiSandbox, Ivanti Sentry and Joomla SP Page builder vulnerabilities, along with the publication of their corresponding PoCs. However, both “frint” and “ _skytext_ ” show a bump of downloads on May 5, indicating a successful prior infection wave. May 5 precisely matches the date where Linux Copy Fail top-tier vulnerability has been added to CISA Known Exploited Vulnerabilities (KEV) catalog and the massive spread of public exploits for it. We may hypothesise that vulnerability researchers interested in such vulnerabilities were also targeted at that time. Similarly, “ _slogsec_ ” package shows a narrow bump on 25 March, which tightly matches a critical Langflow RCE’s disclosure and addition to KEV.
 
-![__wf_reserved_inherit](https://cdn.prod.website-files.com/69b190e7f47e4c44b0ee07d8/6a92a5123e6167cebbf75356_6a92a12319d5c595376964a3_6a43d4606b04938ff7ba1817.webp)
+![](https://cdn.prod.website-files.com/69b190e7f47e4c44b0ee07d8/6a92a5123e6167cebbf75356_6a92a12319d5c595376964a3_6a43d4606b04938ff7ba1817.webp)
 
 Figure 4. Skytext PyPi repository download statistics
 
@@ -304,6 +302,5 @@ jymtKzujqWF3ljJi12z529AvQjSUrodCc14h4v40zPXZ72SkKiEEaoHhOYA56uaC
 ## Annexes
 
 ### ChocoPoC RAT Spawner
-
 
 ### Blob Deobfuscator

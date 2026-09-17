@@ -50,8 +50,8 @@ Tags:
 
 
 
-  * [ ![Download Icon](https://unit42.paloaltonetworks.com/wp-content/themes/unit42-v6/dist/images/icons/icon-download.svg)](https://unit42.paloaltonetworks.com/communication-channel-identity-risks/?pdf=download&lg=en&_wpnonce=ac4b3be3b8 "Click here to download")
-  * [ ![Print Icon](https://unit42.paloaltonetworks.com/wp-content/themes/unit42-v6/dist/images/icons/icon-print.svg)](https://unit42.paloaltonetworks.com/communication-channel-identity-risks/?pdf=print&lg=en&_wpnonce=ac4b3be3b8 "Click here to print")
+  * [ ![Download Icon](https://unit42.paloaltonetworks.com/wp-content/themes/unit42-v6/dist/images/icons/icon-download.svg)](https://unit42.paloaltonetworks.com/communication-channel-identity-risks/?pdf=download&lg=en&_wpnonce=252a1929a6 "Click here to download")
+  * [ ![Print Icon](https://unit42.paloaltonetworks.com/wp-content/themes/unit42-v6/dist/images/icons/icon-print.svg)](https://unit42.paloaltonetworks.com/communication-channel-identity-risks/?pdf=print&lg=en&_wpnonce=252a1929a6 "Click here to print")
 
 
 
@@ -311,9 +311,9 @@ Back to top
 
 ### Related Articles
 
-  * [ Atomic macOS (AMOS) Stealer Activity ](https://unit42.paloaltonetworks.com/atomic-macos-amos-stealer-activity/ "article - table of contents")
   * [ Threat Brief: Mitigating Large-Scale Credential Attacks (Updated August 18) ](https://unit42.paloaltonetworks.com/large-scale-credential-attacks/ "article - table of contents")
   * [ Inside the Modern SOC: The Identity Front Door ](https://unit42.paloaltonetworks.com/soc-identity-front-door/ "article - table of contents")
+  * [ The Xcode Assassin Returns: A Deep Dive Into the Latest XCSSET Version ](https://unit42.paloaltonetworks.com/xcsset-v40-malware-analysis/ "article - table of contents")
 
 
 
@@ -360,8 +360,8 @@ Back to top
 [![ category icon](https://unit42.paloaltonetworks.com/wp-content/uploads/2025/08/Insights-icon-white.svg)Insights](https://unit42.paloaltonetworks.com/category/insights/) September 16, 2026 #### [Atomic macOS (AMOS) Stealer Activity ](https://unit42.paloaltonetworks.com/atomic-macos-amos-stealer-activity/)
 
   * [MacOS](https://unit42.paloaltonetworks.com/tag/macos/ "macOS")
-  * [Malware](https://unit42.paloaltonetworks.com/tag/malware/ "malware")
   * [Threat intelligence](https://unit42.paloaltonetworks.com/tag/threat-intelligence/ "threat intelligence")
+  * [Unit 42](https://unit42.paloaltonetworks.com/tag/unit-42/ "Unit 42")
 
 
 
@@ -468,8 +468,8 @@ Back to top
 [![ category icon](https://unit42.paloaltonetworks.com/wp-content/uploads/2025/08/Insights-icon-white.svg)Insights](https://unit42.paloaltonetworks.com/category/insights/) September 16, 2026 #### [Atomic macOS (AMOS) Stealer Activity ](https://unit42.paloaltonetworks.com/atomic-macos-amos-stealer-activity/)
 
   * [MacOS](https://unit42.paloaltonetworks.com/tag/macos/ "macOS")
-  * [Malware](https://unit42.paloaltonetworks.com/tag/malware/ "malware")
   * [Threat intelligence](https://unit42.paloaltonetworks.com/tag/threat-intelligence/ "threat intelligence")
+  * [Unit 42](https://unit42.paloaltonetworks.com/tag/unit-42/ "Unit 42")
 
 
 

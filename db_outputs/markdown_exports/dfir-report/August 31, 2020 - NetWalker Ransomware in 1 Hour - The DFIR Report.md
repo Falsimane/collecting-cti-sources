@@ -228,4 +228,4 @@ internal case 1003
   * [Share on WhatsApp](https://api.whatsapp.com/send?text=https://thedfirreport.com/2020/08/31/netwalker-ransomware-in-1-hour/)
   * [Share on Linkedin](https://linkedin.com/shareArticle?mini=true&title=NetWalker%20Ransomware%20in%201%20Hour&url=https://thedfirreport.com/2020/08/31/netwalker-ransomware-in-1-hour/)
   * [Share on Reddit](https://reddit.com/submit?url=https://thedfirreport.com/2020/08/31/netwalker-ransomware-in-1-hour/&title=NetWalker%20Ransomware%20in%201%20Hour)
-  * [Share by Mail](/cdn-cgi/l/email-protection#fcc38f899e96999f88c1b29988ab9d9097998ed9ceccae9d928f93918b9d8e99d9cecc9592d9cecccdd9ceccb493898edadfcccfc4c79e939885c19488888c8fc6d3d3889499989a958e8e998c938e88d29f9391d3ceccceccd3ccc4d3cfcdd39299888b9d9097998ed18e9d928f93918b9d8e99d19592d1cdd19493898ed3)
+  * [Share by Mail](/cdn-cgi/l/email-protection#be81cdcbdcd4dbddca83f0dbcae9dfd2d5dbcc9b8c8eecdfd0cdd1d3c9dfccdb9b8c8ed7d09b8c8e8f9b8c8ef6d1cbcc989d8e8d8685dcd1dac783d6cacacecd849191cad6dbdad8d7ccccdbced1ccca90ddd1d3918c8e8c8e918e86918d8f91d0dbcac9dfd2d5dbcc93ccdfd0cdd1d3c9dfccdb93d7d0938f93d6d1cbcc91)
