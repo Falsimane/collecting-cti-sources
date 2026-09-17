@@ -1117,4 +1117,4 @@ Internal case #TB29364 #PR31354
   * [Share on WhatsApp](https://api.whatsapp.com/send?text=https://thedfirreport.com/2024/08/26/blacksuit-ransomware/)
   * [Share on Linkedin](https://linkedin.com/shareArticle?mini=true&title=BlackSuit%20Ransomware&url=https://thedfirreport.com/2024/08/26/blacksuit-ransomware/)
   * [Share on Reddit](https://reddit.com/submit?url=https://thedfirreport.com/2024/08/26/blacksuit-ransomware/&title=BlackSuit%20Ransomware)
-  * [Share by Mail](/cdn-cgi/l/email-protection#b689c5c3d4dcd3d5c28bf4dad7d5dde5c3dfc2938486e4d7d8c5d9dbc1d7c4d3909586858e8dd4d9d2cf8bdec2c2c6c58c9999c2ded3d2d0dfc4c4d3c6d9c4c298d5d9db998486848299868e99848099d4dad7d5ddc5c3dfc29bc4d7d8c5d9dbc1d7c4d399)
+  * [Share by Mail](/cdn-cgi/l/email-protection#efd09c9a8d858a8c9bd2ad838e8c84bc9a869bcadddfbd8e819c8082988e9d8ac9ccdfdcd7d48d808b96d2879b9b9f9cd5c0c09b878a8b89869d9d8a9f809d9bc18c8082c0dddfdddbc0dfd7c0ddd9c08d838e8c849c9a869bc29d8e819c8082988e9d8ac0)

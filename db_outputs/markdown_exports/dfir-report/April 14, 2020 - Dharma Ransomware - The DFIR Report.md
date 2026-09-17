@@ -71,4 +71,4 @@ The ransomware payload created a few run keys
   * [Share on WhatsApp](https://api.whatsapp.com/send?text=https://thedfirreport.com/2020/04/14/dharma-ransomware/)
   * [Share on Linkedin](https://linkedin.com/shareArticle?mini=true&title=Dharma%20Ransomware&url=https://thedfirreport.com/2020/04/14/dharma-ransomware/)
   * [Share on Reddit](https://reddit.com/submit?url=https://thedfirreport.com/2020/04/14/dharma-ransomware/&title=Dharma%20Ransomware)
-  * [Share by Mail](/cdn-cgi/l/email-protection#f6c98583949c939582cbb29e97849b97d3c4c6a4979885999b81978493d0d5c6c5cecd9499928fcb9e82828685ccd9d9829e9392909f84849386998482d895999bd9c4c6c4c6d9c6c2d9c7c2d9929e97849b97db84979885999b81978493d9)
+  * [Share by Mail](/cdn-cgi/l/email-protection#cff0bcbaada5aaacbbf28ba7aebda2aeeafdff9daea1bca0a2b8aebdaae9ecfffcf7f4ada0abb6f2a7bbbbbfbcf5e0e0bba7aaaba9a6bdbdaabfa0bdbbe1aca0a2e0fdfffdffe0fffbe0fefbe0aba7aebda2aee2bdaea1bca0a2b8aebdaae0)

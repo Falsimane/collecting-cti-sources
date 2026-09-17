@@ -110,7 +110,7 @@ Finally, there is the potential that domestic terrorist organizations and [forei
 
 As mentioned above, it would appear that only Primary Arms is in a position to address this issue. We suspect this issue may be resolved by using a more current release of NetSuite SuiteCommerce. A similar e-commerce site, using similar technology but with a more updated version of SuiteCommerce, appears to not be subject to this specific attack technique, so it's unlikely this is a novel vulnerability in the underlying web technology stack.
 
-Customers affected by this issue are encouraged to try to contact Primary Arms, either by email to [[email protected]](/cdn-cgi/l/email-protection#97fef9f1f8d7e7e5fefaf6e5eef6e5fae4b9f4f8fa), or by calling customer service at +1 713.344.9600.
+Customers affected by this issue are encouraged to try to contact Primary Arms, either by email to [[email protected]](/cdn-cgi/l/email-protection#eb82858d84ab9b9982868a99928a998698c5888486), or by calling customer service at +1 713.344.9600.
 
 ## Disclosure timeline
 
@@ -122,7 +122,7 @@ Customers affected by this issue are encouraged to try to contact Primary Arms, 
   * **Wed, May 25, 2022** \- Internal write-up of IDOR issue completed and validated
   * **Thu, May 26, 2022** \- Attempt to contact Primary Arms CEO via guessed email address
   * **Tue, May 31, 2022** \- Called customer support, asked for clarification on contact, reported issue
-  * **Thu, Jun 1, 2022** \- Notified CERT/CC via [[email protected]](/cdn-cgi/l/email-protection#3e5d5b4c4a7e5d5b4c4a10514c59) asking for advice
+  * **Thu, Jun 1, 2022** \- Notified CERT/CC via [[email protected]](/cdn-cgi/l/email-protection#583b3d2a2c183b3d2a2c76372a3f) asking for advice
   * **Fri, Jun 10, 2022** \- Opened a case with CERT/CC, VRF#22-06-QFRZJ
   * **Thu, Jun 16, 2022** \- CERT/CC begins investigation and disclosure attempts, VU#615142
   * **June-July 2022** \- Collaboration with CERT/CC to validate and scope the issue

@@ -246,8 +246,7 @@ The PE file is an unencrypted XWorm trojan, version 6.0, with the C2 address hus
 
 
   * [Tweet](https://twitter.com/share)
-  * Share
-  * 
+  *   * 
 
 
 [ ![Phishing With Google Ads and Fake AI Docs: A Criminal Campaign Targeting the AI Ecosystem](https://threatbook.io/hubfs/Phishing%20With%20Google%20Ads%20and%20Fake%20AI%20Docs%20A%20Criminal%20Campaign%20Targeting%20the%20AI%20Ecosystem.jpeg) ](https://threatbook.io/blog/phishing-with-google-ads-and-fake-ai-docs-a-criminal-campaign-targeting-the-ai-ecosystem)

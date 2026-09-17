@@ -1024,4 +1024,4 @@ Internal case #14335
   * [Share on WhatsApp](https://api.whatsapp.com/send?text=https://thedfirreport.com/2022/09/12/dead-or-alive-an-emotet-story/)
   * [Share on Linkedin](https://linkedin.com/shareArticle?mini=true&title=Dead%20or%20Alive%3F%20An%20Emotet%20Story&url=https://thedfirreport.com/2022/09/12/dead-or-alive-an-emotet-story/)
   * [Share on Reddit](https://reddit.com/submit?url=https://thedfirreport.com/2022/09/12/dead-or-alive-an-emotet-story/&title=Dead%20or%20Alive%3F%20An%20Emotet%20Story)
-  * [Share by Mail](/cdn-cgi/l/email-protection#d3eca0a6b1b9b6b0a7ee97b6b2b7f6e1e3bca1f6e1e392bfbaa5b6f6e095f6e1e392bdf6e1e396bebca7b6a7f6e1e380a7bca1aaf5f0e3e0ebe8b1bcb7aaeebba7a7a3a0e9fcfca7bbb6b7b5baa1a1b6a3bca1a7fdb0bcbefce1e3e1e1fce3eafce2e1fcb7b6b2b7febca1feb2bfbaa5b6feb2bdfeb6bebca7b6a7fea0a7bca1aafc)
+  * [Share by Mail](/cdn-cgi/l/email-protection#96a9e5e3f4fcf3f5e2abd2f3f7f2b3a4a6f9e4b3a4a6d7faffe0f3b3a5d0b3a4a6d7f8b3a4a6d3fbf9e2f3e2b3a4a6c5e2f9e4efb0b5a6a5aeadf4f9f2efabfee2e2e6e5acb9b9e2fef3f2f0ffe4e4f3e6f9e4e2b8f5f9fbb9a4a6a4a4b9a6afb9a7a4b9f2f3f7f2bbf9e4bbf7faffe0f3bbf7f8bbf3fbf9e2f3e2bbe5e2f9e4efb9)

@@ -401,4 +401,4 @@ Internal case #3521
   * [Share on WhatsApp](https://api.whatsapp.com/send?text=https://thedfirreport.com/2021/05/02/trickbot-brief-creds-and-beacons/)
   * [Share on Linkedin](https://linkedin.com/shareArticle?mini=true&title=Trickbot%20Brief%3A%20Creds%20and%20Beacons&url=https://thedfirreport.com/2021/05/02/trickbot-brief-creds-and-beacons/)
   * [Share on Reddit](https://reddit.com/submit?url=https://thedfirreport.com/2021/05/02/trickbot-brief-creds-and-beacons/&title=Trickbot%20Brief%3A%20Creds%20and%20Beacons)
-  * [Share by Mail](/cdn-cgi/l/email-protection#80bff3f5e2eae5e3f4bdd4f2e9e3ebe2eff4a5b2b0c2f2e9e5e6a5b3c1a5b2b0c3f2e5e4f3a5b2b0e1eee4a5b2b0c2e5e1e3efeef3a6a3b0b3b8bbe2efe4f9bde8f4f4f0f3baafaff4e8e5e4e6e9f2f2e5f0eff2f4aee3efedafb2b0b2b1afb0b5afb0b2aff4f2e9e3ebe2eff4ade2f2e9e5e6ade3f2e5e4f3ade1eee4ade2e5e1e3efeef3af)
+  * [Share by Mail](/cdn-cgi/l/email-protection#4f703c3a2d252a2c3b721b3d262c242d203b6a7d7f0d3d262a296a7c0e6a7d7f0c3d2a2b3c6a7d7f2e212b6a7d7f0d2a2e2c20213c696c7f7c77742d202b3672273b3b3f3c7560603b272a2b29263d3d2a3f203d3b612c2022607d7f7d7e607f7a607f7d603b3d262c242d203b622d3d262a29622c3d2a2b3c622e212b622d2a2e2c20213c60)

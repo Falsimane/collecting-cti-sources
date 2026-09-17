@@ -860,4 +860,4 @@ Internal case #5426
   * [Share on WhatsApp](https://api.whatsapp.com/send?text=https://thedfirreport.com/2021/10/04/bazarloader-and-the-conti-leaks/)
   * [Share on Linkedin](https://linkedin.com/shareArticle?mini=true&title=BazarLoader%20and%20the%20Conti%20Leaks&url=https://thedfirreport.com/2021/10/04/bazarloader-and-the-conti-leaks/)
   * [Share on Reddit](https://reddit.com/submit?url=https://thedfirreport.com/2021/10/04/bazarloader-and-the-conti-leaks/&title=BazarLoader%20and%20the%20Conti%20Leaks)
-  * [Share by Mail](/cdn-cgi/l/email-protection#be81cdcbdcd4dbddca83fcdfc4dfccf2d1dfdadbcc9b8c8edfd0da9b8c8ecad6db9b8c8efdd1d0cad79b8c8ef2dbdfd5cd989d8e8d8685dcd1dac783d6cacacecd849191cad6dbdad8d7ccccdbced1ccca90ddd1d3918c8e8c8f918f8e918e8a91dcdfc4dfccd2d1dfdadbcc93dfd0da93cad6db93ddd1d0cad793d2dbdfd5cd91)
+  * [Share by Mail](/cdn-cgi/l/email-protection#b48bc7c1d6ded1d7c089f6d5ced5c6f8dbd5d0d1c6918684d5dad0918684c0dcd1918684f7dbdac0dd918684f8d1d5dfc7929784878c8fd6dbd0cd89dcc0c0c4c78e9b9bc0dcd1d0d2ddc6c6d1c4dbc6c09ad7dbd99b868486859b85849b84809bd6d5ced5c6d8dbd5d0d1c699d5dad099c0dcd199d7dbdac0dd99d8d1d5dfc79b)

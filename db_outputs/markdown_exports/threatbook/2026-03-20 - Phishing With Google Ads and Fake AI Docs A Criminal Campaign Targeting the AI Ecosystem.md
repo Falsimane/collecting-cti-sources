@@ -98,8 +98,7 @@ ThreatBook assesses that this campaign represents a template. The specific appli
 
 A full IOC list and complete technical malware analysis is published in [Part 2](/blog/inside-the-attack-complete-technical-breakdown-of-the-ai-ecosystem-threat-campaign) of this series. ThreatBook's full product suite provides detection coverage for this campaign.
 
-  * [Tweet](https://twitter.com/share)
-  * Share
+  *   * Share
   * 
 
 

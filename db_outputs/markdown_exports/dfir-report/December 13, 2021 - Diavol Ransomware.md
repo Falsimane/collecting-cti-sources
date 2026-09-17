@@ -903,4 +903,4 @@ Internal case #8099
   * [Share on WhatsApp](https://api.whatsapp.com/send?text=https://thedfirreport.com/2021/12/13/diavol-ransomware/)
   * [Share on Linkedin](https://linkedin.com/shareArticle?mini=true&title=Diavol%20Ransomware&url=https://thedfirreport.com/2021/12/13/diavol-ransomware/)
   * [Share on Reddit](https://reddit.com/submit?url=https://thedfirreport.com/2021/12/13/diavol-ransomware/&title=Diavol%20Ransomware)
-  * [Share by Mail](/cdn-cgi/l/email-protection#48773b3d2a222d2b3c750c21293e27246d7a781a29263b27253f293a2d6e6b787b70732a272c3175203c3c383b7267673c202d2c2e213a3a2d38273a3c662b2725677a787a7967797a67797b672c21293e2724653a29263b27253f293a2d67)
+  * [Share by Mail](/cdn-cgi/l/email-protection#b28dc1c7d0d8d7d1c68ff6dbd3c4ddde978082e0d3dcc1dddfc5d3c0d7949182818a89d0ddd6cb8fdac6c6c2c1889d9dc6dad7d6d4dbc0c0d7c2ddc0c69cd1dddf9d808280839d83809d83819dd6dbd3c4ddde9fc0d3dcc1dddfc5d3c0d79d)

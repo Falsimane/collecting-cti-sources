@@ -66,4 +66,4 @@ Enjoy our report? Please consider donating $1 or more to the project using [Patr
   * [Share on WhatsApp](https://api.whatsapp.com/send?text=https://thedfirreport.com/2020/05/08/adfind-recon/)
   * [Share on Linkedin](https://linkedin.com/shareArticle?mini=true&title=AdFind%20Recon&url=https://thedfirreport.com/2020/05/08/adfind-recon/)
   * [Share on Reddit](https://reddit.com/submit?url=https://thedfirreport.com/2020/05/08/adfind-recon/&title=AdFind%20Recon)
-  * [Share by Mail](/cdn-cgi/l/email-protection#dce3afa9beb6b9bfa8e19db89ab5b2b8f9eeec8eb9bfb3b2faffecefe4e7beb3b8a5e1b4a8a8acafe6f3f3a8b4b9b8bab5aeaeb9acb3aea8f2bfb3b1f3eeeceeecf3ece9f3ece4f3bdb8bab5b2b8f1aeb9bfb3b2f3)
+  * [Share by Mail](/cdn-cgi/l/email-protection#142b6761767e717760295570527d7a703126244671777b7a323724272c2f767b706d297c606064672e3b3b607c7170727d666671647b66603a777b793b262426243b24213b242c3b7570727d7a70396671777b7a3b)

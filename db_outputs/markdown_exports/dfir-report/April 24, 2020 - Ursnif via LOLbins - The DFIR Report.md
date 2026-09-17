@@ -194,4 +194,4 @@ Enjoy our report? Please consider donating $1 or more to the project using [Patr
   * [Share on WhatsApp](https://api.whatsapp.com/send?text=https://thedfirreport.com/2020/04/24/ursnif-via-lolbins/)
   * [Share on Linkedin](https://linkedin.com/shareArticle?mini=true&title=Ursnif%20via%20LOLbins&url=https://thedfirreport.com/2020/04/24/ursnif-via-lolbins/)
   * [Share on Reddit](https://reddit.com/submit?url=https://thedfirreport.com/2020/04/24/ursnif-via-lolbins/&title=Ursnif%20via%20LOLbins)
-  * [Share by Mail](/cdn-cgi/l/email-protection#3e014d4b5c545b5d4a036b4c4d5057581b0c0e48575f1b0c0e7271725c57504d181d0e0d06055c515a4703564a4a4e4d0411114a565b5a58574c4c5b4e514c4a105d5153110c0e0c0e110e0a110c0a114b4c4d5057581348575f135251525c57504d11)
+  * [Share by Mail](/cdn-cgi/l/email-protection#112e6264737b7472652c4463627f78773423216778703423215d5e5d73787f6237322122292a737e75682c79656561622b3e3e657974757778636374617e63653f727e7c3e232123213e21253e23253e6463627f78773c6778703c7d7e7d73787f623e)

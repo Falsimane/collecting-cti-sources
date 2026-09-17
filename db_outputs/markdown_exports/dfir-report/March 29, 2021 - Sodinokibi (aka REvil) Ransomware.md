@@ -947,4 +947,4 @@ Internal case # 1051
   * [Share on WhatsApp](https://api.whatsapp.com/send?text=https://thedfirreport.com/2021/03/29/sodinokibi-aka-revil-ransomware/)
   * [Share on Linkedin](https://linkedin.com/shareArticle?mini=true&title=Sodinokibi%20%28aka%20REvil%29%20Ransomware&url=https://thedfirreport.com/2021/03/29/sodinokibi-aka-revil-ransomware/)
   * [Share on Reddit](https://reddit.com/submit?url=https://thedfirreport.com/2021/03/29/sodinokibi-aka-revil-ransomware/&title=Sodinokibi%20%28aka%20REvil%29%20Ransomware)
-  * [Share by Mail](/cdn-cgi/l/email-protection#e9d69a9c8b838c8a9dd4ba868d80878682808b80ccdbd9ccdbd1888288ccdbd9bbac9f8085ccdbd0ccdbd9bb88879a86849e889b8ccfcad9dad1d28b868d90d4819d9d999ad3c6c69d818c8d8f809b9b8c99869b9dc78a8684c6dbd9dbd8c6d9dac6dbd0c69a868d80878682808b80c4888288c49b8c9f8085c49b88879a86849e889b8cc6)
+  * [Share by Mail](/cdn-cgi/l/email-protection#c8f7bbbdaaa2adabbcf59ba7aca1a6a7a3a1aaa1edfaf8edfaf0a9a3a9edfaf89a8dbea1a4edfaf1edfaf89aa9a6bba7a5bfa9baadeeebf8fbf0f3aaa7acb1f5a0bcbcb8bbf2e7e7bca0adacaea1babaadb8a7babce6aba7a5e7faf8faf9e7f8fbe7faf1e7bba7aca1a6a7a3a1aaa1e5a9a3a9e5baadbea1a4e5baa9a6bba7a5bfa9baade7)

@@ -341,4 +341,4 @@ Internal case 1014
   * [Share on WhatsApp](https://api.whatsapp.com/send?text=https://thedfirreport.com/2021/01/18/all-that-for-a-coinminer/)
   * [Share on Linkedin](https://linkedin.com/shareArticle?mini=true&title=All%20That%20for%20a%20Coinminer%3F&url=https://thedfirreport.com/2021/01/18/all-that-for-a-coinminer/)
   * [Share on Reddit](https://reddit.com/submit?url=https://thedfirreport.com/2021/01/18/all-that-for-a-coinminer/&title=All%20That%20for%20a%20Coinminer%3F)
-  * [Share by Mail](/cdn-cgi/l/email-protection#201f5355424a4543541d614c4c05121074484154051210464f5205121041051210634f494e4d494e455205136606031013181b424f44591d48545450531a0f0f544845444649525245504f52540e434f4d0f121012110f10110f11180f414c4c0d544841540d464f520d410d434f494e4d494e45520f)
+  * [Share by Mail](/cdn-cgi/l/email-protection#536c202631393630276e123f3f766163073b3227766163353c2176616332766163103c3a3d3e3a3d3621766015757063606b68313c372a6e3b27272320697c7c273b3637353a212136233c21277d303c3e7c616361627c63627c626b7c323f3f7e273b32277e353c217e327e303c3a3d3e3a3d36217c)

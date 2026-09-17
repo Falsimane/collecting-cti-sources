@@ -678,4 +678,4 @@ Internal case #14373
   * [Share on WhatsApp](https://api.whatsapp.com/send?text=https://thedfirreport.com/2022/09/26/bumblebee-round-two/)
   * [Share on Linkedin](https://linkedin.com/shareArticle?mini=true&title=BumbleBee%3A%20Round%20Two&url=https://thedfirreport.com/2022/09/26/bumblebee-round-two/)
   * [Share on Reddit](https://reddit.com/submit?url=https://thedfirreport.com/2022/09/26/bumblebee-round-two/&title=BumbleBee%3A%20Round%20Two)
-  * [Share by Mail](/cdn-cgi/l/email-protection#c4fbb7b1a6aea1a7b0f986b1a9a6a8a186a1a1e1f785e1f6f496abb1aaa0e1f6f490b3abe2e7f4f7fcffa6aba0bdf9acb0b0b4b7feebebb0aca1a0a2adb6b6a1b4abb6b0eaa7aba9ebf6f4f6f6ebf4fdebf6f2eba6b1a9a6a8a1a6a1a1e9b6abb1aaa0e9b0b3abeb)
+  * [Share by Mail](/cdn-cgi/l/email-protection#0c337f796e66696f78314e79616e60694e6969293f4d293e3c5e63796268293e3c587b632a2f3c3f34376e636875316478787c7f362323786469686a657e7e697c637e78226f6361233e3c3e3e233c35233e3a236e79616e60696e6969217e6379626821787b6323)

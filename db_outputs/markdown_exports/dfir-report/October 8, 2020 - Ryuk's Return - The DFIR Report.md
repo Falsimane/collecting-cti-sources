@@ -590,4 +590,4 @@ Data Encrypted for Impact – T1486
   * [Share on WhatsApp](https://api.whatsapp.com/send?text=https://thedfirreport.com/2020/10/08/ryuks-return/)
   * [Share on Linkedin](https://linkedin.com/shareArticle?mini=true&title=Ryuk%27s%20Return&url=https://thedfirreport.com/2020/10/08/ryuks-return/)
   * [Share on Reddit](https://reddit.com/submit?url=https://thedfirreport.com/2020/10/08/ryuks-return/&title=Ryuk%27s%20Return)
-  * [Share by Mail](/cdn-cgi/l/email-protection#2a15595f48404f495e1778535f410f181d590f181a784f5e5f58440c091a19121148454e5317425e5e5a591005055e424f4e4c4358584f5a45585e0449454705181a181a051b1a051a120558535f415907584f5e5f584405)
+  * [Share by Mail](/cdn-cgi/l/email-protection#0f307c7a6d656a6c7b325d767a642a3d387c2a3d3f5d6a7b7a7d61292c3f3c37346d606b7632677b7b7f7c3520207b676a6b69667d7d6a7f607d7b216c6062203d3f3d3f203e3f203f37207d767a647c227d6a7b7a7d6120)

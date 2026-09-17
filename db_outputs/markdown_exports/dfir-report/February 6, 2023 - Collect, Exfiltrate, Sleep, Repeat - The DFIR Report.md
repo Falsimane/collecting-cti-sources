@@ -595,4 +595,4 @@ Internal case #17333
   * [Share on WhatsApp](https://api.whatsapp.com/send?text=https://thedfirreport.com/2023/02/06/collect-exfiltrate-sleep-repeat/)
   * [Share on Linkedin](https://linkedin.com/shareArticle?mini=true&title=Collect%2C%20Exfiltrate%2C%20Sleep%2C%20Repeat&url=https://thedfirreport.com/2023/02/06/collect-exfiltrate-sleep-repeat/)
   * [Share on Reddit](https://reddit.com/submit?url=https://thedfirreport.com/2023/02/06/collect-exfiltrate-sleep-repeat/&title=Collect%2C%20Exfiltrate%2C%20Sleep%2C%20Repeat)
-  * [Share by Mail](/cdn-cgi/l/email-protection#bd82cec8dfd7d8dec980fed2d1d1d8dec9988ffe988f8df8c5dbd4d1c9cfdcc9d8988ffe988f8deed1d8d8cd988ffe988f8defd8cdd8dcc99b9e8d8e8586dfd2d9c480d5c9c9cdce879292c9d5d8d9dbd4cfcfd8cdd2cfc993ded2d0928f8d8f8e928d8f928d8b92ded2d1d1d8dec990d8c5dbd4d1c9cfdcc9d890ced1d8d8cd90cfd8cdd8dcc992)
+  * [Share by Mail](/cdn-cgi/l/email-protection#68571b1d0a020d0b1c552b0704040d0b1c4d5a2b4d5a582d100e01041c1a091c0d4d5a2b4d5a583b040d0d184d5a2b4d5a583a0d180d091c4e4b585b50530a070c1155001c1c181b5247471c000d0c0e011a1a0d18071a1c460b0705475a585a5b47585a47585e470b0704040d0b1c450d100e01041c1a091c0d451b040d0d18451a0d180d091c47)

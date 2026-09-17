@@ -761,4 +761,4 @@ Internal case #5295
   * [Share on WhatsApp](https://api.whatsapp.com/send?text=https://thedfirreport.com/2021/11/01/from-zero-to-domain-admin/)
   * [Share on Linkedin](https://linkedin.com/shareArticle?mini=true&title=From%20Zero%20to%20Domain%20Admin&url=https://thedfirreport.com/2021/11/01/from-zero-to-domain-admin/)
   * [Share on Reddit](https://reddit.com/submit?url=https://thedfirreport.com/2021/11/01/from-zero-to-domain-admin/&title=From%20Zero%20to%20Domain%20Admin)
-  * [Share by Mail](/cdn-cgi/l/email-protection#7e410d0b1c141b1d0a43380c11135b4c4e241b0c115b4c4e0a115b4c4e3a11131f17105b4c4e3f1a131710585d4e4d46451c111a0743160a0a0e0d4451510a161b1a18170c0c1b0e110c0a501d1113514c4e4c4f514f4f514e4f51180c111353041b0c11530a11531a11131f1710531f1a13171051)
+  * [Share by Mail](/cdn-cgi/l/email-protection#46793533242c2325327b0034292b6374761c233429637476322963747602292b272f2863747607222b2f28606576757e7d2429223f7b2e323236357c6969322e2322202f343423362934326825292b6974767477697777697677692034292b6b3c2334296b32296b22292b272f286b27222b2f2869)

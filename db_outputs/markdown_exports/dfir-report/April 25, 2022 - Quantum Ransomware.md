@@ -787,4 +787,4 @@ Internal case #12647
   * [Share on WhatsApp](https://api.whatsapp.com/send?text=https://thedfirreport.com/2022/04/25/quantum-ransomware/)
   * [Share on Linkedin](https://linkedin.com/shareArticle?mini=true&title=Quantum%20Ransomware&url=https://thedfirreport.com/2022/04/25/quantum-ransomware/)
   * [Share on Reddit](https://reddit.com/submit?url=https://thedfirreport.com/2022/04/25/quantum-ransomware/&title=Quantum%20Ransomware)
-  * [Share by Mail](/cdn-cgi/l/email-protection#b38cc0c6d1d9d6d0c78ee2c6d2ddc7c6de968183e1d2ddc0dcdec4d2c1d6959083808b88d1dcd7ca8edbc7c7c3c0899c9cc7dbd6d7d5dac1c1d6c3dcc1c79dd0dcde9c818381819c83879c81869cc2c6d2ddc7c6de9ec1d2ddc0dcdec4d2c1d69c)
+  * [Share by Mail](/cdn-cgi/l/email-protection#59662a2c3b333c3a2d64082c38372d2c347c6b690b38372a36342e382b3c7f7a696a61623b363d2064312d2d292a6376762d313c3d3f302b2b3c29362b2d773a3634766b696b6b76696d766b6c76282c38372d2c34742b38372a36342e382b3c76)

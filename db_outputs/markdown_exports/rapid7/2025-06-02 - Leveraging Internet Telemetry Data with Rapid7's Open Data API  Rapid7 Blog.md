@@ -349,7 +349,7 @@ YOU HAVE BEEN HACKED| 1
 
 ## Fin
 
-I hope you've enjoyed this first foray into using our Sonar Data API and working with data from one of our scans. Drop us a note at [[email protected]](/cdn-cgi/l/email-protection#a6d4c3d5c3c7d4c5cee6d4c7d6cfc29188c5c9cb) with any questions about this post, the Sonar Data portal/API, or the new ropendata package.
+I hope you've enjoyed this first foray into using our Sonar Data API and working with data from one of our scans. Drop us a note at [[email protected]](/cdn-cgi/l/email-protection#502235233531223338102231203934677e333f3d) with any questions about this post, the Sonar Data portal/API, or the new ropendata package.
 
 You can find the code used in this post over at [Rapid7’s GitHub](https://github.com/rapid7/data/tree/master/blogs/2019/2019-02-ropendata).
 

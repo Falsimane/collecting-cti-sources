@@ -584,4 +584,4 @@ Internal case #12780
   * [Share on WhatsApp](https://api.whatsapp.com/send?text=https://thedfirreport.com/2022/07/11/select-xmrig-from-sqlserver/)
   * [Share on Linkedin](https://linkedin.com/shareArticle?mini=true&title=SELECT%20XMRig%20FROM%20SQLServer&url=https://thedfirreport.com/2022/07/11/select-xmrig-from-sqlserver/)
   * [Share on Reddit](https://reddit.com/submit?url=https://thedfirreport.com/2022/07/11/select-xmrig-from-sqlserver/&title=SELECT%20XMRig%20FROM%20SQLServer)
-  * [Share by Mail](/cdn-cgi/l/email-protection#d8e7abadbab2bdbbace58b9d949d9b8cfdeae880958ab1bffdeae89e8a9795fdeae88b89948bbdaaaebdaafefbe8ebe0e3bab7bca1e5b0acaca8abe2f7f7acb0bdbcbeb1aaaabda8b7aaacf6bbb7b5f7eae8eaeaf7e8eff7e9e9f7abbdb4bdbbacf5a0b5aab1bff5beaab7b5f5aba9b4abbdaaaebdaaf7)
+  * [Share by Mail](/cdn-cgi/l/email-protection#e4db9791868e818790d9b7a1a8a1a7b0c1d6d4bca9b68d83c1d6d4a2b6aba9c1d6d4b7b5a8b78196928196c2c7d4d7dcdf868b809dd98c90909497decbcb908c8180828d969681948b9690ca878b89cbd6d4d6d6cbd4d3cbd5d5cb978188818790c99c89968d83c982968b89c9979588978196928196cb)

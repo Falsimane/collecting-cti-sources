@@ -108,7 +108,7 @@ The Rapid7 Sonar Data Forward DNS dataset can be used to study DGAs. A challenge
 
 ## Conclusion
 
-We hope the uses case above help you get started using the data. The files are available directly in parquet format at : s3://rapid7-opendata/fdns/any/v1/. To find out more on the DNS records and the other network information that Sonar provides, check out [Rapid7 OpenData](https://opendata.rapid7.com/). We appreciate any community analysis results and hope to collaborate with you in the future. Don’t hesitate to contact us at [[email protected]](/cdn-cgi/l/email-protection#b0c2d5c3d5d1c2d3d8f0c2d1c0d9d4879ed3dfdd) with any further questions!
+We hope the uses case above help you get started using the data. The files are available directly in parquet format at : s3://rapid7-opendata/fdns/any/v1/. To find out more on the DNS records and the other network information that Sonar provides, check out [Rapid7 OpenData](https://opendata.rapid7.com/). We appreciate any community analysis results and hope to collaborate with you in the future. Don’t hesitate to contact us at [[email protected]](/cdn-cgi/l/email-protection#8cfee9ffe9edfeefe4ccfeedfce5e8bba2efe3e1) with any further questions!
 
 _Image source:_[_Flickr_](https://www.flickr.com/photos/30661646@N00/231526044)
 

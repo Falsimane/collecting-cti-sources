@@ -196,7 +196,7 @@ Unlike other studies that Project Sonar publishes on [Scans.IO,](https://scans.i
 
 
 
-As always, if you are interesting in having Sonar perform additional relevant studies, have interests in related research, or if you have questions, we welcome your comments here as well as by reaching out to us at [[email protected]](/cdn-cgi/l/email-protection#f4869187919586979cb48695849d90c3da979b99).
+As always, if you are interesting in having Sonar perform additional relevant studies, have interests in related research, or if you have questions, we welcome your comments here as well as by reaching out to us at [[email protected]](/cdn-cgi/l/email-protection#bac8dfc9dfdbc8d9d2fac8dbcad3de8d94d9d5d7).
 
 ## Article tags
 

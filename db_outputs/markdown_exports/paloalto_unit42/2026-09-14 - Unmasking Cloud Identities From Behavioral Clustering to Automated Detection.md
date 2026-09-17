@@ -327,7 +327,21 @@ Back to top
 
 ### Table of Contents
 
-  * 
+  *   * Executive Summary
+  * The Identity Challenge
+  * Mapping the Landscape: Functional Identity Roles
+    * Analytical Methods
+      * Operation Frequency
+      * Class-Based Scoring
+      * Attribute-Based Mapping
+      * Identity Naming Patterns
+      * Landscape Mapping Summary
+  * Methodology: The Clustering Pipeline
+  * Automated Detection Mechanics
+  * Conclusion
+  * Additional Resources
+  * Appendix: Cortex XDR/XSIAM Alerts Utilizing Behavioral Roles
+
 
 
 ### Related Articles

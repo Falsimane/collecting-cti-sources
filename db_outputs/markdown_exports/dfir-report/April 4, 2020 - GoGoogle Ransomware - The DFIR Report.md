@@ -114,4 +114,4 @@ In the future IOCs will be posted to MISP but right now you can find them on [pa
   * [Share on WhatsApp](https://api.whatsapp.com/send?text=https://thedfirreport.com/2020/04/04/gogoogle-ransomware/)
   * [Share on Linkedin](https://linkedin.com/shareArticle?mini=true&title=GoGoogle%20Ransomware&url=https://thedfirreport.com/2020/04/04/gogoogle-ransomware/)
   * [Share on Reddit](https://reddit.com/submit?url=https://thedfirreport.com/2020/04/04/gogoogle-ransomware/&title=GoGoogle%20Ransomware)
-  * [Share by Mail](/cdn-cgi/l/email-protection#e7d89492858d828493daa088a08888808b82c2d5d7b5868994888a90869582c1c4d7d4dfdc8588839eda8f93939794ddc8c8938f8283818e95958297889593c984888ac8d5d7d5d7c8d7d3c8d7d3c88088808888808b82ca95868994888a90869582c8)
+  * [Share by Mail](/cdn-cgi/l/email-protection#231c505641494640571e644c644c4c444f4606111371424d504c4e54425146050013101b18414c475a1e4b57575350190c0c574b4647454a515146534c51570d404c4e0c111311130c13170c13170c444c444c4c444f460e51424d504c4e544251460c)

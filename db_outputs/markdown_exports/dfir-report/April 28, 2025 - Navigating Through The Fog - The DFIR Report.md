@@ -356,4 +356,4 @@ All the IP addresses found in the file data.txt, present in the ZIP file sonic_s
   * [Share on WhatsApp](https://api.whatsapp.com/send?text=https://thedfirreport.com/2025/04/28/navigating-through-the-fog/)
   * [Share on Linkedin](https://linkedin.com/shareArticle?mini=true&title=Navigating%20Through%20The%20Fog&url=https://thedfirreport.com/2025/04/28/navigating-through-the-fog/)
   * [Share on Reddit](https://reddit.com/submit?url=https://thedfirreport.com/2025/04/28/navigating-through-the-fog/&title=Navigating%20Through%20The%20Fog)
-  * [Share by Mail](/cdn-cgi/l/email-protection#47783432252d2224337a0926312e2026332e2920627577132f352832202f627577132f22627577012820616477747f7c2528233e7a2f333337347d6868332f2223212e353522372835336924282a687577757268777368757f682926312e2026332e29206a332f352832202f6a332f226a21282068)
+  * [Share by Mail](/cdn-cgi/l/email-protection#9da2eee8fff7f8fee9a0d3fcebf4fafce9f4f3fab8afadc9f5eff2e8faf5b8afadc9f5f8b8afaddbf2fabbbeadaea5a6fff2f9e4a0f5e9e9edeea7b2b2e9f5f8f9fbf4efeff8edf2efe9b3fef2f0b2afadafa8b2ada9b2afa5b2f3fcebf4fafce9f4f3fab0e9f5eff2e8faf5b0e9f5f8b0fbf2fab2)

@@ -790,4 +790,4 @@ Internal case #17386 Share this entry
   * [Share on WhatsApp](https://api.whatsapp.com/send?text=https://thedfirreport.com/2023/01/09/unwrapping-ursnifs-gifts/)
   * [Share on Linkedin](https://linkedin.com/shareArticle?mini=true&title=Unwrapping%20Ursnifs%20Gifts&url=https://thedfirreport.com/2023/01/09/unwrapping-ursnifs-gifts/)
   * [Share on Reddit](https://reddit.com/submit?url=https://thedfirreport.com/2023/01/09/unwrapping-ursnifs-gifts/&title=Unwrapping%20Ursnifs%20Gifts)
-  * [Share by Mail](/cdn-cgi/l/email-protection#f3cc80869199969087cea69d84819283839a9d94d6c1c3a681809d9a9580d6c1c3b49a958780d5d0c3c0cbc8919c978ace9b87878380c9dcdc879b9697959a818196839c8187dd909c9edcc1c3c1c0dcc3c2dcc3cadc869d84819283839a9d94de8681809d9a9580de949a958780dc)
+  * [Share by Mail](/cdn-cgi/l/email-protection#407f3335222a2523347d152e3732213030292e276572701532332e292633657270072926343366637073787b222f24397d28343430337a6f6f342825242629323225302f32346e232f2d6f727072736f70716f70796f352e3732213030292e276d3532332e2926336d27292634336f)

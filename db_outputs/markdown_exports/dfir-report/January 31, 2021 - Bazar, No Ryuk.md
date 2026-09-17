@@ -511,4 +511,4 @@ Internal case #1013
   * [Share on WhatsApp](https://api.whatsapp.com/send?text=https://thedfirreport.com/2021/01/31/bazar-no-ryuk/)
   * [Share on Linkedin](https://linkedin.com/shareArticle?mini=true&title=Bazar%2C%20No%20Ryuk%3F&url=https://thedfirreport.com/2021/01/31/bazar-no-ryuk/)
   * [Share on Reddit](https://reddit.com/submit?url=https://thedfirreport.com/2021/01/31/bazar-no-ryuk/&title=Bazar%2C%20No%20Ryuk%3F)
-  * [Share by Mail](/cdn-cgi/l/email-protection#427d313720282721367f00233823306770016770720c2d677072103b3729677104646172717a79202d263b7f2a36363231786d6d362a2726242b303027322d30366c212d2f6d707270736d72736d71736d20233823306f2c2d6f303b37296d)
+  * [Share by Mail](/cdn-cgi/l/email-protection#b08fc3c5d2dad5d3c48df2d1cad1c29582f3958280fedf958280e2c9c5db9583f696938083888bd2dfd4c98dd8c4c4c0c38a9f9fc4d8d5d4d6d9c2c2d5c0dfc2c49ed3dfdd9f828082819f80819f83819fd2d1cad1c29ddedf9dc2c9c5db9f)
