@@ -107,5 +107,14 @@
       "page_load_wait": 7.0,
       "max_pages": 10,
       "slow_mode": true
+    },
+    "ShadowServer": {
+      "url": "https://www.shadowserver.org/topics/threat-intelligence/",
+      "card_selector": "article",
+      "keyword": "",
+      "use_curl_cffi": true,
+      "pagination_pattern": "page/{page}/",
+      "max_pages": 999,
+      "slow_mode": false
     }
 }
